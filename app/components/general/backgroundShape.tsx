@@ -5,6 +5,7 @@ export default function BackgroundShape(top: any) {
   
     return (
       <div className={`absolute inset-x-0 ${position} -z-10 transform-gpu overflow-hidden blur-3xl`} aria-hidden="true">
+        {/* bg-gradient-to-l from-white via-teal-400 to-stone-100 */}
         <div
           className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:w-[72.1875rem]"
           style={{
