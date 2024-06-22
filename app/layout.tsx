@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import BackgroundShape from "./components/general/backgroundShape";
+import { ThemeProvider, useTheme } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,14 +18,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen bg-white">
+
+        <div className="min-h-screen ">
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
           <Header />
+        <BackgroundShape top />
+
           {children}
+          <BackgroundShape />
           <Footer />
+          </ThemeProvider>
         </div>
+
       </body>
     </html>
   );

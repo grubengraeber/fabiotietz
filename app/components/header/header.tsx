@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import ModeToggleButton from '../general/modeToggleButton';
 import LanguageToggleButton from '../general/languageToggleButton';
+import { useTheme } from 'next-themes';
+import { ModeToggle } from './modeToggle';
 
 const companyUrl = 'https://tietz-innovations.at';
 const companyName = "TIETZ Innovations";
@@ -49,7 +50,7 @@ export default function Header() {
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end relative group space-x-3 ">
-                    <ModeToggleButton />
+                    <ModeToggle />
                     <LanguageToggleButton />
                 </div>
             </nav>
@@ -86,7 +87,7 @@ export default function Header() {
                                 ))}
                             </div>
                             <div>
-                                <ModeToggleButton />
+                                <ModeToggle />
                                 <LanguageToggleButton />
                             </div>
                         </div>
