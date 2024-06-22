@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import LanguageToggleButton from '../general/languageToggleButton';
-import { useTheme } from 'next-themes';
 import { ModeToggle } from './modeToggle';
 
 const companyUrl = 'https://tietz-innovations.at';
@@ -44,7 +43,7 @@ export default function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12 lg:justify-start">
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6 text-gray-900">
+                        <a key={item.name} href={item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
                             {item.name}
                         </a>
                     ))}
@@ -80,7 +79,7 @@ export default function Header() {
                                         key={item.name}
                                         href={item.href}
                                         target={item.href === companyUrl ? '_blank' : ''}
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7"
                                     >
                                         {item.name}
                                     </a>
