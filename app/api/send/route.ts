@@ -16,6 +16,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       to: ['fabiotietz0@gmail.com'],
       subject: 'New message',
       react: EmailTemplate({ name, email, message }),
+      text: `You have a new message from ${name} (${email}):\n\n${message}`,
     });
 
     if (error) {
