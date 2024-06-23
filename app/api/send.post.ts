@@ -6,11 +6,6 @@ import { NextRequest, NextResponse } from 'next/server';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function handler(req: NextRequest, res: NextResponse) {
-  if (req.method !== "POST") {
-    return Response.json({ error: "Method not allowed" }, { status: 405 });
-
-  }
-
       const { name, email, message } = await req.json();
 
 
