@@ -35,7 +35,7 @@ export default function Contact() {
     submitEvent.preventDefault()
     
     const response = await fetch("/api/send", {
-        method: "POST",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json"
           },
