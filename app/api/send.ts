@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { EmailTemplate } from '../../../app/components/email-template';
+import { EmailTemplate } from '../components/email-template';
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
