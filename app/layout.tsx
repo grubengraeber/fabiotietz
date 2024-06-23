@@ -5,6 +5,7 @@ import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import BackgroundShape from "./components/general/backgroundShape";
 import { ThemeProvider, useTheme } from "next-themes";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,7 @@ export default function RootLayout({
           <Footer />
           </ThemeProvider>
         </div>
-
+      <Toaster />
       </body>
     </html>
   );
