@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export const runtime = 'edge'
 
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
       const { name, email, message } = await req.json();
   
   try {
