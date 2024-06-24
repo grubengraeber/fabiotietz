@@ -3,8 +3,10 @@ import { EmailTemplate } from '../../components/email-template';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+export const runtime = 'edge'
 
-export async function GET(req: NextRequest) {
+
+export async function POST(req: NextRequest) {
       const { name, email, message } = await req.json();
   
       console.debug(req);
