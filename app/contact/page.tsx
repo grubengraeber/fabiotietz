@@ -76,8 +76,6 @@ export default function Contact() {
         >
             <CardHeader>
                 <CardTitle>
-
-
         {contactMe}
                 </CardTitle>
             </CardHeader>

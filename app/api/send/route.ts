@@ -3,15 +3,12 @@ import { EmailTemplate } from '../../components/email-template';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 
 export async function POST(req: NextRequest) {
       const { name, email, message } = await req.json();
   
-      console.debug(req);
-
-
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <contact@fabiotietz.com>',
