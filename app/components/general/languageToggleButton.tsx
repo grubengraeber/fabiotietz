@@ -9,8 +9,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import getUnicodeFlagIcon from 'country-flag-icons/unicode'
+
 
 export default function LanguageToggleButton() {
+
+  const germanFlag = getUnicodeFlagIcon('DE');
+    const englishFlag = getUnicodeFlagIcon('GB');
+    const frenchFlag = getUnicodeFlagIcon('FR');
+    const spanishFlag = getUnicodeFlagIcon('ES');
+    const croatianFlag = getUnicodeFlagIcon('HR');
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -20,14 +28,20 @@ export default function LanguageToggleButton() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => console.log("English selected")}>
-          English
-        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => console.log("German selected")}>
-          German
+          {germanFlag} Deustch
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => console.log("English selected")}>
+          {englishFlag} English
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => console.log("French selected")}>
-          French
+          {frenchFlag} Français
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => console.log("Spanish selected")}>
+          {spanishFlag} Español
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => console.log("Croatian selected")}>
+          {croatianFlag} Hrvatski
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
