@@ -27,7 +27,7 @@ export default function Header() {
                     <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">{companyName}</span>
                         <h1 className='font-bold space-x-1'>
-                            <span className='text-teal-700 text-2xl'>Fabio</span> <span className='text-emerald-700 text-2xl'>TIETZ</span>
+                            <span className='text-teal-700 text-2xl'>Fabio TIETZ</span>
                         </h1>
                     </a>
                 </div>
