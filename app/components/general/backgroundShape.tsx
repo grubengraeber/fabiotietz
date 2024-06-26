@@ -6,8 +6,10 @@ export default function BackgroundShape(top: any) {
     return (
       <div className={`absolute inset-x-0 ${position} -z-10 transform-gpu overflow-hidden blur-3xl`} aria-hidden="true">
         {/* bg-gradient-to-l from-white via-teal-400 to-stone-100 */}
+        {/* bg-gradient-to-r from-green-300 via-emerald-600 to-teal-400 (WORKS) */}
+        {/* bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] (WORKS)*/}
         <div
-          className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:w-[72.1875rem]"
+          className="relative left-1/2 aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-r from-green-300 via-emerald-600 to-teal-400 opacity-30 sm:w-[72.1875rem]"
           style={{
             clipPath:
               'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',

@@ -26,7 +26,6 @@ export default function Header() {
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">{companyName}</span>
-                        {/* TODO: Change out with Fabio TIETZ in two colors */}
                         <h1 className='font-bold space-x-1'>
                             <span className='text-teal-700 text-2xl'>Fabio</span> <span className='text-emerald-700 text-2xl'>TIETZ</span>
                         </h1>
