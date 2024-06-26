@@ -4,8 +4,9 @@ import "./globals.css";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import BackgroundShape from "./components/general/backgroundShape";
-import { ThemeProvider, useTheme } from "next-themes";
+import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <Analytics />
       <body className={inter.className}>
 
         <div className="min-h-screen ">
