@@ -61,19 +61,21 @@ export function ModeToggle() {
           System
           </span>
         </DropdownMenuItem>
-<DropdownMenuSeparator />
 {
   mobile ?
   null
   :
+  <div>
+
+<DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => toggleTheme(theme)}>
           {
             isMacOS ?
 <p className="grid grid-cols-3 items-center"><Command size={14} /> <Option size={14} /> T </p>
 : <p className="grid grid-cols-3 items-center"> <strong>CTRL</strong> <strong>ALT</strong> T </p>
-
-          }
+}
         </DropdownMenuItem>
+</div>
 }
       </DropdownMenuContent>
     </DropdownMenu>
