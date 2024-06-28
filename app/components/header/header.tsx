@@ -1,11 +1,13 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import LanguageToggleButton from '../general/languageToggleButton';
 import { ModeToggle } from './modeToggle';
 import { useTheme } from 'next-themes';
+import { HotkeyItem, useHotkeys } from '@mantine/hooks';
+import { toggleTheme } from '@/app/utils/toggle-theme';
 
 const companyUrl = 'https://tietz-innovations.at';
 const companyName = "TIETZ Innovations";
@@ -19,6 +21,17 @@ const navigation = [
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+    const theme = useTheme();
+
+    const hotkeys: HotkeyItem[] = [
+        [
+          'mod+alt+T',
+          () => toggleTheme(theme),
+          { preventDefault: false },
+        ],
+      ];
+      useHotkeys(hotkeys);
 
     return (
         <header className="absolute inset-x-0 top-0 z-50">
