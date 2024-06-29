@@ -7,6 +7,7 @@ import BackgroundShape from "./components/general/backgroundShape";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react"
+import { isMobileDevice } from "./utils/is-mobile-server";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const isMobile = isMobileDevice();
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
@@ -38,7 +41,7 @@ export default function RootLayout({
 
           {children}
           <BackgroundShape />
-          <Footer />
+          <Footer isMobile={isMobile} />
           </ThemeProvider>
         </div>
       <Toaster />

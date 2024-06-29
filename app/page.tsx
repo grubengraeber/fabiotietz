@@ -1,3 +1,6 @@
+"use client"
+
+
 export default function Home() {
 
   const welcome = "welcome to my website";

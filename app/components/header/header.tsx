@@ -8,6 +8,7 @@ import { ModeToggle } from './modeToggle';
 import { useTheme } from 'next-themes';
 import { HotkeyItem, useHotkeys } from '@mantine/hooks';
 import { toggleTheme } from '@/app/utils/toggle-theme';
+import { openShortcutMenu } from '@/app/utils/open-shortcut-menu';
 
 const companyUrl = 'https://tietz-innovations.at';
 const companyName = "TIETZ Innovations";
@@ -29,7 +30,12 @@ export default function Header() {
           'mod+alt+T',
           () => toggleTheme(theme),
           { preventDefault: false },
-        ],
+          ],
+          [
+              'mod+S',
+              () => openShortcutMenu(),
+              { preventDefault: true },
+          ],
       ];
       useHotkeys(hotkeys);
 
