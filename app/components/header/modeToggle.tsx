@@ -1,21 +1,16 @@
 "use client"
 
 import * as React from "react"
-import { Command, Moon, Option, Sun } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-
-
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useEffect, useState } from "react"
-import { toggleTheme } from "@/app/utils/toggle-theme"
-import { isMobile } from "@/app/utils/is-mobile"
 
 export function ModeToggle() {
   const [mounted, setMounted] = useState(false)
@@ -29,10 +24,6 @@ export function ModeToggle() {
   if (!mounted) {
     return null
   }
-
-  const isMacOS = typeof window !== 'undefined' ? navigator.userAgent.includes('Mac') : false;
-  const mobile = isMobile(navigator.userAgent);
-
 
   return (
     <DropdownMenu>
@@ -60,22 +51,6 @@ export function ModeToggle() {
           System
           </span>
         </DropdownMenuItem>
-{
-  mobile ?
-  null
-  :
-  <div>
-
-<DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => toggleTheme(theme)}>
-          {
-            isMacOS ?
-<p className="grid grid-cols-3 items-center"><Command size={14} /> <Option size={14} /> T </p>
-: <p className="grid grid-cols-3 items-center"> <strong>CTRL</strong> <strong>ALT</strong> T </p>
-}
-        </DropdownMenuItem>
-</div>
-}
       </DropdownMenuContent>
     </DropdownMenu>
   )

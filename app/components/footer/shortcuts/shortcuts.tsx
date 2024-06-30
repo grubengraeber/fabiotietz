@@ -6,18 +6,15 @@ import React, { ReactElement } from 'react'
 import Key from './key';
 import { KeyType } from './key-type';
 import { DialogTitle } from '@/components/ui/dialog';
-import { useLocalStorage } from '@mantine/hooks';
+import { useAppContext } from '@/context/shortcut-context';
 
-type props = {
-  show: boolean
-}
 
-function Shortcuts({show}: props) {
+function Shortcuts() {
 
-    const [isOpen, setIsOpen] = useLocalStorage({
-      key: 'showShortcutPanel',
-      defaultValue: show,
-    });
+  const { showShortcuts, setShowShortcuts } = useAppContext();
+    const toggleShortcutMenu = () => {
+      setShowShortcuts(!showShortcuts)
+    };
 
     const shortcuts: {icon: ReactElement, description: string, keys: KeyType[]}[] = [
       { icon: <FileDown />, description: 'Download Resume', keys: ['cmd', 'shift', 'R'] },
@@ -34,14 +31,13 @@ function Shortcuts({show}: props) {
       { icon: <SunMoon />, description: 'Toggle Theme', keys: ['cmd', 'option', 'T'] },
       { icon: <Contrast />, description: 'Contrast Mode', keys: ['cmd', 'option', 'C'] },
       { icon: <Globe />, description: 'Toggle Language', keys: ['cmd', 'option', 'L'] },
-      { icon: <Command />, description: 'Open Keyboard Shortcuts Info', keys: ['cmd', 'shift', 'R'] },
+      { icon: <Command />, description: 'Open Keyboard Shortcuts Info', keys: ['cmd', 'shift', 'S'] },
       ];
-
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>Show Shortcuts</button>
-      <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
+      <button onClick={toggleShortcutMenu}>Show Shortcuts</button>
+      <CommandDialog open={showShortcuts} onOpenChange={toggleShortcutMenu}>
       <DialogTitle hidden>Keyboard Shortcuts</DialogTitle>
         <CommandInput placeholder="Search shortcuts..." />
         <CommandList>
@@ -64,24 +60,6 @@ function Shortcuts({show}: props) {
         </CommandList>
       </CommandDialog>
     </>
-
-    /* 
-          <AlertDialog open={showShortcutPanel} onOpenChange={setShowShortcutPanel}>
-  <AlertDialogTrigger>Open Shortcuts</AlertDialogTrigger>
-  <AlertDialogContent>
-    <AlertDialogHeader>
-      <AlertDialogTitle>Portfolio Shortcuts</AlertDialogTitle>
-      <AlertDialogDescription>
-        Quickly access common actions.
-      </AlertDialogDescription>
-    </AlertDialogHeader>
-    <AlertDialogFooter>
-      <AlertDialogCancel>Close</AlertDialogCancel>
-      <AlertDialogAction onClick={() => console.log("Toggled Theme")}>Toggle Light Theme</AlertDialogAction>
-      </AlertDialogFooter>
-      </AlertDialogContent>
-      </AlertDialog>
-      */
   )
 }
 

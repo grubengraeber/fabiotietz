@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react"
 import { isMobileDevice } from "./utils/is-mobile-server";
+import { AppWrapper } from "../context/shortcut-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <Analytics />
       <body className={inter.className}>
+          <AppWrapper>
 
         <div className="min-h-screen ">
         <ThemeProvider
@@ -38,13 +40,13 @@ export default function RootLayout({
           >
           <Header />
         <BackgroundShape top />
-
           {children}
           <BackgroundShape />
           <Footer isMobile={isMobile} />
           </ThemeProvider>
         </div>
       <Toaster />
+          </AppWrapper>
       </body>
     </html>
   );

@@ -1,6 +1,5 @@
 "use client"
 
-import { useLocalStorage } from "@mantine/hooks";
 import Shortcuts from "./shortcuts/shortcuts";
 
 
@@ -9,11 +8,6 @@ type props = {
 }
 
 export default function Footer({isMobile} : props) {
-
-    const [showShortcutPanel, setShowShortcutPanel] = useLocalStorage({
-        key: 'seenShortcutPanel',
-        defaultValue: !isMobile,
-      });
     
       
     return (
@@ -22,7 +16,7 @@ export default function Footer({isMobile} : props) {
         <h1>Footer</h1>
         {
             isMobile ?
-            <Shortcuts show={showShortcutPanel} />
+            <Shortcuts />
             : null
         }
         </div>

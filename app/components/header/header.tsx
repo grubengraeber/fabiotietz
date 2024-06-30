@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import LanguageToggleButton from '../general/languageToggleButton';
@@ -8,7 +8,7 @@ import { ModeToggle } from './modeToggle';
 import { useTheme } from 'next-themes';
 import { HotkeyItem, useHotkeys } from '@mantine/hooks';
 import { toggleTheme } from '@/app/utils/toggle-theme';
-import { openShortcutMenu } from '@/app/utils/open-shortcut-menu';
+import { useAppContext } from '@/context/shortcut-context';
 
 const companyUrl = 'https://tietz-innovations.at';
 const companyName = "TIETZ Innovations";
@@ -20,22 +20,26 @@ const navigation = [
     { name: 'Company', href: companyUrl },
 ]
 
-export default function Header() {
+function Header() {
+    const { showShortcuts, setShowShortcuts } = useAppContext();
+    const toggleShortcutMenu = () => {
+      setShowShortcuts(!showShortcuts)
+    };
+      
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
     const theme = useTheme();
 
     const hotkeys: HotkeyItem[] = [
         [
-          'mod+alt+T',
-          () => toggleTheme(theme),
-          { preventDefault: false },
-          ],
-          [
-              'mod+S',
-              () => openShortcutMenu(),
-              { preventDefault: true },
-          ],
+            'mod+alt+T',
+            () => toggleTheme(theme),
+            { preventDefault: false },
+        ],
+        [
+            'mod+alt+S',
+            () => toggleShortcutMenu(),
+            { preventDefault: true },
+        ],
       ];
       useHotkeys(hotkeys);
 
@@ -78,7 +82,6 @@ export default function Header() {
                     <div className="flex items-center justify-between">
                         <a href='/' className="-m-1.5 p-1.5">
                             <span className="sr-only">{companyName}</span>
-                            {/* TODO: Change out with Fabio TIETZ in two colors */}
                             <h1>Fabio TIETZ</h1>
                         </a>
                         <button
@@ -115,3 +118,5 @@ export default function Header() {
         </header>
     );
 }
+
+export default Header;
