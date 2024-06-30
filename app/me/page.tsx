@@ -1,16 +1,37 @@
+'use client'
 
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import CV from "./cv";
+import { Button } from "@/components/ui/button";
+import { useAppContext } from "@/context/app-context";
 
 export default function Me() {
 
-    return <div className="flex items-center justify-between">
-        <div className='p-4 '>
+    const { showResumePanel, setShowResumePanel } = useAppContext();
 
-            <h1 className='text-black'>Me</h1>
-        </div>
+    const toggleShowResumePanel = () => {
+        setShowResumePanel(!showResumePanel)
+    }
+
+    return (
+    <div className="flex items-center justify-center min-h-screen">
         <Card>
+            <CardHeader>
+
+            <CardTitle>
+            Me
+            </CardTitle>
+            </CardHeader>
+            <CardContent>
+
             <CV /> {/* TODO: downloadable CV */}
+            </CardContent>
+            <CardFooter>
+
+            <Button onClick={toggleShowResumePanel}>
+                Download CV
+            </Button>
+            </CardFooter>
         </Card>
-    </div>
+    </div>)
 }

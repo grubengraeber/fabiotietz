@@ -54,7 +54,7 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
       { icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       { icon: <SunMoon />, description: 'Toggle Theme', keys: ['cmd', 'option', 'T'], action:  () => {
         toggleTheme(theme);
-      }}, // TODO
+      }},
       { icon: <Contrast />, description: 'Contrast Mode', keys: ['cmd', 'option', 'C'], action:  () => {}}, // TODO
       { icon: <Globe />, description: 'Toggle Language', keys: ['cmd', 'option', 'L'], action:  () => {
         toggleLanguage({currentLanguage: language, setLanguage: setLanguage})
