@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocalStorage } from "@mantine/hooks";
+import { language } from "@/app/utils/language";
 import { createContext, useContext, useState } from "react";
 
 
@@ -11,9 +11,11 @@ export function AppWrapper({ children } : {
 }) {
 
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [language, setLanguage] = useState<language>('english');
+  const [showResumePanel, setShowResumePanel] = useState<boolean>(false);
 
   return (
-    <AppContext.Provider value={{ showShortcuts, setShowShortcuts }}>
+    <AppContext.Provider value={{ showShortcuts, setShowShortcuts, language, setLanguage, showResumePanel, setShowResumePanel }}>
       {children}
     </AppContext.Provider>
   )

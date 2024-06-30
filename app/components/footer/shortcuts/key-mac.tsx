@@ -7,7 +7,7 @@ type props = {
     icon?: KeyType
 }
 
-const Key = ({ children, icon }: props) => {
+const KeyMac = ({ children, icon }: props) => {
 
     const icons = {
         cmd: <Command className="w-4 h-4" />,
@@ -51,4 +51,4 @@ const Key = ({ children, icon }: props) => {
   );
 };
 
-export default Key;
+export default KeyMac;

@@ -1,0 +1,1 @@
+export type language = 'german' | 'english' | 'french' | 'croatian' | 'spanish';

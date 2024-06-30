@@ -7,8 +7,11 @@ import LanguageToggleButton from '../general/languageToggleButton';
 import { ModeToggle } from './modeToggle';
 import { useTheme } from 'next-themes';
 import { HotkeyItem, useHotkeys } from '@mantine/hooks';
+import { useAppContext } from '@/context/app-context';
 import { toggleTheme } from '@/app/utils/toggle-theme';
-import { useAppContext } from '@/context/shortcut-context';
+import { downloadFile } from '@/app/utils/download-file';
+import { useRouter } from 'next/navigation';
+import { toggleLanguage } from '@/app/utils/toggle-language';
 
 const companyUrl = 'https://tietz-innovations.at';
 const companyName = "TIETZ Innovations";
@@ -21,13 +24,16 @@ const navigation = [
 ]
 
 function Header() {
-    const { showShortcuts, setShowShortcuts } = useAppContext();
+    const { showShortcuts, setShowShortcuts, language, setLanguage, setShowResumePanel } = useAppContext();
     const toggleShortcutMenu = () => {
       setShowShortcuts(!showShortcuts)
     };
       
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const theme = useTheme();
+
+    const router = useRouter();
+
 
     const hotkeys: HotkeyItem[] = [
         [
@@ -38,6 +44,49 @@ function Header() {
         [
             'mod+alt+S',
             () => toggleShortcutMenu(),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+R',
+            () => setShowResumePanel(true),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+D',
+            () => downloadFile('/api/portfolio', 'fabiotietz_portfolio'),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+H',
+            () => {
+                router.push('/')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+M',
+            () => {
+                router.push('/me')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+C',
+            () => {
+                router.push('/contact')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+P',
+            () => {
+                router.push('/projects')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+L',
+            () => toggleLanguage({currentLanguage: language, setLanguage: setLanguage}),
             { preventDefault: true },
         ],
       ];

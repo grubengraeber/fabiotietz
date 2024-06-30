@@ -3,7 +3,7 @@
 import { headers } from 'next/headers'
 import { UAParser } from 'ua-parser-js'
 
-export const isMobileDevice = () => {
+export const isMacOS = () => {
   if (typeof process === 'undefined') {
     throw new Error('[Server method] you are importing a server-only module outside of server')
   }
@@ -11,7 +11,7 @@ export const isMobileDevice = () => {
   const { get } = headers()
   const ua = get('user-agent')
 
-  const device = new UAParser(ua || '').getDevice()
+  const os = new UAParser(ua || '').getOS()
 
-  return device.type === 'mobile'
+  return os.name === 'Mac OS'
 }
