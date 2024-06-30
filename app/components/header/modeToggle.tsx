@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useEffect, useState } from "react"
 
+// TODO: language
 export function ModeToggle() {
   const [mounted, setMounted] = useState(false)
   const theme = useTheme()

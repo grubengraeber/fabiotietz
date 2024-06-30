@@ -23,6 +23,7 @@ const navigation = [
     { name: 'Company', href: companyUrl },
 ]
 
+// TODO: language
 function Header() {
     const { showShortcuts, setShowShortcuts, language, setLanguage, setShowResumePanel } = useAppContext();
     const toggleShortcutMenu = () => {
@@ -87,6 +88,16 @@ function Header() {
         [
             'mod+alt+L',
             () => toggleLanguage({currentLanguage: language, setLanguage: setLanguage}),
+            { preventDefault: true },
+        ],
+        [
+            'mod+shift+C',
+            () => window.open('https://tietz-innovations.at', '_ blank'),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+B',
+            () => window.open('https://blog.fabiotietz.com', '_ blank'),
             { preventDefault: true },
         ],
       ];

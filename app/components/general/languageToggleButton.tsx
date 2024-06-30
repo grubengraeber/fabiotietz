@@ -27,7 +27,7 @@ export default function LanguageToggleButton() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <GlobeAltIcon className="h-6 w-6" />
-          <span className="sr-only">Toggle language</span>
+          <span className="sr-only">Toggle language</span> {/* TODO: language */}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

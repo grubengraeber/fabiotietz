@@ -3,6 +3,7 @@
 import { useAppContext } from "@/context/app-context";
 import { language } from "./utils/language";
 
+// TODO: language
 export default function Home() {
 
   const {language} = useAppContext();

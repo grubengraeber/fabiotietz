@@ -1,7 +1,7 @@
 "use client"
 
 import { CommandDialog, CommandInput, CommandItem, CommandList, CommandShortcut } from '@/components/ui/command'
-import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Command, Contact, Contrast, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Key, SunMoon } from 'lucide-react';
+import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Building2, Command, Contact, Contrast, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Key, SunMoon } from 'lucide-react';
 import React, { ReactElement } from 'react'
 import { KeyType } from './key-type';
 import { DialogTitle } from '@/components/ui/dialog';
@@ -14,7 +14,7 @@ import { toggleTheme } from '@/app/utils/toggle-theme';
 import { useRouter } from 'next/navigation';
 import { toggleLanguage } from '@/app/utils/toggle-language';
 
-
+// TODO: language
 function Shortcuts({ isMac }: { isMac: boolean}) {
 
   const { showShortcuts, setShowShortcuts, setShowResumePanel, language, setLanguage } = useAppContext();
@@ -48,7 +48,14 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
         setShowShortcuts(false)
         router.push('/projects')
       }},
-      { icon: <FilePenLine />, description: 'Blog Section', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
+      { icon: <Building2 />, description: 'Company', keys: ['cmd', 'shift', 'C'], action:  () => {
+        setShowShortcuts(false)
+        window.open('https://tietz-innovations.at', '_ blank'); 
+      }},
+      { icon: <FilePenLine />, description: 'Blog Section', keys: ['cmd', 'option', 'B'], action:  () => {
+        setShowShortcuts(false)
+        window.open ('https://blog.fabiotietz.com', '_ blank')
+      }},
       { icon: <Forward />, description: 'Share Page', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       { icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       { icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO

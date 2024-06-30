@@ -8,6 +8,7 @@ type props = {
     isMac: boolean,
 }
 
+// TODO: language
 export default function Footer({isMobile, isMac} : props) {
       
     return (

@@ -5,6 +5,7 @@ import CV from "./cv";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/app-context";
 
+// TODO: language
 export default function Me() {
 
     const { showResumePanel, setShowResumePanel } = useAppContext();

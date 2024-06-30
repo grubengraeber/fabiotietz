@@ -6,6 +6,8 @@ type props = {
     icon?: KeyType
 }
 
+// TODO: language
+
 const KeyWindows = ({ children, icon }: props) => {
 
     const icons = {
