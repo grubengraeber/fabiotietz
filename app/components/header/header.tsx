@@ -12,6 +12,7 @@ import { toggleTheme } from '@/app/utils/toggle-theme';
 import { downloadFile } from '@/app/utils/download-file';
 import { useRouter } from 'next/navigation';
 import { toggleLanguage } from '@/app/utils/toggle-language';
+import Link from 'next/link';
 
 const companyUrl = 'https://tietz-innovations.at';
 const companyName = "TIETZ Innovations";
@@ -126,9 +127,9 @@ function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12 lg:justify-start">
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
+                        <Link key={item.name} href={item.href === companyUrl ? '' : item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end relative group space-x-3 ">
