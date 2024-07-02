@@ -30,8 +30,8 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
         setShowShortcuts(false);
         setShowResumePanel(true);
       }},
-      { icon: <FolderDown />, description: 'Download Portfolio As PDF', keys: ['cmd', 'option', 'D'], action:  () => {}}, // TODO
-      { icon: <BrainCog />, description: 'Skills', keys: ['cmd', 'shift', 'S'], action:  () => {}}, // TODO
+      //{ icon: <FolderDown />, description: 'Download Portfolio As PDF', keys: ['cmd', 'option', 'D'], action:  () => {}}, // TODO
+      //{ icon: <BrainCog />, description: 'Skills', keys: ['cmd', 'shift', 'S'], action:  () => {}}, // TODO
       { icon: <Home />, description: 'Home', keys: ['cmd', 'option', 'H'], action:  () => {
         setShowShortcuts(false)
         router.push('/')
@@ -56,13 +56,13 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
         setShowShortcuts(false)
         window.open ('https://blog.fabiotietz.com', '_ blank')
       }},
-      { icon: <Forward />, description: 'Share Page', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
-      { icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
-      { icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
+      //{ icon: <Forward />, description: 'Share Page', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
+      //{ icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
+      //{ icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       { icon: <SunMoon />, description: 'Toggle Theme', keys: ['cmd', 'option', 'T'], action:  () => {
         toggleTheme(theme);
       }},
-      { icon: <Contrast />, description: 'Contrast Mode', keys: ['cmd', 'option', 'C'], action:  () => {}}, // TODO
+      //{ icon: <Contrast />, description: 'Contrast Mode', keys: ['cmd', 'option', 'C'], action:  () => {}}, // TODO
       { icon: <Globe />, description: 'Toggle Language', keys: ['cmd', 'option', 'L'], action:  () => {
         toggleLanguage({currentLanguage: language, setLanguage: setLanguage})
       }},
