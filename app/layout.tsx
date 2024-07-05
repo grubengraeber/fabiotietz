@@ -11,6 +11,10 @@ import { isMobileDevice } from "./utils/detection/is-mobile-server";
 import { AppWrapper } from "../context/app-context";
 import { isMacOS } from "./utils/detection/is-mac-device";
 import { DownloadResume } from "./utils/download-resume";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
+import { appWithTranslation } from "next-i18next";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,9 +31,14 @@ export default async function RootLayout({
 
   const isMobile = await isMobileDevice();
   const isMac = isMacOS();
+  const locale = await getLocale();
+ 
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
 
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang={locale} suppressHydrationWarning={true}>
       <Analytics />
       <body className={inter.className}>
           <AppWrapper>
@@ -41,6 +50,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            {/* <NextIntlClientProvider messages={messages}> */}
           <Header />
         <BackgroundShape top />
           {children}
@@ -48,6 +58,7 @@ export default async function RootLayout({
              null : <DownloadResume />}
           <BackgroundShape />
           <Footer isMobile={isMobile} isMac={isMac} />
+          {/* </NextIntlClientProvider> */}
           </ThemeProvider>
         </div>
       <Toaster />

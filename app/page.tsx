@@ -2,9 +2,11 @@
 
 import { useAppContext } from "@/context/app-context";
 import { language } from "./utils/language";
+import { useTranslation } from "next-i18next";
 
 // TODO: language
 export default function Home() {
+  const { t } = useTranslation();
 
   const {language} = useAppContext();
   const currentLanguage: language = language;
@@ -17,7 +19,7 @@ export default function Home() {
     <div className="relative isolate px-6 pt-14 lg:px-8">
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-          {welcome}
+          {t('welcome')}
         </h1>
         <p className="mt-6 text-lg leading-8">
           {checkOut}
