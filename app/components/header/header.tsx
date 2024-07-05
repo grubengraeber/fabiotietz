@@ -13,6 +13,7 @@ import { downloadFile } from '@/app/utils/download-file';
 import { useRouter } from 'next/navigation';
 import { toggleLanguage } from '@/app/utils/toggle-language';
 import Link from 'next/link';
+import { sharePage } from '@/app/utils/share-page';
 
 const companyUrl = 'https://tietz-innovations.at';
 const companyName = "TIETZ Innovations";
@@ -99,6 +100,11 @@ function Header() {
         [
             'mod+alt+B',
             () => window.open('https://blog.fabiotietz.com', '_ blank'),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+F',
+            () => sharePage(),
             { preventDefault: true },
         ],
       ];

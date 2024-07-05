@@ -13,6 +13,7 @@ import { useTheme } from 'next-themes';
 import { toggleTheme } from '@/app/utils/toggle-theme';
 import { useRouter } from 'next/navigation';
 import { toggleLanguage } from '@/app/utils/toggle-language';
+import { sharePage } from '@/app/utils/share-page';
 
 // TODO: language
 function Shortcuts({ isMac }: { isMac: boolean}) {
@@ -56,7 +57,7 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
         setShowShortcuts(false)
         window.open ('https://blog.fabiotietz.com', '_ blank')
       }},
-      //{ icon: <Forward />, description: 'Share Page', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
+      { icon: <Forward />, description: 'Share Page', keys: ['cmd', 'option', 'F'], action:  () => sharePage()}, 
       //{ icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       //{ icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       { icon: <SunMoon />, description: 'Toggle Theme', keys: ['cmd', 'option', 'T'], action:  () => {
