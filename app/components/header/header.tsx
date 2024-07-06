@@ -13,9 +13,8 @@ import { downloadFile } from '@/app/utils/download-file';
 import { useRouter } from 'next/navigation';
 import { toggleLanguage } from '@/app/utils/toggle-language';
 import Link from 'next/link';
-import { sharePage } from '@/app/utils/share-page';
 
-const companyUrl = 'https://tietz-innovations.at';
+const companyUrl = process.env.NEXT_PUBLIC_COMPANY_URL!;
 const companyName = "TIETZ Innovations";
 const navigation = [
     { name: 'Home', href: '/' },
@@ -27,7 +26,7 @@ const navigation = [
 
 // TODO: language
 function Header() {
-    const { showShortcuts, setShowShortcuts, language, setLanguage, setShowResumePanel } = useAppContext();
+    const { showShortcuts, setShowShortcuts, language, setLanguage, setShowResumePanel, setShowSharePanel } = useAppContext();
     const toggleShortcutMenu = () => {
       setShowShortcuts(!showShortcuts)
     };
@@ -94,17 +93,17 @@ function Header() {
         ],
         [
             'mod+shift+C',
-            () => window.open('https://tietz-innovations.at', '_ blank'),
+            () => window.open(process.env.NEXT_PUBLIC_COMPANY_URL!, '_ blank'),
             { preventDefault: true },
         ],
         [
             'mod+alt+B',
-            () => window.open('https://blog.fabiotietz.com', '_ blank'),
+            () => window.open(process.env.NEXT_PUBLIC_BLOG_URL!, '_ blank'),
             { preventDefault: true },
         ],
         [
             'mod+alt+F',
-            () => sharePage(),
+            () => setShowSharePanel(true),
             { preventDefault: true },
         ],
       ];
@@ -133,7 +132,7 @@ function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12 lg:justify-start">
                     {navigation.map((item) => (
-                        <Link key={item.name} href={item.href === companyUrl ? '' : item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
+                        <Link key={item.name} href={item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
                             {item.name}
                         </Link>
                     ))}

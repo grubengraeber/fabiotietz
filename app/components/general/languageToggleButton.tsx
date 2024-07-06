@@ -31,19 +31,19 @@ export default function LanguageToggleButton() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLanguage('german')}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('german')}>
           {germanFlag} Deustch
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setLanguage('english')}>
           {englishFlag} English
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage('french')}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('french')}>
           {frenchFlag} Français
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage('spanish')}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('spanish')}>
           {spanishFlag} Español
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage('croatian')}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('croatian')}>
           {croatianFlag} Hrvatski
         </DropdownMenuItem>
       </DropdownMenuContent>

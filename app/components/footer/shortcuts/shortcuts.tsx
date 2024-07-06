@@ -18,7 +18,7 @@ import { sharePage } from '@/app/utils/share-page';
 // TODO: language
 function Shortcuts({ isMac }: { isMac: boolean}) {
 
-  const { showShortcuts, setShowShortcuts, setShowResumePanel, language, setLanguage } = useAppContext();
+  const { showShortcuts, setShowShortcuts, setShowResumePanel, language, setLanguage, setShowSharePanel } = useAppContext();
     const toggleShortcutMenu = () => {
       setShowShortcuts(!showShortcuts)
     };
@@ -51,13 +51,16 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
       }},
       { icon: <Building2 />, description: 'Company', keys: ['cmd', 'shift', 'C'], action:  () => {
         setShowShortcuts(false)
-        window.open('https://tietz-innovations.at', '_ blank'); 
+        window.open(process.env.NEXT_PUBLIC_COMPANY_URL!, '_ blank'); 
       }},
       { icon: <FilePenLine />, description: 'Blog Section', keys: ['cmd', 'option', 'B'], action:  () => {
         setShowShortcuts(false)
-        window.open ('https://blog.fabiotietz.com', '_ blank')
+        window.open (process.env.NEXT_PUBLIC_BLOG_URL!, '_ blank')
       }},
-      { icon: <Forward />, description: 'Share Page', keys: ['cmd', 'option', 'F'], action:  () => sharePage()}, 
+      { icon: <Forward />, description: 'Share Page', keys: ['cmd', 'option', 'F'], action:  () => {
+        setShowShortcuts(false)
+        setShowSharePanel(true)
+      }}, 
       //{ icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       //{ icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       { icon: <SunMoon />, description: 'Toggle Theme', keys: ['cmd', 'option', 'T'], action:  () => {

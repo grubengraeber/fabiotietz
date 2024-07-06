@@ -3,17 +3,15 @@
 import { useAppContext } from "@/context/app-context"
 import { language } from "./language";
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-import { CommandDialog, CommandInput, CommandItem, CommandList, CommandShortcut } from "@/components/ui/command";
+import { CommandDialog, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { downloadFile } from "./download-file";
-import { Button } from "@/components/ui/button";
 
 
 export const DownloadResume = () => {
 
     const { showResumePanel, setShowResumePanel } = useAppContext();
 
-    // TODO: create misssing CVs
     const toggleResumePanel = () => {
       setShowResumePanel(!showResumePanel)
     };

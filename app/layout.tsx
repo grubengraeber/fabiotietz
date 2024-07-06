@@ -11,6 +11,7 @@ import { isMobileDevice } from "./utils/detection/is-mobile-server";
 import { AppWrapper } from "../context/app-context";
 import { isMacOS } from "./utils/detection/is-mac-device";
 import { DownloadResume } from "./utils/download-resume";
+import { SharePage } from "./utils/share-page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ export default async function RootLayout({
           {children}
           {isMobile ?
              null : <DownloadResume />}
+             <SharePage />
           <BackgroundShape />
           <Footer isMobile={isMobile} isMac={isMac} />
           </ThemeProvider>
