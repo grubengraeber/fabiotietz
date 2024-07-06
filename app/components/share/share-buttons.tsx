@@ -4,7 +4,7 @@ import React from 'react';
 import { FacebookShare, TwitterShare, LinkedinShare, EmailShare, WhatsappShare } from 'react-share-kit';
 
 const ShareButtons = () => {
-  const shareUrl = 'https://fabiotietz.com';
+  const shareUrl = process.env.NEXT_PUBLIC_API_URL!;
   const title = 'Check out the Fabio TIETZ portfolio website!'; // TODO: update with language
 
   return (
