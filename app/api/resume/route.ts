@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { join } from "path";
-import { promises as fs } from 'fs';
 import { language } from "@/app/utils/language";
 
 export async function GET(request: NextRequest) {
