@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Shortcuts from "./shortcuts/shortcuts";
-import { Bean, Linkedin, X } from "lucide-react";
+import { Bean, Book, Code, Cookie, GlobeLock, Home, Icon, Linkedin, Mails, Map, Newspaper, PocketKnife, ReceiptText, X } from "lucide-react";
 
 
 type props = {
@@ -25,61 +25,51 @@ export default function Footer({isMobile, isMac} : props) {
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Socials</h4>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            <Linkedin />
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Linkedin /> LinkedIn
           </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            <X />
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <X /> X (Twitter)
           </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Github
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Home /> Github
           </Link>
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Resources</h4>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Documentation {/* TODO */}
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Mails /> Newsletter {/* TODO */}
           </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Tutorials {/* TODO */}
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <PocketKnife /> Tools I use {/* TODO */}
           </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
         {
             !isMobile ?
-            <Shortcuts isMac={isMac} />
+                    <Shortcuts  isMac={isMac} />
             : null
         }
-          </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Blog {/* TODO */}
+          <Link href={process.env.NEXT_PUBLIC_BLOG_URL!} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+            <Newspaper /> Blog
           </Link>
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Legal</h4>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Terms of Service {/* TODO */}
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+            <ReceiptText /> Terms of Service {/* TODO */}
           </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Privacy Policy {/* TODO */}
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+            <GlobeLock /> Privacy Policy {/* TODO */}
           </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Cookie Policy {/* TODO */}
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+            <Cookie /> Cookie Policy {/* TODO */}
           </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Sitemap
+          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+           <Map />  Sitemap
           </Link>
         </div>
       </div>
-      <div className="container max-w-7xl mt-12 flex items-center justify-between">
+      <div className="container max-w-7xl mt-12 flex items-center text-center justify-center">
         <p className="text-sm text-muted-foreground">&copy; 2024 TIETZ Innovations e.U. All rights reserved.</p>
-        <div className="flex items-center gap-4">
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Privacy {/* TODO */}
-          </Link>
-          <Link href="#" className="text-sm hover:underline" prefetch={false}>
-            Terms {/* TODO */}
-          </Link>
-        </div>
       </div>
     </footer>
     );

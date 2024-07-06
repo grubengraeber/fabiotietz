@@ -10,7 +10,7 @@ import { Technology } from '../data/technology';
 const projectData: Project[] = [
     // Example project data
     new Project(
-      'Example Project 1',
+      'ExampleProject1',
       'This is an example project 1.',
       'http://thispersondoesnotexist.com',
       new Date(),
@@ -20,7 +20,7 @@ const projectData: Project[] = [
       'http://example.com/1'
     ),
     new Project(
-      'Example Project 2',
+      'ExampleProject2',
       'This is an example project 2.',
       "https://random.imagecdn.app/500/150",
       new Date(),

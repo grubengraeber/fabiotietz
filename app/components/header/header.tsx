@@ -126,7 +126,7 @@ function Header() {
       useHotkeys(hotkeys);
 
     return (
-        <header className={`inset-x-0 top-0 z-100 sticky transition-colors duration-300 ${isScrolled ? isDarkMode ? 'bg-gray-800' : 'bg-white' : 'bg-transparent'}`}>
+        <header className={`inset-x-0 top-0 z-50 sticky transition-colors duration-300 ${isScrolled ? isDarkMode ? 'bg-gray-800' : 'bg-white' : 'bg-transparent'}`}>
             <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">

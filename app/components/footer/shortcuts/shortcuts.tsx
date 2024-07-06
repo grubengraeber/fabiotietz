@@ -1,7 +1,7 @@
 "use client"
 
 import { CommandDialog, CommandInput, CommandItem, CommandList, CommandShortcut } from '@/components/ui/command'
-import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Building2, Command, Contact, Contrast, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Key, SunMoon } from 'lucide-react';
+import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Building2, Code, Command, Contact, Contrast, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Key, SunMoon } from 'lucide-react';
 import React, { ReactElement } from 'react'
 import { KeyType } from './key-type';
 import { DialogTitle } from '@/components/ui/dialog';
@@ -76,7 +76,20 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
 
   return (
     <>
-      <button onClick={toggleShortcutMenu}>Show Shortcuts</button>
+      <button onClick={toggleShortcutMenu}>
+    <p className="text-sm hover:underline">
+            <div className="grid grid-cols-12">
+                <div className="col-span-1">
+                    <Code />
+                </div>
+                <div className="col-span-4 mx-4">
+        Shortcuts
+                </div>
+                <div className="col-span-6">
+                </div>
+            </div>
+          </p>
+        </button>
       <CommandDialog open={showShortcuts} onOpenChange={toggleShortcutMenu}>
       <DialogTitle hidden>Keyboard Shortcuts</DialogTitle>
       <DialogDescription hidden>Explanations for the available shortcuts</DialogDescription>

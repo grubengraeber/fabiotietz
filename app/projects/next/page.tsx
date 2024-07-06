@@ -1,7 +1,9 @@
-import Project from '@/app/data/project'
 import React from 'react'
 
-function NextProject({project}: {project: Project}) {
+function NextProject() {
+  // Get next project
+
+  // Display Project Detail View
   return (
     <div>
 
