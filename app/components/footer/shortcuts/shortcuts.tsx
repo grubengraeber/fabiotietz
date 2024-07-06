@@ -13,7 +13,6 @@ import { useTheme } from 'next-themes';
 import { toggleTheme } from '@/app/utils/toggle-theme';
 import { useRouter } from 'next/navigation';
 import { toggleLanguage } from '@/app/utils/toggle-language';
-import { sharePage } from '@/app/utils/share-page';
 
 // TODO: language
 function Shortcuts({ isMac }: { isMac: boolean}) {
