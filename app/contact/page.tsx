@@ -68,7 +68,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center mt-40">
         <Card className="w-[450px]">
 
       <form

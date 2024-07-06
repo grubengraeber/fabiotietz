@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import LanguageToggleButton from '../general/languageToggleButton';
@@ -13,6 +13,7 @@ import { downloadFile } from '@/app/utils/download-file';
 import { useRouter } from 'next/navigation';
 import { toggleLanguage } from '@/app/utils/toggle-language';
 import Link from 'next/link';
+import { Bean } from 'lucide-react';
 
 const companyUrl = process.env.NEXT_PUBLIC_COMPANY_URL!;
 const companyName = "TIETZ Innovations";
@@ -35,6 +36,21 @@ function Header() {
     const theme = useTheme();
 
     const router = useRouter();
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const isDarkMode = !(theme.theme === "light" || (theme.theme === "system" && theme.systemTheme === "light"));
 
 
     const hotkeys: HotkeyItem[] = [
@@ -110,13 +126,13 @@ function Header() {
       useHotkeys(hotkeys);
 
     return (
-        <header className="absolute inset-x-0 top-0 z-50">
+        <header className={`inset-x-0 top-0 z-100 sticky transition-colors duration-300 ${isScrolled ? isDarkMode ? 'bg-gray-800' : 'bg-white' : 'bg-transparent'}`}>
             <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">{companyName}</span>
                         <h1 className='font-bold space-x-1'>
-                            <span className='text-teal-700 text-2xl'>Fabio TIETZ</span>
+                            <span className='text-teal-700 text-2xl inline-flex gap-2'><Bean />Fabio TIETZ</span>
                         </h1>
                     </a>
                 </div>

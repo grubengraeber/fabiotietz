@@ -43,6 +43,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.5",
     "react-share-kit": "^1.1.0",
+    "react-social-icons": "^6.16.0",
     "resend": "^3.3.0",
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.3.0",

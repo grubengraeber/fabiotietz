@@ -44,11 +44,15 @@ export default async function RootLayout({
           >
           <Header />
         <BackgroundShape top />
+        <div className="mt-16 min-h-screen">
           {children}
+        </div>
           <DownloadResume />
              <SharePage />
           <BackgroundShape />
+          <div className="bottom-0 w-full">
           <Footer isMobile={isMobile} isMac={isMac} />
+          </div>
           </ThemeProvider>
         </div>
       <Toaster />
