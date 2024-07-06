@@ -9,29 +9,29 @@ export async function GET(request: NextRequest) {
     const prefix = 'fabiotietz_';
     const fileDescription: {filename: string, url: string} = {
         filename: prefix + 'resume',
-        url: "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_resume-47AH3TIhDCEyB72ds4nAElyWLg5Q7b.pdf"
+        url: "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_resume-vdRderZ12BKSGo84rXe7SxYSydzdjs.pdf"
     }
 
     switch (actualLanguage) {
         case 'german':
             fileDescription.filename = prefix + 'lebenslauf';
-            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_lebenslauf-jHgg9hGndmoBwR9eRZlpzwKOFcnBmf.pdf";
+            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_lebenslauf-oRcJpAMhQEAIU1XmFt0TCfJ77ESo3q.pdf";
             break;
         case 'french':
             fileDescription.filename = prefix + 'cv';
-            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_cv-aMgY2FvHrl3Bo93o1BweeS08Z8vJNv.pdf";
+            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_cv-kgWNeULYdFpFpp6R1oSUEpUpego1Kr.pdf";
             break;
         case 'croatian':
             fileDescription.filename = prefix + 'životopis';
-            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_z%CC%8Civotopis-kAUVO4tMNsj46l710E5PeAbgYEA6kN.pdf";
+            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_z%CC%8Civotopis-SRitXIWilZcY2FjZe8TYuiUVSofUkl.pdf";
             break;
         case 'spanish':
             fileDescription.filename = prefix + 'resumen';
-            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_resumen-vJaVYZJDZmdPgPNUxUaoQvaMN71IlL.pdf";
+            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_resumen-BS5Y7JdVh8DgpRYhEwBQeE8p1eGIF6.pdf";
             break;
         default:
             fileDescription.filename = prefix + 'resume';
-            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_resume-47AH3TIhDCEyB72ds4nAElyWLg5Q7b.pdf";
+            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_resume-vdRderZ12BKSGo84rXe7SxYSydzdjs.pdf";
             break;
     }
 
