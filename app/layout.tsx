@@ -45,8 +45,7 @@ export default async function RootLayout({
           <Header />
         <BackgroundShape top />
           {children}
-          {isMobile ?
-             null : <DownloadResume />}
+          <DownloadResume />
              <SharePage />
           <BackgroundShape />
           <Footer isMobile={isMobile} isMac={isMac} />
