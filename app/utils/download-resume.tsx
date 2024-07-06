@@ -10,6 +10,7 @@ import { downloadFile } from "./download-file";
 
 export const DownloadResume = () => {
 
+   // TODO: use Vercel blob storage for downloading the resumes
     const { showResumePanel, setShowResumePanel } = useAppContext();
 
     const toggleResumePanel = () => {
