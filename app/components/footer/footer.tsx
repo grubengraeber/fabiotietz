@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import Shortcuts from "./shortcuts/shortcuts";
-import { Bean, Book, Code, Cookie, GlobeLock, Home, Icon, Linkedin, Mails, Map, Newspaper, PocketKnife, ReceiptText, X } from "lucide-react";
+import { Bean, Book, Code, Cookie, Github, GlobeLock, Home, Icon, Linkedin, Mails, Map, Newspaper, PocketKnife, ReceiptText, Share2, X } from "lucide-react";
+import { useAppContext } from "@/context/app-context";
+import SubscribeNewsletter from "@/app/utils/subscribe-newsletter";
 
 
 type props = {
@@ -12,6 +14,8 @@ type props = {
 
 // TODO: language
 export default function Footer({isMobile, isMac} : props) {
+
+    const { setShowSharePanel } = useAppContext();
       
     return (
         <footer className="bg-muted py-12">
@@ -25,21 +29,19 @@ export default function Footer({isMobile, isMac} : props) {
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Socials</h4>
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL!} className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
           <Linkedin /> LinkedIn
           </Link>
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
-          <X /> X (Twitter)
+          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL!} className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Github /> Github
           </Link>
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
-          <Home /> Github
-          </Link>
+          <div className="text-sm hover:underline inline-flex gap-4" onClick={() => setShowSharePanel(true)}>
+            <Share2 /> Share
+          </div>
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Resources</h4>
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
-          <Mails /> Newsletter {/* TODO */}
-          </Link>
+          <SubscribeNewsletter />
           <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
           <PocketKnife /> Tools I use {/* TODO */}
           </Link>

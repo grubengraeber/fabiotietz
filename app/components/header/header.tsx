@@ -27,7 +27,7 @@ const navigation = [
 
 // TODO: language
 function Header() {
-    const { showShortcuts, setShowShortcuts, language, setLanguage, setShowResumePanel, setShowSharePanel } = useAppContext();
+    const { showShortcuts, setShowShortcuts, language, setLanguage, setShowResumePanel, setShowSharePanel, setShowNewsletterPanel } = useAppContext();
     const toggleShortcutMenu = () => {
       setShowShortcuts(!showShortcuts)
     };
@@ -120,6 +120,11 @@ function Header() {
         [
             'mod+alt+F',
             () => setShowSharePanel(true),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+N',
+            () => setShowNewsletterPanel(true),
             { preventDefault: true },
         ],
       ];

@@ -1,7 +1,7 @@
 "use client"
 
 import { CommandDialog, CommandInput, CommandItem, CommandList, CommandShortcut } from '@/components/ui/command'
-import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Building2, Code, Command, Contact, Contrast, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Key, SunMoon } from 'lucide-react';
+import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Building2, Code, Command, Contact, Contrast, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Key, Mails, SunMoon } from 'lucide-react';
 import React, { ReactElement } from 'react'
 import { KeyType } from './key-type';
 import { DialogTitle } from '@/components/ui/dialog';
@@ -17,7 +17,7 @@ import { toggleLanguage } from '@/app/utils/toggle-language';
 // TODO: language
 function Shortcuts({ isMac }: { isMac: boolean}) {
 
-  const { showShortcuts, setShowShortcuts, setShowResumePanel, language, setLanguage, setShowSharePanel } = useAppContext();
+  const { showShortcuts, setShowShortcuts, setShowResumePanel, language, setLanguage, setShowSharePanel, setShowNewsletterPanel } = useAppContext();
     const toggleShortcutMenu = () => {
       setShowShortcuts(!showShortcuts)
     };
@@ -59,7 +59,11 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
       { icon: <Forward />, description: 'Share Page', keys: ['cmd', 'option', 'F'], action:  () => {
         setShowShortcuts(false)
         setShowSharePanel(true)
-      }}, 
+        }}, 
+        { icon: <Mails />, description: 'Subscribe to Newsletter', keys: ['cmd', 'option', 'N'], action:  () => {
+          setShowShortcuts(false)
+          setShowNewsletterPanel(true)
+      }},
       //{ icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       //{ icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
       { icon: <SunMoon />, description: 'Toggle Theme', keys: ['cmd', 'option', 'T'], action:  () => {
@@ -77,7 +81,7 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
   return (
     <>
       <button onClick={toggleShortcutMenu}>
-    <p className="text-sm hover:underline">
+    <div className="text-sm hover:underline">
             <div className="grid grid-cols-12">
                 <div className="col-span-1">
                     <Code />
@@ -88,7 +92,7 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
                 <div className="col-span-6">
                 </div>
             </div>
-          </p>
+          </div>
         </button>
       <CommandDialog open={showShortcuts} onOpenChange={toggleShortcutMenu}>
       <DialogTitle hidden>Keyboard Shortcuts</DialogTitle>

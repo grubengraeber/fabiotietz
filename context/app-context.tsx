@@ -15,8 +15,9 @@ export function AppWrapper({ children } : {
   const [language, setLanguage] = useLocalStorage<language>({ key: 'language', defaultValue: 'english'});
   const [showResumePanel, setShowResumePanel] = useState<boolean>(false);
   const [showSharePanel, setShowSharePanel] = useState<boolean>(false);
+  const [showNewsletterPanel, setShowNewsletterPanel] = useState<boolean>(false);
   return (
-    <AppContext.Provider value={{ showShortcuts, setShowShortcuts, language, setLanguage, showResumePanel, setShowResumePanel, showSharePanel, setShowSharePanel }}>
+    <AppContext.Provider value={{ showShortcuts, setShowShortcuts, language, setLanguage, showResumePanel, setShowResumePanel, showSharePanel, setShowSharePanel, showNewsletterPanel, setShowNewsletterPanel }}>
       {children}
     </AppContext.Provider>
   )
