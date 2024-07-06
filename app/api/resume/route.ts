@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
             break;
         case 'croatian':
             fileDescription.filename = prefix + 'životopis';
-            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_životopis-SRitXIWilZcY2FjZe8TYuiUVSofUkl.pdf";
+            fileDescription.url = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_zivotopis-Rb2cost8LR3WXBd1WhNovS8dL2UGrS.pdf";
             break;
         case 'spanish':
             fileDescription.filename = prefix + 'resumen';
