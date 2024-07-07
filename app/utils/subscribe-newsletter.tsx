@@ -57,10 +57,10 @@ function SubscribeNewsletter() {
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             <div className="mt-4 flex justify-end gap-4">
               <AlertDialogAction asChild>
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Subscribe</button>
+                <Button type="submit" className="outlined">Subscribe</Button>
               </AlertDialogAction>
               <AlertDialogCancel asChild>
-                <Button onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>
+                <Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>
               </AlertDialogCancel>
             </div>
           </form>
