@@ -4,7 +4,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Button } from '@/components/ui/button';
 import { useAppContext } from '@/context/app-context';
 import { Mails } from 'lucide-react';
-import React, { useContext } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
@@ -21,7 +21,7 @@ function SubscribeNewsletter() {
         setShowNewsletterPanel(!showNewsletterPanel);
         }
 
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>(); // TODO: typecheck email format
     
     const onSubmit = (data: FormData) => {
         console.log(data);
@@ -56,8 +56,9 @@ function SubscribeNewsletter() {
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             <div className="mt-4 flex justify-end gap-4">
+                {/* TODO */}
               <AlertDialogAction asChild>
-                <Button type="submit" className="outlined">Subscribe</Button>
+                <Button type="submit" disabled className="outlined">Subscribe</Button>
               </AlertDialogAction>
               <AlertDialogCancel asChild>
                 <Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>

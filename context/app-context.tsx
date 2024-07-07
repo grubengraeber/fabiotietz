@@ -16,8 +16,9 @@ export function AppWrapper({ children } : {
   const [showResumePanel, setShowResumePanel] = useState<boolean>(false);
   const [showSharePanel, setShowSharePanel] = useState<boolean>(false);
   const [showNewsletterPanel, setShowNewsletterPanel] = useState<boolean>(false);
+  const [showCookies, setShowCookies] = useState<boolean>(false);
   return (
-    <AppContext.Provider value={{ showShortcuts, setShowShortcuts, language, setLanguage, showResumePanel, setShowResumePanel, showSharePanel, setShowSharePanel, showNewsletterPanel, setShowNewsletterPanel }}>
+    <AppContext.Provider value={{ showShortcuts, setShowShortcuts, language, setLanguage, showResumePanel, setShowResumePanel, showSharePanel, setShowSharePanel, showNewsletterPanel, setShowNewsletterPanel, showCookies, setShowCookies }}>
       {children}
     </AppContext.Provider>
   )

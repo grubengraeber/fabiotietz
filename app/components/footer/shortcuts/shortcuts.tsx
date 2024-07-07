@@ -1,7 +1,7 @@
 "use client"
 
 import { CommandDialog, CommandInput, CommandItem, CommandList, CommandShortcut } from '@/components/ui/command'
-import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Building2, Code, Command, Contact, Contrast, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Key, Mails, SunMoon } from 'lucide-react';
+import { ArrowBigLeftDash, ArrowBigRightDash, Bean, BrainCog, Building2, Code, Command, Contact, FileDown, FilePenLine, FolderDown, FolderKanban, Forward, Globe, Home, Mails, PocketKnife, SunMoon } from 'lucide-react';
 import React, { ReactElement } from 'react'
 import { KeyType } from './key-type';
 import { DialogTitle } from '@/components/ui/dialog';
@@ -48,6 +48,10 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
         setShowShortcuts(false)
         router.push('/projects')
       }},
+      { icon: <PocketKnife />, description: 'Tools', keys: ['cmd', 'option', 'shift', 'T'], action:  () => {
+        setShowShortcuts(false)
+        router.push('/tools')
+      }},
       { icon: <Building2 />, description: 'Company', keys: ['cmd', 'shift', 'C'], action:  () => {
         setShowShortcuts(false)
         window.open(process.env.NEXT_PUBLIC_COMPANY_URL!, '_ blank'); 
@@ -64,12 +68,17 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
           setShowShortcuts(false)
           setShowNewsletterPanel(true)
       }},
-      //{ icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
-      //{ icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'shift', 'R'], action:  () => {}}, // TODO
+      { icon: <ArrowBigRightDash />, description: 'Next Project', keys: ['cmd', 'option', 'shift', 'N'], action:  () => {
+        setShowShortcuts(false)
+        router.push('/projects/next')
+      }},
+      { icon: <ArrowBigLeftDash />, description: 'Latest Project', keys: ['cmd', 'option', 'shift', 'L'], action:  () => {
+        setShowShortcuts(false)
+        router.push('/projects/latest')
+      }},
       { icon: <SunMoon />, description: 'Toggle Theme', keys: ['cmd', 'option', 'T'], action:  () => {
         toggleTheme(theme);
       }},
-      //{ icon: <Contrast />, description: 'Contrast Mode', keys: ['cmd', 'option', 'C'], action:  () => {}}, // TODO
       { icon: <Globe />, description: 'Toggle Language', keys: ['cmd', 'option', 'L'], action:  () => {
         toggleLanguage({currentLanguage: language, setLanguage: setLanguage})
       }},

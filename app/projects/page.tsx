@@ -1,5 +1,4 @@
 import { NextPage } from 'next'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Project from '../data/project';
 import KanbanBoard from '../components/projects/kanban-board/kanban-board';
 import { ProjectStatus } from '../data/project-status';
@@ -24,7 +23,7 @@ const projectData: Project[] = [
       'This is an example project 2.',
       "https://random.imagecdn.app/500/150",
       new Date(),
-      ProjectStatus.PLANNED,
+      ProjectStatus.IN_PROGRESS,
       [Technology.TYPESCRIPT, Technology.NUXT],
       'https://blog.example.com/2',
       'https://example.com/2'

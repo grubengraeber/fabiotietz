@@ -5,6 +5,7 @@ import Shortcuts from "./shortcuts/shortcuts";
 import { Bean, Book, Code, Cookie, Github, GlobeLock, Home, Icon, Linkedin, Mails, Map, Newspaper, PocketKnife, ReceiptText, Share2, X } from "lucide-react";
 import { useAppContext } from "@/context/app-context";
 import SubscribeNewsletter from "@/app/utils/subscribe-newsletter";
+import Cookies from "@/app/utils/legal/cookies";
 
 
 type props = {
@@ -42,8 +43,8 @@ export default function Footer({isMobile, isMac} : props) {
         <div className="grid gap-2">
           <h4 className="font-medium">Resources</h4>
           <SubscribeNewsletter />
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
-          <PocketKnife /> Tools I use {/* TODO */}
+          <Link href="/tools" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <PocketKnife /> Tools I use
           </Link>
         {
             !isMobile ?
@@ -62,9 +63,7 @@ export default function Footer({isMobile, isMac} : props) {
           <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
             <GlobeLock /> Privacy Policy {/* TODO */}
           </Link>
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
-            <Cookie /> Cookie Policy {/* TODO */}
-          </Link>
+            <Cookies />
           <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
            <Map />  Sitemap
           </Link>

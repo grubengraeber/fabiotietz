@@ -127,6 +127,27 @@ function Header() {
             () => setShowNewsletterPanel(true),
             { preventDefault: true },
         ],
+        [
+            'mod+alt+shift+T',
+            () => {
+                router.push('/tools')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+shift+L',
+            () => {
+                router.push('/projects/latest')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+shift+N',
+            () => {
+                router.push('/projects/next')
+            },
+            { preventDefault: true },
+        ],
       ];
       useHotkeys(hotkeys);
 
@@ -194,7 +215,7 @@ function Header() {
                                     </a>
                                 ))}
                             </div>
-                            <div>
+                            <div className='items-center space-x-2 align-middle justify-center'>
                                 <ModeToggle />
                                 <LanguageToggleButton />
                             </div>
