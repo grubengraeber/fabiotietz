@@ -73,7 +73,7 @@ function Terms() {
         <p>If you have any questions about these Terms, please contact us:</p>
         <ul>
             <li>By email: <a href="mailto:fabio@fabiotietz.com">fabio@fabiotietz.com</a></li>
-            <li>By visiting this page on our website: <a href="fabiotietz.com/contact">fabiotietz.com/contact</a></li>
+            <li>By visiting this page on our website: <a href="https://fabiotietz.com/contact" rel="external nofollow noopener" target="_blank">fabiotietz.com/contact</a></li>
         </ul>
 <AlertDialogCancel asChild>
 <Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>
