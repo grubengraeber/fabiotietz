@@ -30,7 +30,7 @@ function Cookies() {
           <p>
 
 <h4>Introduction</h4> 
-Fabio TIETZ Innovations e.U. ("we", "our", "us") uses cookies on our website (the "Service"). By using the Service, you consent to the use of cookies.
+Fabio TIETZ Innovations e.U. (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) uses cookies on our website (the &quot;Service&quot;). By using the Service, you consent to the use of cookies.
 </p>
 
 
@@ -90,7 +90,7 @@ If you have any questions about this Cookie Policy, please contact us:
 By email: <strong>fabio@fabiotietz.com</strong> 
 By visiting this page on our website: [https://fabiotietz.com/contact]
 <AlertDialogCancel asChild>
-<Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>
+<Button className='text-black dark:text-white' onClick={() => {}} disabled={false}>Cancel</Button>
 </AlertDialogCancel>
 </AlertDialogContent>
 </AlertDialog>

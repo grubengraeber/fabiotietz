@@ -8,7 +8,7 @@ const UnderConstruction: React.FC = () => {
           🚧 Under Construction 🚧
         </h1>
         <p className="text-gray-700 dark:text-gray-300 text-lg">
-          I'm working hard to bring you something amazing! Please check back later.
+          I&apos;m working hard to bring you something amazing! Please check back later.
         </p>
       </div>
     </div>
