@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Project from '@/app/data/project';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import ProjectTags from './project-tags';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   project: Project;
@@ -14,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
   return (
         <Card className='my-2'>
             <CardHeader>
-      <img src={`${project.banner}`} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" />
+      <Image src={`${project.banner}`} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" width={100} height={50} />
             <CardTitle>
             {project.title}
             </CardTitle>

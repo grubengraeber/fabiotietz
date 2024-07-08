@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Project from "../../data/project";
+import Image from "next/image";
 
 const ProjectDetailView: React.FC<{project: Project}> = ({project}: {project: Project}) => {
 
   return (
     <div className="container mx-auto p-4">
-      <img src={project.banner} alt={project.title} className="w-full h-64 object-cover rounded-lg" />
+      <Image src={project.banner} alt={project.title} className="w-full h-64 object-cover rounded-lg" height={50} width={100} />
       <h1 className="text-3xl font-bold mt-4">{project.title}</h1>
       <p className="mt-2">{project.content}</p>
       {project.blogPost && (
