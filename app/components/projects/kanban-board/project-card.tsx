@@ -12,10 +12,9 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}) => {
   return (
-    /* bg-white p-4 rounded-lg shadow-md */
         <Card className='my-2'>
             <CardHeader>
-      <img src={project.banner} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" />
+      <img src={`${project.banner}`} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" />
             <CardTitle>
             {project.title}
             </CardTitle>
