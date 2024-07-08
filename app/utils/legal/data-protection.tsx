@@ -171,7 +171,7 @@ function DataProtection() {
 <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
 <p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
 <h3>Transfer of Your Personal Data</h3>
-<p>Your information, including Personal Data, is processed at the Company&APOS;s operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+<p>Your information, including Personal Data, is processed at the Company&apos;s operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
 <p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
 <p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
 <h3>Delete Your Personal Data</h3>
@@ -195,11 +195,11 @@ function DataProtection() {
 </ul>
 <h3>Security of Your Personal Data</h3>
 <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
-<h2>Children&APOS;s Privacy</h2>
+<h2>Children&apos;s Privacy</h2>
 <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
-<p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent&APOS;s consent before We collect and use that information.</p>
+<p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent&apos;s consent before We collect and use that information.</p>
 <h2>Links to Other Websites</h2>
-<p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&APOS;s site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+<p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&apos;s site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
 <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
 <h2>Changes to this Privacy Policy</h2>
 <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
