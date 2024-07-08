@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import Shortcuts from "./shortcuts/shortcuts";
-import { Bean, Book, Code, Cookie, Github, GlobeLock, Home, Icon, Linkedin, Mails, Map, Newspaper, PocketKnife, ReceiptText, Share2, X } from "lucide-react";
+import { Bean, Github, Linkedin, Map, Newspaper, PocketKnife, Share2 } from "lucide-react";
 import { useAppContext } from "@/context/app-context";
 import SubscribeNewsletter from "@/app/utils/subscribe-newsletter";
 import Cookies from "@/app/utils/legal/cookies";
+import DataProtection from "@/app/utils/legal/data-protection";
+import Terms from "@/app/utils/legal/terms";
 
 
 type props = {
@@ -57,14 +59,10 @@ export default function Footer({isMobile, isMac} : props) {
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Legal</h4>
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
-            <ReceiptText /> Terms of Service {/* TODO */}
-          </Link>
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
-            <GlobeLock /> Privacy Policy {/* TODO */}
-          </Link>
+            <Terms />
+            <DataProtection />
             <Cookies />
-          <Link href="#" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Link href="/sitemap.xml" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
            <Map />  Sitemap
           </Link>
         </div>

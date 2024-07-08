@@ -1,3 +1,5 @@
+"use client"
+
 import Project from '@/app/data/project'
 import React from 'react'
 import ProjectCard from './project-card'

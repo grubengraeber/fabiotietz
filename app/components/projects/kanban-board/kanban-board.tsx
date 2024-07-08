@@ -1,5 +1,6 @@
-import React from 'react';
+"use client"
 
+import React from 'react';
 import Project from '@/app/data/project';
 import { ProjectStatus } from '@/app/data/project-status';
 import KanbanColumn from './kanban-column';
@@ -20,9 +21,9 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ projects }: {projects: Projec
       {statuses.map(status => (
         <div key={status}>
           {
-            /* getStatusProjects(status).length > 0 ? */
+            getStatusProjects(status).length > 0 ?
             <KanbanColumn projects={getStatusProjects(status)} status={status} />
-            /* : <></> */
+            : <></>
           }
         </div>
       ))}

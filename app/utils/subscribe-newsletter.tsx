@@ -43,9 +43,9 @@ function SubscribeNewsletter() {
             </div>
         </AlertDialogTrigger>
         <AlertDialogContent>
-          <AlertDialogTitle>Subscribe to our Newsletter</AlertDialogTitle>
+          <AlertDialogTitle>Subscribe to my Newsletter</AlertDialogTitle>
           <AlertDialogDescription>
-            Enter your email address below to subscribe to our newsletter.
+            Enter your email address below to subscribe to my newsletter.
           </AlertDialogDescription>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
             <input

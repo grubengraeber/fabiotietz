@@ -1,5 +1,5 @@
 import { ProjectStatus } from "./project-status";
-import { Technology } from "./technology";
+import Technology from "./technology";
 
 class Project {
     title: string;

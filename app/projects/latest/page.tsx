@@ -1,3 +1,4 @@
+import UnderConstruction from '@/app/components/under-construction'
 import React from 'react'
 
 function LatestProject() {
@@ -5,8 +6,8 @@ function LatestProject() {
 
 // Display Project Detail View
   return (
-    <div>
-      
+    <div className='container mx-auto p-4'>
+      <UnderConstruction />
     </div>
   )
 }

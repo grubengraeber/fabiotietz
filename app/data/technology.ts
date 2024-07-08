@@ -1,4 +1,4 @@
-export enum Technology {
+/* export enum Technology {
     JAVASCRIPT = ("Javascript"),
     TYPESCRIPT = ("Typescript"),
     DART = ("Dart"),
@@ -17,4 +17,22 @@ export enum Technology {
     FIGMA = ("Figma"),
     PEN_AND_PAPER = ("Pen and paper"),
     HANDS = ("Hands"),
+} */
+
+import TechnologyType from "./technology-type";
+
+class Technology {
+    name: string;
+    type: TechnologyType;
+    resources: string;
+    personalLikability: number;
+
+    constructor(name: string, type: TechnologyType, resources: string, personalLikability: number) {
+        this.name = name;
+        this.type = type;
+        this.resources = resources;
+        this.personalLikability = personalLikability;
+    }
 }
+
+export default Technology;
