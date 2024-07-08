@@ -80,15 +80,15 @@ Changes to this Cookie Policy
 We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page. You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie Policy are effective when they are posted on this page.
 </p>
 
-<h4>
-Contact Us
-</h4>
-<p>
-If you have any questions about this Cookie Policy, please contact us:
-</p>
-
-By email: <strong>fabio@fabiotietz.com</strong> 
-By visiting this page on our website: [https://fabiotietz.com/contact]
+<p>If you have any questions about this Privacy Policy, You can contact us:</p>
+<ul>
+<li>
+<p>By email: fabio@fabiotietz.com</p>
+</li>
+<li>
+<p>By visiting this page on our website: <a href="https://fabiotietz.com/contact" rel="external nofollow noopener" target="_blank">https://fabiotietz.com/contact</a></p>
+</li>
+</ul>
 <AlertDialogCancel asChild>
 <Button className='text-black dark:text-white' onClick={() => {}} disabled={false}>Cancel</Button>
 </AlertDialogCancel>
