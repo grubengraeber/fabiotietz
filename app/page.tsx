@@ -1,6 +1,14 @@
+"use client"
+
+import { useAppContext } from "@/context/app-context";
+import { language } from "./utils/language";
+
+// TODO: language
 export default function Home() {
 
-  const welcome = "welcome to my website";
+  const {language} = useAppContext();
+  const currentLanguage: language = language;
+  const welcome = currentLanguage === 'english' ?  "welcome to my website" : 'testlanguage';
   const checkOut = "Check out who I am, check out what I have accomplished so far and get in contact with me.";
   const contactMe = "contact me";
   const seeProjects = "see projects";

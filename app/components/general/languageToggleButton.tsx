@@ -10,9 +10,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
+import { useAppContext } from "@/context/app-context"
 
 
 export default function LanguageToggleButton() {
+
+  const { setLanguage } = useAppContext();
 
   const germanFlag = getUnicodeFlagIcon('DE');
     const englishFlag = getUnicodeFlagIcon('GB');
@@ -24,23 +27,23 @@ export default function LanguageToggleButton() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <GlobeAltIcon className="h-6 w-6" />
-          <span className="sr-only">Toggle language</span>
+          <span className="sr-only">Toggle language</span> {/* TODO: language */}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => console.log("German selected")}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('german')}>
           {germanFlag} Deustch
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("English selected")}>
+        <DropdownMenuItem onClick={() => setLanguage('english')}>
           {englishFlag} English
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("French selected")}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('french')}>
           {frenchFlag} Français
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("Spanish selected")}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('spanish')}>
           {spanishFlag} Español
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("Croatian selected")}>
+        <DropdownMenuItem disabled onClick={() => setLanguage('croatian')}>
           {croatianFlag} Hrvatski
         </DropdownMenuItem>
       </DropdownMenuContent>

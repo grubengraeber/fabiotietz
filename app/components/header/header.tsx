@@ -7,9 +7,15 @@ import LanguageToggleButton from '../general/languageToggleButton';
 import { ModeToggle } from './modeToggle';
 import { useTheme } from 'next-themes';
 import { HotkeyItem, useHotkeys } from '@mantine/hooks';
+import { useAppContext } from '@/context/app-context';
 import { toggleTheme } from '@/app/utils/toggle-theme';
+import { downloadFile } from '@/app/utils/download-file';
+import { useRouter } from 'next/navigation';
+import { toggleLanguage } from '@/app/utils/toggle-language';
+import Link from 'next/link';
+import { Bean } from 'lucide-react';
 
-const companyUrl = 'https://tietz-innovations.at';
+const companyUrl = process.env.NEXT_PUBLIC_COMPANY_URL!;
 const companyName = "TIETZ Innovations";
 const navigation = [
     { name: 'Home', href: '/' },
@@ -19,28 +25,140 @@ const navigation = [
     { name: 'Company', href: companyUrl },
 ]
 
-export default function Header() {
+// TODO: language
+function Header() {
+    const { showShortcuts, setShowShortcuts, language, setLanguage, setShowResumePanel, setShowSharePanel, setShowNewsletterPanel } = useAppContext();
+    const toggleShortcutMenu = () => {
+      setShowShortcuts(!showShortcuts)
+    };
+      
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
     const theme = useTheme();
+
+    const router = useRouter();
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const isDarkMode = !(theme.theme === "light" || (theme.theme === "system" && theme.systemTheme === "light"));
+
 
     const hotkeys: HotkeyItem[] = [
         [
-          'mod+alt+T',
-          () => toggleTheme(theme),
-          { preventDefault: false },
+            'mod+alt+T',
+            () => toggleTheme(theme),
+            { preventDefault: false },
+        ],
+        [
+            'mod+alt+S',
+            () => toggleShortcutMenu(),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+R',
+            () => setShowResumePanel(true),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+D',
+            () => downloadFile('/api/portfolio', 'fabiotietz_portfolio'),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+H',
+            () => {
+                router.push('/')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+M',
+            () => {
+                router.push('/me')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+C',
+            () => {
+                router.push('/contact')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+P',
+            () => {
+                router.push('/projects')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+L',
+            () => toggleLanguage({currentLanguage: language, setLanguage: setLanguage}),
+            { preventDefault: true },
+        ],
+        [
+            'mod+shift+C',
+            () => window.open(process.env.NEXT_PUBLIC_COMPANY_URL!, '_ blank'),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+B',
+            () => window.open(process.env.NEXT_PUBLIC_BLOG_URL!, '_ blank'),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+F',
+            () => setShowSharePanel(true),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+N',
+            () => setShowNewsletterPanel(true),
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+shift+T',
+            () => {
+                router.push('/tools')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+shift+L',
+            () => {
+                router.push('/projects/latest')
+            },
+            { preventDefault: true },
+        ],
+        [
+            'mod+alt+shift+N',
+            () => {
+                router.push('/projects/next')
+            },
+            { preventDefault: true },
         ],
       ];
       useHotkeys(hotkeys);
 
     return (
-        <header className="absolute inset-x-0 top-0 z-50">
+        <header className={`inset-x-0 top-0 z-50 sticky transition-colors duration-300 ${isScrolled ? isDarkMode ? 'bg-gray-800' : 'bg-white' : 'bg-transparent'}`}>
             <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">{companyName}</span>
                         <h1 className='font-bold space-x-1'>
-                            <span className='text-teal-700 text-2xl'>Fabio TIETZ</span>
+                            <span className='text-teal-700 text-2xl inline-flex gap-2'><Bean />Fabio TIETZ</span>
                         </h1>
                     </a>
                 </div>
@@ -56,9 +174,9 @@ export default function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12 lg:justify-start">
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
+                        <Link key={item.name} href={item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end relative group space-x-3 ">
@@ -72,7 +190,6 @@ export default function Header() {
                     <div className="flex items-center justify-between">
                         <a href='/' className="-m-1.5 p-1.5">
                             <span className="sr-only">{companyName}</span>
-                            {/* TODO: Change out with Fabio TIETZ in two colors */}
                             <h1>Fabio TIETZ</h1>
                         </a>
                         <button
@@ -98,7 +215,7 @@ export default function Header() {
                                     </a>
                                 ))}
                             </div>
-                            <div>
+                            <div className='items-center space-x-2 align-middle justify-center'>
                                 <ModeToggle />
                                 <LanguageToggleButton />
                             </div>
@@ -109,3 +226,5 @@ export default function Header() {
         </header>
     );
 }
+
+export default Header;

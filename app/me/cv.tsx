@@ -1,6 +1,7 @@
 // components/CV.tsx
 import React from 'react';
 
+// TODO: language
 const CV = () => {
     return (
         <div>
