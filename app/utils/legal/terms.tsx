@@ -67,7 +67,7 @@ function Terms() {
         <p>These Terms shall be governed and construed in accordance with the laws of the European Union, without regard to its conflict of law provisions.</p>
 
         <h2>10. Changes to the Terms</h2>
-        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days&APOS; notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
 
         <h2>11. Contact Us</h2>
         <p>If you have any questions about these Terms, please contact us:</p>
