@@ -24,7 +24,7 @@ export default function Footer({isMobile, isMac} : props) {
         <footer className="bg-muted py-12">
       <div className="container max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         <div className="flex flex-col items-start gap-4">
-          <Link href="#" className="flex items-center gap-2" prefetch={false}>
+          <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <Bean className="w-6 h-6" />
             <span className="font-bold text-lg">Fabio TIETZ</span>
           </Link>
