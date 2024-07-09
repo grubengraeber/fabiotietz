@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import CV from "./cv";
+import CV from "./cv/cv";
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/app-context";
 
@@ -14,24 +14,35 @@ export default function Me() {
         setShowResumePanel(!showResumePanel)
     }
 
+    const pdfUrl = "https://z6qih29arqodtoqx.public.blob.vercel-storage.com/fabiotietz_resume-vdRderZ12BKSGo84rXe7SxYSydzdjs.pdf";
+
     return (
-    <div className="flex items-center justify-center mt-40">
+    <div className="flex items-center justify-center mb-16 w-full">
         <Card>
             <CardHeader>
-
-            <CardTitle>
+            <CardTitle className="flow-root">
+                <div className="float-left">
             Me
-            </CardTitle>
-            </CardHeader>
-            <CardContent>
-
-            <CV /> {/* TODO: downloadable CV */}
-            </CardContent>
-            <CardFooter>
+                </div>
+                <div className="float-right">
 
             <Button onClick={toggleShowResumePanel}>
                 Download CV
             </Button>
+                </div>
+            </CardTitle>
+            </CardHeader>
+            <CardContent>
+
+            {/* <iframe 
+                    src={pdfUrl} 
+                    title="CV"
+                    className='w-full h-screen max-w-3xl'
+                /> */}
+            <CV />
+            </CardContent>
+            <CardFooter>
+
             </CardFooter>
         </Card>
     </div>)
