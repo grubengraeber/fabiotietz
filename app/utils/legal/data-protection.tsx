@@ -1,4 +1,4 @@
-import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useAppContext } from '@/context/app-context';
 import { GlobeLock } from 'lucide-react';
@@ -12,17 +12,17 @@ function DataProtection() {
     }
 
   return (
-    <AlertDialog open={showDataProtection} onOpenChange={toggleDataProtection} >
-        <AlertDialogTrigger asChild>
+    <Dialog open={showDataProtection} onOpenChange={toggleDataProtection} >
+        <DialogTrigger asChild>
             <div className='text-sm hover:underline inline-flex gap-4'>
                 <GlobeLock /> Privacy Policy
             </div>
-        </AlertDialogTrigger>
-        <AlertDialogContent className='overflow-y-scroll max-h-screen h-5/6 w-1/2'>
-          <AlertDialogTitle>Privacy Policy</AlertDialogTitle>
-          <AlertDialogDescription>
+        </DialogTrigger>
+        <DialogContent className='overflow-y-scroll max-h-screen h-5/6 lg:w-1/2 sm:w-full'>
+          <DialogTitle>Privacy Policy</DialogTitle>
+          <DialogDescription>
             Read our Privacy Policy below 
-          </AlertDialogDescription>
+          </DialogDescription>
           <h1>Privacy Policy</h1>
 <p>Last updated: July 08, 2024</p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
@@ -215,11 +215,11 @@ function DataProtection() {
 <p>By visiting this page on our website: <a href="https://fabiotietz.com/contact" rel="external nofollow noopener" target="_blank">https://fabiotietz.com/contact</a></p>
 </li>
 </ul>
-<AlertDialogCancel asChild>
-<Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>
-</AlertDialogCancel>
-</AlertDialogContent>
-</AlertDialog>
+<DialogClose asChild>
+Cancel
+</DialogClose>
+</DialogContent>
+</Dialog>
   )
 }
 
