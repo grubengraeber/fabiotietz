@@ -36,7 +36,7 @@ export const DownloadResume = () => {
       <CommandDialog open={showResumePanel} onOpenChange={toggleResumePanel}>
       <DialogTitle hidden>Choose Resume Language</DialogTitle> {/* TODO: language */}
       <DialogDescription hidden>A picker for the language of the downloaded resume</DialogDescription> {/* TODO: language */}
-        <CommandInput placeholder="Search available languages..." />
+        {/* <CommandInput placeholder="Search available languages..." /> */}
         <CommandList>
           {languages.map((language, index) => (
             <CommandItem key={index} onSelect={() => {
