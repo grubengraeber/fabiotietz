@@ -37,7 +37,7 @@ export const DownloadResume = () => {
       <DialogTitle hidden>Choose Resume Language</DialogTitle> {/* TODO: language */}
       <DialogDescription hidden>A picker for the language of the downloaded resume</DialogDescription> {/* TODO: language */}
         {/* <CommandInput placeholder="Search available languages..." /> */}
-        <CommandList>
+        <CommandList className="mt-10">
           {languages.map((language, index) => (
             <CommandItem key={index} onSelect={() => {
                 downloadFile(`/api/resume?language=${language.language}`, '')
