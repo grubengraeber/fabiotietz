@@ -56,7 +56,7 @@ function SubscribeNewsletter() {
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
                 {/* TODO */}
-                <AlertDialogFooter className='my-4'>
+                <AlertDialogFooter className='my-4 gap-2'>
 
               <AlertDialogAction type="submit" disabled>
                 Subscribe
