@@ -8,6 +8,7 @@ import { useParams } from 'next/navigation';
 import Technology from '@/app/data/technology';
 import TechnologyType from '@/app/data/technology-type';
 import UnderConstruction from '@/app/components/under-construction';
+import { NextPage } from 'next';
 
 const projectData: Project[] = [
     // Example project data
@@ -33,7 +34,7 @@ const projectData: Project[] = [
     ),
   ];
 
-function ProjectDetailPage() {
+const ProjectDetailPage: NextPage = () => {
   const params = useParams<{ projectName: string }>()
   const projectName = params.projectName;
   const project = projectData.find(p => p.title === projectName);
