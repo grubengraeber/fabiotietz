@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div className="relative isolate px-6 pt-14 lg:px-8">
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center">
+      <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:py-32 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
           {welcome}
         </h1>
@@ -23,7 +23,7 @@ export default function Home() {
           {checkOut}
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
-        <a
+          <a
                 href="/contact"
                 className="rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
               >
