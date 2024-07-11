@@ -1,5 +1,5 @@
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog'
-import { Button } from '@/components/ui/button'
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
+
 import { useAppContext } from '@/context/app-context'
 import { Cookie } from 'lucide-react'
 import React from 'react'
@@ -15,21 +15,21 @@ function Cookies() {
     }
 
   return (
-    <AlertDialog open={showCookies} onOpenChange={toggleCookies} >
-        <AlertDialogTrigger asChild>
+    <Dialog open={showCookies} onOpenChange={toggleCookies}>
+        <DialogTrigger asChild>
             <div className='text-sm hover:underline inline-flex gap-4'>
                 <Cookie /> Cookie Policy
             </div>
-        </AlertDialogTrigger>
-        <AlertDialogContent className='overflow-y-scroll max-h-screen h-5/6 w-1/2'>
-          <AlertDialogTitle>Cookie Policy</AlertDialogTitle>
-          <AlertDialogDescription>
+        </DialogTrigger>
+        <DialogContent className='overflow-y-scroll max-h-screen h-5/6 lg:w-1/2 sm:w-full'>
+          <DialogTitle>Cookie Policy</DialogTitle>
+          <DialogDescription>
             Read our Cookie Policy below 
-          </AlertDialogDescription>
+          </DialogDescription>
           <h2>Cookie Policy</h2> 
-          <p>
 
 <h4>Introduction</h4> 
+<p>
 Fabio TIETZ Innovations e.U. (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) uses cookies on our website (the &quot;Service&quot;). By using the Service, you consent to the use of cookies.
 </p>
 
@@ -89,11 +89,12 @@ We may update our Cookie Policy from time to time. We will notify you of any cha
 <p>By visiting this page on our website: <a href="https://fabiotietz.com/contact" rel="external nofollow noopener" target="_blank">https://fabiotietz.com/contact</a></p>
 </li>
 </ul>
-<AlertDialogCancel asChild>
-<Button className='text-black dark:text-white' onClick={() => {}} disabled={false}>Cancel</Button>
-</AlertDialogCancel>
-</AlertDialogContent>
-</AlertDialog>
+<DialogClose asChild>
+  Close
+{/* <Button className='text-black dark:text-white' onClick={() => {}} disabled={false}>Cancel</Button> */}
+</DialogClose>
+</DialogContent>
+</Dialog>
   )
 }
 

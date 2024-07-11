@@ -1,9 +1,8 @@
-import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { useAppContext } from '@/context/app-context';
 import { ReceiptText } from 'lucide-react';
 import React from 'react'
 import DataProtection from './data-protection';
-import { Button } from '@/components/ui/button';
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
 function Terms() {
   const { showTerms, setShowTerms } = useAppContext();
@@ -13,17 +12,17 @@ function Terms() {
     }
 
   return (
-    <AlertDialog open={showTerms} onOpenChange={toggleTerms} >
-        <AlertDialogTrigger asChild>
+    <Dialog open={showTerms} onOpenChange={toggleTerms} >
+        <DialogTrigger asChild>
             <div className='text-sm hover:underline inline-flex gap-4'>
                 <ReceiptText /> Terms of Service
             </div>
-        </AlertDialogTrigger>
-        <AlertDialogContent className='overflow-y-scroll max-h-screen h-5/6 w-1/2'>
-          <AlertDialogTitle>Terms of Service</AlertDialogTitle>
-          <AlertDialogDescription>
+        </DialogTrigger>
+        <DialogContent className='overflow-y-scroll max-h-screen h-5/6 lg:w-1/2 sm:w-full'>
+          <DialogTitle>Terms of Service</DialogTitle>
+          <DialogDescription>
             Read our Terms of Service below 
-          </AlertDialogDescription>
+          </DialogDescription>
           <h1>Terms of Service</h1>
 
         <h2>1. Introduction</h2>
@@ -31,7 +30,7 @@ function Terms() {
         <p>By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the Terms, then you do not have permission to access the Service.</p>
 
         <h2>2. Privacy Policy</h2>
-        <p>Your privacy is important to us. Please read our <DataProtection /> to understand how we collect, use, and share information about you.</p>
+        <div>Your privacy is important to us. Please read our <DataProtection /> to understand how we collect, use, and share information about you.</div>
 
         <h2>3. Use of the Service</h2>
         <h3>Eligibility</h3>
@@ -75,11 +74,11 @@ function Terms() {
             <li>By email: <a href="mailto:fabio@fabiotietz.com">fabio@fabiotietz.com</a></li>
             <li>By visiting this page on our website: <a href="https://fabiotietz.com/contact" rel="external nofollow noopener" target="_blank">fabiotietz.com/contact</a></li>
         </ul>
-<AlertDialogCancel asChild>
-<Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>
-</AlertDialogCancel>
-</AlertDialogContent>
-</AlertDialog>
+<DialogClose asChild>
+Cancel
+</DialogClose>
+</DialogContent>
+</Dialog>
   )
 }
 

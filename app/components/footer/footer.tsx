@@ -28,7 +28,7 @@ export default function Footer({isMobile, isMac} : props) {
             <Bean className="w-6 h-6" />
             <span className="font-bold text-lg">Fabio TIETZ</span>
           </Link>
-          <p className="text-muted-foreground text-sm">Building, Supporting and Launching.</p>
+          <p className="text-muted-foreground text-sm">Building, Launching and Supporting.</p>
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Socials</h4>
