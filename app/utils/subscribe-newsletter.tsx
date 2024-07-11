@@ -1,6 +1,6 @@
 "use client"
 
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
 import { useAppContext } from '@/context/app-context';
 import { Mails } from 'lucide-react';
@@ -55,15 +55,18 @@ function SubscribeNewsletter() {
               className="w-full px-3 py-2 border rounded-md"
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-            <div className="mt-4 flex justify-end gap-4">
                 {/* TODO */}
-              <AlertDialogAction asChild>
-                <Button type="submit" disabled className="outlined">Subscribe</Button>
+                <AlertDialogFooter className='my-4'>
+
+              <AlertDialogAction type="submit" disabled>
+                Subscribe
               </AlertDialogAction>
-              <AlertDialogCancel asChild>
-                <Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button>
+              <AlertDialogCancel>
+                {/* <Button className='text-black dark:text-white' onClick={() => console.debug('Clicked on Cancel button')} disabled={false}>Cancel</Button> */
+                }
+                Cancel
               </AlertDialogCancel>
-            </div>
+              </AlertDialogFooter>
           </form>
         </AlertDialogContent>
       </AlertDialog>
