@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import { CustomPagination } from '@/app/components/pagination/custom-pagination';
 import 'react-pdf/dist/Page/TextLayer.css';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
-import { CustomPagination } from '@/app/components/pagination/custom-pagination';
 
 /* pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/legacy/build/pdf.worker.min.mjs',
