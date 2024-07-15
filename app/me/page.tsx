@@ -10,7 +10,7 @@ import ScrollManager from "./3d/scroll-manager";
 
 export default function Me() {
     const theme = useTheme();
-    const isDarkMode = theme.theme === "dark" || (theme.theme === "system" && theme.systemTheme === "dark")
+    /* const isDarkMode = theme.theme === "dark" || (theme.theme === "system" && theme.systemTheme === "dark") */
     const [section, setSection] = useState(0)
     return (
         <>
@@ -26,6 +26,7 @@ export default function Me() {
 </ScrollControls>
 {/* <OrbitControls /> */}
             </Canvas>
+            <Menu />
         </div>
         </>
     )

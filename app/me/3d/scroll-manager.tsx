@@ -9,6 +9,8 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
   const isAnimating = useRef(false);
 
   useEffect(() => {
+    data.fill.classList.add("top-0")
+    data.fill.classList.add("absolute")
     gsap.to(data.el, { 
       duration: 1, 
       scrollTop: section * data.el.clientHeight,
