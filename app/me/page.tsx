@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Smatrics } from "./3d/work/smatrics/smatrics";
-import { Html, ScrollControls, Scroll } from "@react-three/drei";
+import { ScrollControls, Scroll } from "@react-three/drei";
 import Interface from "./3d/interface";
 import { useTheme } from "next-themes";
 import { useState } from "react";
