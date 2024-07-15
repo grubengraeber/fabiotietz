@@ -17,7 +17,7 @@ function MeshComponent() {
  const {animation} = useControls({
   animation: {
     value: "Typing",
-  options: ["Typing", "SalsaDance", "Standing", "Sitting", "Capoeira", "SkateboardingPushing", "SkateboardingCruising", "ShoulderThrow"]
+  options: ["Typing", "SalsaDance", "Standing", "Sitting", "Capoeira", "SkateboardingPushing", "SkateboardingCruising", "ShoulderThrow", "Waving", "Salute"]
   }
 }) 
 

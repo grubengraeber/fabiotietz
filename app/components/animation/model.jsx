@@ -30,6 +30,9 @@ export function Model(props) {
   const { animations: shoulderThrowAnimation } = useFBX("/animations/Shoulder_throw.fbx");
   const { animations: salsaDancingAnimation } = useFBX("/animations/Salsa_Dancing.fbx");
   const { animations: capoeiraAnimation } = useFBX("/animations/Capoeira.fbx");
+  const { animations: wavingAnimation } = useFBX("/animations/Waving.fbx");
+  const { animations: saluteAnimation } = useFBX("/animations/Salute.fbx");
+
   typingAnimation[0].name = "Typing"
   standingAnimation[0].name = "Standing"
   skateboardingPushingAnimation[0].name = "SkateboardingPushing"
@@ -38,6 +41,8 @@ export function Model(props) {
   shoulderThrowAnimation[0].name = "ShoulderThrow"
   salsaDancingAnimation[0].name = "SalsaDance"
   capoeiraAnimation[0].name = "Capoeira"
+  wavingAnimation[0].name = "Waving"
+  saluteAnimation[0].name = "Salute"
 
   const { actions } = useAnimations([
     typingAnimation[0],
@@ -47,7 +52,9 @@ export function Model(props) {
     skateboardingCruisingAnimation[0],
     skateboardingPushingAnimation[0],
     shoulderThrowAnimation[0],
-    capoeiraAnimation[0]
+    capoeiraAnimation[0],
+    wavingAnimation[0],
+    saluteAnimation[0]
   ], group);
 
   useFrame((state) => {
