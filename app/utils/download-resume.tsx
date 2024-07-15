@@ -39,7 +39,7 @@ export const DownloadResume = () => {
         {/* <CommandInput placeholder="Search available languages..." /> */}
         <CommandList className="mt-10">
           {languages.map((language, index) => (
-            <CommandItem key={index} onSelect={() => {
+            <CommandItem disabled key={index} onSelect={() => {
                 downloadFile(`/api/resume?language=${language.language}`, '')
                 toggleResumePanel()
             }}>

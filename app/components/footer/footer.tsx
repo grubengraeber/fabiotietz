@@ -38,9 +38,9 @@ export default function Footer({isMobile, isMac} : props) {
           <Link href={process.env.NEXT_PUBLIC_GITHUB_URL!} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
           <Github /> Github
           </Link>
-          <div className="text-sm hover:underline inline-flex gap-4" onClick={() => setShowSharePanel(true)}>
+          <button className="text-sm hover:underline inline-flex gap-4" onClick={() => setShowSharePanel(true)}>
             <Share2 /> Share
-          </div>
+          </button>
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Resources</h4>
