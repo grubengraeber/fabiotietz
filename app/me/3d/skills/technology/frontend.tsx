@@ -1,6 +1,7 @@
 import React from 'react'
 import SkillBase from '../base'
 import SkillSubBase from '../sub-base'
+import TechnologySkillBase from './technology-skill-base'
 
 function FrontendSkills() {
     const frontendTechnologies = [
@@ -32,7 +33,8 @@ function FrontendSkills() {
 
   return (
     <div>
-      <SkillSubBase title='Frontend Technologies' items={frontendTechnologies} />
+      {/* <SkillSubBase title='Frontend Technologies' items={frontendTechnologies} /> */}
+      <TechnologySkillBase items={frontendTechnologies} label='Frontend' />
     </div>
   )
 }
