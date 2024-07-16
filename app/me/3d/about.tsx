@@ -2,7 +2,7 @@ import React from 'react'
 import Section from './section'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 
 
 function About() {
@@ -12,7 +12,7 @@ function About() {
         <div className='text-start'>
 
         <h1 className='text-6xl font-extrabold leading-snug'>
-            Hey, I'm
+            Hey, I&apos;m
             <br />
             <span className='bg-black dark:bg-white px-1 italic text-white dark:text-black'>Fabio TIETZ</span>
         </h1>
@@ -23,7 +23,7 @@ function About() {
                 transition={
                     {duration: 1, delay: 1.5}
                 }
-            >I'm a Software Developer</motion.p>
+            >I&apos;m a Software Developer</motion.p>
             <motion.p initial={{ opacity: 0, y: 25}}
             whileInView={{ opacity: 1, y: 0, 
                 }}
