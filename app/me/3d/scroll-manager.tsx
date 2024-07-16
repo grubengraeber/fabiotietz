@@ -8,6 +8,9 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
   const lastScroll = useRef(0);
   const isAnimating = useRef(false);
 
+  // FIXME
+
+
   useEffect(() => {
     data.fill.classList.add("top-0")
     data.fill.classList.add("absolute")
