@@ -4,11 +4,14 @@ import BackendSkills from './backend'
 import MobileSkills from './mobile'
 import DatabaseSkills from './database'
 import SkillBase from '../base'
+import Section from '../../section'
 
 function Technology() {
   return (
+    <Section>
+      <h1 className='text-6xl font-extrabold leading-snug'>Technology</h1>
     <div className='space-y-4'>
-        <SkillBase title='Technologies' items={[]} />
+        <SkillBase title='' items={[]} />
       <FrontendSkills />
       <br />
       <BackendSkills />
@@ -18,6 +21,7 @@ function Technology() {
       <DatabaseSkills />
       <br />
     </div>
+    </Section>
   )
 }
 

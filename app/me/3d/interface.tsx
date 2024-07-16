@@ -3,6 +3,8 @@ import About from './about'
 import Work from './work/work'
 import Education from './education/education'
 import Skills from './skills/skills'
+import Technology from './skills/technology/technology'
+import OtherSkills from './skills/others/others'
 
 function Interface() {
   return (
@@ -11,7 +13,9 @@ function Interface() {
         <About />
         <Work />
         <Education />
-        <Skills />
+        {/* <Skills /> */}
+        <Technology />
+        <OtherSkills />
     </div>
   )
 }

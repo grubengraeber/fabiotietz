@@ -14,6 +14,7 @@ export default function Me() {
     /* const isDarkMode = theme.theme === "dark" || (theme.theme === "system" && theme.systemTheme === "dark") */
     const [section, setSection] = useState(0)
     const [menuOpen, setMenuOpen] = useState(false)
+
     return (
         <>
         <div className="mt-8 mb-8 w-full h-screen">

@@ -8,9 +8,7 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
   const lastScroll = useRef(0);
   const isAnimating = useRef(false);
 
-  // FIXME
-
-
+  
   useEffect(() => {
     data.fill.classList.add("top-0")
     data.fill.classList.add("absolute")
@@ -24,7 +22,7 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
         isAnimating.current = false;
       }
     })
-  }, [])
+  }, [section])
 
   useFrame(() => {
     if (isAnimating.current) {
@@ -34,10 +32,12 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
        
        const currentSection = Math.floor(data.offset * data.pages)
        
-       if (data.offset > lastScroll.current && currentSection === 0) {
+       // works with data.scoll
+       if (data.scroll > lastScroll.current && currentSection === 0) {
          onSectionChange(1)
          }
-         if (data.offset < lastScroll.current && data.offset < 1 / (data.pages - 1) ) {
+        // works with data.scoll
+         if (data.scroll < lastScroll.current && data.offset < 1 / (data.pages - 1) ) {
            onSectionChange(0)
            }
           lastScroll.current = data.offset;
