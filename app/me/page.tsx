@@ -23,7 +23,7 @@ export default function Me() {
             </div>
             <Canvas shadows camera={{ position: [3, 3, 3], fov: 40 }}>
                 {/* <color attach={'background'} args={isDarkMode ? ['#2f2f2f'] : ['#ececec']} /> */}
-            <ScrollControls pages={4} damping={0.1}>
+            <ScrollControls pages={5} damping={0.1}>
             <ScrollManager section={section} onSectionChange={setSection} />
             <Smatrics />
             <Scroll html>
