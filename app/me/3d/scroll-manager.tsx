@@ -3,8 +3,16 @@ import { useFrame } from '@react-three/fiber';
 import React, { Dispatch, SetStateAction, useEffect, useRef } from 'react'
 import {  gsap } from "gsap"
 
+interface ScrollData {
+  fill: HTMLDivElement;
+  el: HTMLDivElement;
+  offset: number;
+  scroll: number;
+  pages: number;
+}
+
 function ScrollManager({section, onSectionChange}: {section: number, onSectionChange: Dispatch<SetStateAction<number>>}) {
-  const data = useScroll(); 
+  const data = useScroll() as unknown as ScrollData; 
   const lastScroll = useRef(0);
   const isAnimating = useRef(false);
 
