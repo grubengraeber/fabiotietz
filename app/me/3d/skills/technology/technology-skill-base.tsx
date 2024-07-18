@@ -43,17 +43,17 @@ function TechnologySkillBase({items, label} : {items: {title: string, level: num
               <div className="flex justify-between space-x-4">
                 <div>
 
-                <Link href={item.url} target='_blank'>
+                <Link href={item.url} target='_blank' className='inline-flex space-x-2'>
+                  <h4 className="text-lg font-semibold justify-center align-middle content-center">{item.title}</h4>
                 <Avatar>
                   <AvatarImage src={item.image} />
                   <AvatarFallback>{item.title[0]}</AvatarFallback>
                 </Avatar>
                 </Link>
-                <br />
+                <div className='my-4' />
                 <Link href={item.projects}>Check out my related projects</Link> 
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">{item.title}</h4>
                   <p className="text-sm">Skill Level: {item.level}%</p>
                   <div className="flex items-center pt-2">
                     <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}

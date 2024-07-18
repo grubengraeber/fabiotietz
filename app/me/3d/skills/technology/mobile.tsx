@@ -9,28 +9,32 @@ function MobileSkills() {
             80,
             "https://dart.dev/",
             "https://media.licdn.com/dms/image/D5612AQH9LqQIHNjbmg/article-cover_image-shrink_600_2000/0/1695541044573?e=2147483647&v=beta&t=Mx7rTYFiidokfxmw3W7Xo3UNANFfEk3l1WDx-wlls9U",
-            "/tools/dart"
+            "/tools/dart",
+            new Date(2022, 7, 1)
         ),
         new TechnologySkill(
             "Flutter",
             40,
             "https://flutter.dev/",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/2560px-Google-flutter-logo.svg.png",
-            "/tools/flutter"
+            "/tools/flutter",
+            new Date(2022, 7, 1)
         ),
         new TechnologySkill(
             "Swift",
             20,
             "https://developer.apple.com/xcode/swiftui/",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTytBAPExtXR2U_6KaDmU8SIpbh6n2nFRvo9w&s",
-            "/tools/swift"
+            "/tools/swift",
+            new Date(2022, 6, 1)
         ),
         new TechnologySkill(
             "React Native",
             15,
             "https://reactnative.dev/",
             "https://devtop.io/wp-content/uploads/2022/10/react-native-1.png",
-            "/tools/react-native"
+            "/tools/react-native",
+            new Date(2022, 10, 1)
         ),
     ]
 

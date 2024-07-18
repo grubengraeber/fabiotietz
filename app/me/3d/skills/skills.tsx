@@ -1,6 +1,5 @@
 import React from 'react'
 import Section from '../section'
-import Languages from './others/languages'
 import Technology from './technology/technology'
 import OtherSkills from './others/others'
 

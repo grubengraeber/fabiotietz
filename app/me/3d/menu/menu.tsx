@@ -20,7 +20,7 @@ function Menu({ onSectionChange, menuOpen, setMenuOpen }: { onSectionChange: Dis
     <>
       <Sheet open={menuOpen} onOpenChange={toggleMenu}>
         <SheetTrigger asChild className='top-20 left-12'>
-          <Button className='bg-emerald-600' variant="outline">{menuOpen ? <X /> : <MenuIcon />}</Button>
+          <Button className='bg-emerald-400 dark:bg-emerald-600' variant="outline">{menuOpen ? <X /> : <MenuIcon />}</Button>
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
