@@ -11,14 +11,12 @@ import Link from 'next/link';
 import { Bean } from 'lucide-react';
 import useKeyboardShortcuts from './use-keyboard-shortcuts';
 
-const companyUrl = process.env.NEXT_PUBLIC_COMPANY_URL!;
 const companyName = "TIETZ Innovations";
 const navigation = [
-    { name: 'Home', href: '/' },
     { name: 'About Me', href: '/me' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Company', href: companyUrl },
+    { name: 'Blog', href: '/blog' },
 ]
 
 // TODO: language
@@ -67,7 +65,7 @@ function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12 lg:justify-start">
                     {navigation.map((item) => (
-                        <Link key={item.name} href={item.href} target={item.href === companyUrl ? '_blank' : ''} className="text-sm font-semibold leading-6">
+                        <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6">
                             {item.name}
                         </Link>
                     ))}
@@ -100,7 +98,6 @@ function Header() {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    target={item.href === companyUrl ? '_blank' : ''}
                                     className="block rounded-lg px-3 py-2 text-base font-semibold leading-7"
                                 >
                                     {item.name}

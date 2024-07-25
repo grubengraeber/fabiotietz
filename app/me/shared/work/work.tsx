@@ -5,7 +5,6 @@ function Work() {
   return (
     <Section>
       <div>
-
         <h1 className='text-6xl font-extrabold leading-snug'>
             These where my fields of work so far:
         </h1>
