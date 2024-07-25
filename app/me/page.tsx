@@ -1,6 +1,6 @@
 'use client'
 
-import Interface from "./3d/interface";
+import TwoDAnimatedPage from "./2d/two-d-animated-page";
 import ThreeDAnimatedPage from "./3d/three-d-animated-page";
 
 export default function Me() {
@@ -8,7 +8,7 @@ export default function Me() {
     return (
         <>
         {/* <ThreeDAnimatedPage /> */}
-        <Interface />
+        <TwoDAnimatedPage />
         </>
     )
 }

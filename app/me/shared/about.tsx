@@ -9,8 +9,8 @@ function About() {
 
   return (
     <Section>
-        <div className='text-start'>
-
+        
+        <div>
         <h1 className='text-6xl font-extrabold leading-snug'>
             Hey, I&apos;m
             <br />

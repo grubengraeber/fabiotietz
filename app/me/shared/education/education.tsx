@@ -6,8 +6,31 @@ function Education() {
     <Section>
     <div>
       Education:
-      - Codecool
-      - Matura
+
+      <div id='cooking'>
+        Cooking
+      </div>
+      <div id='service'>
+        Service
+      </div>
+      <div id='media-informatics'>
+        Media Informatics
+      </div>
+      <div id='economics'>
+        Economics
+      </div>
+      <div id='basics'>
+        Basics
+      </div>
+      <div id='web'>
+        Web Development
+      </div>
+      <div id='oop'>
+        Object Oriented Programming
+      </div>
+      <div id='advanced'>
+        Advnced
+      </div>
     </div>
     </Section>
   )

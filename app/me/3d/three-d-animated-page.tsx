@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { ScrollControls, Scroll } from "@react-three/drei";
-import Interface from "./interface";
+import Interface from "../shared/interface";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import ScrollManager from "./scroll-manager";

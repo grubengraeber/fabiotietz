@@ -9,6 +9,8 @@ import DatabaseSkills from './database'
 function Technology() {
   return (
     <Section>
+      <div>
+
       <h1 className='text-6xl font-extrabold leading-snug'>Technology</h1>
     <div className='space-y-4'>
         <SkillBase title='' items={[]} />
@@ -21,6 +23,7 @@ function Technology() {
       <DatabaseSkills />
       <br />
     </div>
+      </div>
     </Section>
   )
 }
