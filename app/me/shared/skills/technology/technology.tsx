@@ -1,10 +1,10 @@
 import React from 'react'
+import Section from '../../section'
+import SkillBase from '../base/base'
 import FrontendSkills from './frontend'
 import BackendSkills from './backend'
 import MobileSkills from './mobile'
 import DatabaseSkills from './database'
-import SkillBase from '../base/base'
-import Section from '../../section'
 
 function Technology() {
   return (

@@ -1,9 +1,9 @@
 import React from 'react'
-import About from './about'
-import Work from './work/work'
-import Education from './education/education'
-import Technology from './skills/technology/technology'
-import OtherSkills from './skills/others/others'
+import About from '../shared/about'
+import Work from '../shared/work/work'
+import Education from '../shared/education/education'
+import Technology from '../shared/skills/technology/technology'
+import OtherSkills from '../shared/skills/others/others'
 
 function Interface() {
   return (

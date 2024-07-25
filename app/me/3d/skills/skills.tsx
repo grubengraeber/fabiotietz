@@ -1,7 +1,7 @@
 import React from 'react'
-import Section from '../section'
-import Technology from './technology/technology'
-import OtherSkills from './others/others'
+import Section from '../../shared/section'
+import Technology from '../../shared/skills/technology/technology'
+import OtherSkills from '../../shared/skills//others/others'
 
 function Skills() {
   return (
