@@ -1,6 +1,6 @@
 import React from 'react'
-import SkillBase from '../base'
-import SkillSubBase from '../sub-base'
+import SkillBase from '../base/base'
+import SkillSubBase from '../base/sub-base'
 
 function Languages() {
 

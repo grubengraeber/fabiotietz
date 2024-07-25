@@ -4,9 +4,10 @@ import { CalendarDays } from 'lucide-react';
 import React from 'react'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Button } from '@headlessui/react';
+import Added from './added';
+import TechnologySkill from '../../data/TechnologySkill';
 
-function TechnologySkillBase({items, label} : {items: {title: string, level: number, url: string, image: string, projects: string}[], label: string}) {
+function TechnologySkillBase({items, label} : {items: TechnologySkill[], label: string}) {
     const colors = ['bg-red-500', 'bg-green-500', 'bg-blue-500', 'bg-yellow-500', 'bg-purple-500'];
     const totalLevel = items.reduce((acc, item) => acc + item.level, 0);
 
@@ -57,9 +58,7 @@ function TechnologySkillBase({items, label} : {items: {title: string, level: num
                   <p className="text-sm">Skill Level: {item.level}%</p>
                   <div className="flex items-center pt-2">
                     <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{" "}
-                    <span className="text-xs text-muted-foreground">
-                      Added Recently
-                    </span>
+                    <Added date={item.added} />
                   </div>
                 </div>
               </div>

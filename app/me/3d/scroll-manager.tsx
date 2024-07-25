@@ -1,13 +1,15 @@
 import { useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
-import React, { Dispatch, SetStateAction, useEffect, useRef } from 'react'
+import React, { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef } from 'react'
 import {  gsap } from "gsap"
+import { Ref } from 'react';
 
+ 
 interface ScrollData {
   fill: HTMLDivElement;
   el: HTMLDivElement;
   offset: number;
-  scroll: number;
+scroll: MutableRefObject<number>;
   pages: number;
 }
 
@@ -18,6 +20,7 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
 
   
   useEffect(() => {
+    console.log("CHANGING SECTION")
     data.fill.classList.add("top-0")
     data.fill.classList.add("absolute")
     gsap.to(data.el, { 
@@ -33,22 +36,40 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
   }, [section])
 
   useFrame(() => {
-    if (isAnimating.current) {
-       lastScroll.current = data.offset
-       return;
-       }
+      if (isAnimating.current) {
+        lastScroll.current = data.scroll.current;
+        return;
+      }
        
-       const currentSection = Math.floor(data.offset * data.pages)
-       
-       // works with data.scoll
-       if (data.scroll > lastScroll.current && currentSection === 0) {
+      const currentSection = Math.floor(data.scroll.current * data.pages)
+
+      if (currentSection !== section) {
+        onSectionChange(currentSection)
+      }
+
+      /* if (data.scroll.current * data.pages > currentSection) {
+        onSectionChange(currentSection + 1)
+        } else if (data.scroll.current * data.pages < currentSection) {
+          onSectionChange(currentSection - 1)
+          
+      } else {
+        console.log("SAME SECTION")
+      } */
+      
+      if (data.scroll.current < lastScroll.current && currentSection > 0) {
+        onSectionChange(currentSection - 1)
+        } else if (data.scroll.current > lastScroll.current && currentSection < data.pages - 1) {
+        onSectionChange(currentSection + 1)
+      }
+           
+       /* if (data.scroll.current > lastScroll.current && currentSection === 0) {
          onSectionChange(1)
-         }
-        // works with data.scoll
-         if (data.scroll < lastScroll.current && data.offset < 1 / (data.pages - 1) ) {
-           onSectionChange(0)
-           }
-          lastScroll.current = data.offset;
+         } 
+
+      if (data.scroll.current < lastScroll.current && data.scroll.current < 1 / (data.pages - 1) ) {
+        onSectionChange(0)
+        } */
+      lastScroll.current = data.scroll.current;
   })
 
   return (

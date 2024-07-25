@@ -1,7 +1,6 @@
 import React from 'react'
 import Languages from './languages'
 import Mediation from './mediation'
-import SkillBase from '../base'
 import Section from '../../section'
 
 function OtherSkills() {

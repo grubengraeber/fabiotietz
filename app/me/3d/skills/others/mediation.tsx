@@ -1,5 +1,5 @@
 import React from 'react'
-import SkillSubBase from '../sub-base'
+import SkillSubBase from '../base/sub-base'
 
 function Mediation() {
 

@@ -4,9 +4,8 @@ Command: npx gltfjsx@6.4.1 public/models/6692c2f7f174a747797255bb.glb app/compon
 */
 
 import React, { useEffect, useRef } from 'react'
-import { useFrame, useGraph } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
-import { SkeletonUtils } from 'three-stdlib'
 import { useControls } from "leva"
 import { Vector3 } from 'three'
 

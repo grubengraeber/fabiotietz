@@ -1,5 +1,5 @@
 import React from 'react'
-import TechnologySkillBase from './technology-skill-base'
+import TechnologySkillBase from '../base/technology/technology-skill-base'
 import TechnologySkill from '../data/TechnologySkill'
 
 function FrontendSkills() {

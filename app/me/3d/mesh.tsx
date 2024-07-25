@@ -1,11 +1,11 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Mesh } from "three";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Model } from "@/app/components/animation/model"
 import { useControls } from "leva";
 
-function MeshComponent() {
+function MeshComponent({section}: {section: number}) {
     /* const fileUrl = "/models/6692c2f7f174a747797255bb.glb";
   const mesh = useRef<Mesh>(null!);
   const gltf = useLoader(GLTFLoader, fileUrl);
@@ -14,12 +14,22 @@ function MeshComponent() {
     mesh.current.rotation.y += 0.01;
  }); */
 
- const {animation} = useControls({
+ const animationOptions = ["Typing", "SalsaDance", "Standing", "Sitting", "Capoeira", "SkateboardingPushing", "SkateboardingCruising", "ShoulderThrow", "Waving", "Salute"];
+
+ const [{animation}, set] = useControls(() => ({
   animation: {
     value: "Typing",
-  options: ["Typing", "SalsaDance", "Standing", "Sitting", "Capoeira", "SkateboardingPushing", "SkateboardingCruising", "ShoulderThrow", "Waving", "Salute"]
+  options: animationOptions
   }
-}) 
+})) 
+
+useEffect(() => {
+  console.log(animation + " animation")
+  set({animation: animationOptions[section]})
+} , [section]) 
+
+
+  
 
     return (
         <mesh>

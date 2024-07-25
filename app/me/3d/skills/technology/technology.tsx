@@ -3,7 +3,7 @@ import FrontendSkills from './frontend'
 import BackendSkills from './backend'
 import MobileSkills from './mobile'
 import DatabaseSkills from './database'
-import SkillBase from '../base'
+import SkillBase from '../base/base'
 import Section from '../../section'
 
 function Technology() {
