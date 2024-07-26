@@ -9,15 +9,15 @@ function Interface() {
   return (
       <div className='w-screen'>
         {/* <div className='flex flex-col items-center w-screen '> */}
-        <div id='about' className='my-10'></div>
+        <div id='about' className='my-10'/>
         <About />
-        <div id='work' className='my-10'></div>
+        <div id='work' className='my-10'/>
         <Work />
-        <div id='education' className='my-10'></div>
+        <div id='education' className='my-10'/>
         <Education />
-        <div id='technology' className='my-10'></div>
+        <div id='technology' className='my-10'/>
         <Technology />
-        <div id='other-skills' className='my-10'></div>
+        <div id='other-skills' className='my-10'/>
         <OtherSkills />
     </div>
   )

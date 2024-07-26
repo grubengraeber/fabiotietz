@@ -8,8 +8,8 @@ function Menu() {
 
     const router = useRouter();
   return (
-    <div className='grid grid-cols-10'>
-        <Menubar className='col-span-3'>
+    <div className='grid grid-cols-8'>
+        <Menubar className='col-span-2'>
       <MenubarMenu>
         <MenubarTrigger onClick={() => {
             router.push('#about')
