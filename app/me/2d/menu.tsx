@@ -1,6 +1,4 @@
-import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuTrigger } from '@/components/ui/context-menu'
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from '@/components/ui/menubar';
-import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
@@ -8,8 +6,8 @@ function Menu() {
 
     const router = useRouter();
   return (
-    <div className='grid grid-cols-8'>
-        <Menubar className='col-span-2'>
+    <div className='w-4/12'>
+        <Menubar>
       <MenubarMenu>
         <MenubarTrigger onClick={() => {
             router.push('#about')
@@ -17,17 +15,9 @@ function Menu() {
           }}>About</MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Work</MenubarTrigger>
+        <MenubarTrigger>Previous Workfields</MenubarTrigger>
         <MenubarContent>
           <MenubarItem onClick={() => {
-{            /* How can I scroll to the div with id .. inside the div with id ..? */
-
-            // document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
-
-            // document.getElementById('smatrics')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
-}
-
-
             router.push('#austrian-armed-forces')
           }}>
             Austrian Armed Forces
@@ -165,12 +155,6 @@ function Menu() {
         </MenubarTrigger>
       </MenubarMenu>
     </Menubar>
-            
-      {/* <Link href="#about" >About</Link>
-        <Link href="#education" onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })}>Education</Link>
-        <Link href="#work" onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })}>Work</Link>
-        <Link href="#technology" onClick={() => document.getElementById('technology')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })}>Technology</Link>
-        <Link href="#other-skills" onClick={() => document.getElementById('other-skills')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })}>Other Skills</Link> */}
     </div>
   )
 }
