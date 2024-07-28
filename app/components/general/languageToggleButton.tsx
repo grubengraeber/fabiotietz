@@ -17,7 +17,7 @@ export default function LanguageToggleButton() {
 
   const { setLanguage } = useAppContext();
 
-  const germanFlag = getUnicodeFlagIcon('DE');
+    const germanFlag = getUnicodeFlagIcon('DE');
     const englishFlag = getUnicodeFlagIcon('GB');
     const frenchFlag = getUnicodeFlagIcon('FR');
     const spanishFlag = getUnicodeFlagIcon('ES');
@@ -37,7 +37,7 @@ export default function LanguageToggleButton() {
         <DropdownMenuItem onClick={() => setLanguage('english')}>
           {englishFlag} English
         </DropdownMenuItem>
-        <DropdownMenuItem disabled onClick={() => setLanguage('french')}>
+        {/* <DropdownMenuItem disabled onClick={() => setLanguage('french')}>
           {frenchFlag} Français
         </DropdownMenuItem>
         <DropdownMenuItem disabled onClick={() => setLanguage('spanish')}>
@@ -45,7 +45,7 @@ export default function LanguageToggleButton() {
         </DropdownMenuItem>
         <DropdownMenuItem disabled onClick={() => setLanguage('croatian')}>
           {croatianFlag} Hrvatski
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
       </DropdownMenuContent>
     </DropdownMenu>
   )
