@@ -24,7 +24,7 @@ function Smatrics() {
                 <ul className='list-disc list-inside'>
                     <li>Developed a microservice in a team of 3 for roaming and authorization logic</li>
                     <li>Worked in an agile team managing 2 micro services and the integration between the two services</li>
-                    <li>Mapped data and functionality between two different 'Open Charge Protocols' used in the E-Mobility sector</li>
+                    <li>Mapped data and functionality between two different &apos;Open Charge Protocols&apos; used in the E-Mobility sector</li>
                 </ul>
                 <p className='text-2xl'>Technologies used:</p>
                 <ul className='list-disc list-inside'>
