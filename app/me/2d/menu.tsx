@@ -46,6 +46,12 @@ function Menu() {
                 </MenubarShortcut>
               </MenubarItem>
               <MenubarItem onClick={() => {
+            router.push('#sfc')
+          }}>
+                Child Care / Youth Worker
+                <MenubarShortcut>SFC Vienna</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem onClick={() => {
             router.push('#sellinnx')
           }}>Promoter / Sample Distributor
                 <MenubarShortcut>Sellinnx</MenubarShortcut>

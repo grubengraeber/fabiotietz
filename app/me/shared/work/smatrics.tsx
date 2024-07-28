@@ -2,10 +2,14 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 import React from 'react'
+import Section from '../section'
 
 function Smatrics() {
   return (
-    <div className='mb-10'>
+    <Section>
+
+    
+    <div>
       <Card className='h-full'>
         <CardHeader>
             <CardTitle>Full-Stack Developer <small>(mostly backend)</small></CardTitle>
@@ -45,6 +49,7 @@ function Smatrics() {
         </CardFooter>
       </Card>
     </div>
+    </Section>
   )
 }
 

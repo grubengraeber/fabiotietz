@@ -2,11 +2,13 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 import React from 'react'
+import Section from '../section'
 
 function AustrianArmedForces() {
   return (
-    <div className='mb-10'>
-      <Card className='h-full'>
+      <Section>
+        <div className='mb-10'>
+      <Card className='mt-64'>
         <CardHeader>
             <CardTitle>Wachtmeister <small>Sergeant (OR-5)</small></CardTitle>
             <CardDescription>Austrian Armed Forces <small>03/2017 - 02/2022</small></CardDescription>
@@ -81,6 +83,7 @@ function AustrianArmedForces() {
         </CardFooter>
       </Card>
     </div>
+    </Section>
   )
 }
 

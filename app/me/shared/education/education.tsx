@@ -1,38 +1,22 @@
 import React from 'react'
 import Section from '../section'
+import { motion } from 'framer-motion'
+import Hlw10 from './hlw10'
+import Codecool from './codecool'
 
 function Education() {
   return (
-    <Section>
-    <div>
-      Education:
-
-      <div id='cooking'>
-        Cooking
+    <motion.section className='w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-center justify-center' initial={{ opacity: 0, y: 50}} whileInView={{ opacity: 1, y: 0, transition: {
+      duration: 1, delay: 0.6
+  }}} >
+    <div className='mt-16 mb-16'>
+        <h1 className='text-6xl font-extrabold leading-snug my-10'>
+        Education
+        </h1>
+        <Hlw10 />
+        <Codecool />
       </div>
-      <div id='service'>
-        Service
-      </div>
-      <div id='media-informatics'>
-        Media Informatics
-      </div>
-      <div id='economics'>
-        Economics
-      </div>
-      <div id='basics'>
-        Basics
-      </div>
-      <div id='web'>
-        Web Development
-      </div>
-      <div id='oop'>
-        Object Oriented Programming
-      </div>
-      <div id='advanced'>
-        Advnced
-      </div>
-    </div>
-    </Section>
+    </motion.section>
   )
 }
 
