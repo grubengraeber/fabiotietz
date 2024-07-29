@@ -98,7 +98,7 @@ function Menu() {
             router.push('#economics')
           }}>
                 Economics
-                <MenubarShortcut>4 years</MenubarShortcut>
+                <MenubarShortcut>5 years</MenubarShortcut>
               </MenubarItem>
               <MenubarItem onClick={() => {
             router.push('#media-informatics')

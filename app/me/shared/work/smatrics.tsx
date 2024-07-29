@@ -7,8 +7,6 @@ import Section from '../section'
 function Smatrics() {
   return (
     <Section>
-
-    
     <div>
       <Card>
         <CardHeader>
