@@ -38,9 +38,10 @@ function SubscribeNewsletter() {
     <>
       <AlertDialog open={showNewsletterPanel} onOpenChange={togglePanelOpen}>
         <AlertDialogTrigger asChild>
-            <div className='text-sm hover:underline inline-flex gap-4'>
+          <button className='text-sm hover:underline inline-flex gap-4'>
+
                 <Mails /> Newsletter
-            </div>
+          </button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogTitle>Subscribe to my Newsletter</AlertDialogTitle>

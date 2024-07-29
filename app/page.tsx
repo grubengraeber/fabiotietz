@@ -11,7 +11,7 @@ export default function Home() {
   const welcome = currentLanguage === 'english' ?  "welcome to my website" : 'testlanguage';
   const checkOut = "Check out who I am, check out what I have accomplished so far and get in contact with me.";
   const contactMe = "contact me";
-  const seeProjects = "see projects";
+  const aboutMe = "about me";
 
   return (
     <div className="relative isolate px-6 pt-14 lg:px-8">
@@ -29,8 +29,8 @@ export default function Home() {
               >
                 {contactMe}
               </a>
-              <a href="/projects" className="text-sm font-semibold leading-6">
-                {seeProjects} <span aria-hidden="true"></span>
+              <a href="/me#about" className="text-sm font-semibold leading-6">
+                {aboutMe} <span aria-hidden="true"></span>
               </a>
         </div>
       </div>

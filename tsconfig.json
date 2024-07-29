@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/utils/scripts/copy-pdf-worker.mjs", "app/me/3d/work/smatrics/Avatar.jsx"  ],
   "exclude": [
     "node_modules"
   ]

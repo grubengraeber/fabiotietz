@@ -14,9 +14,9 @@ function DataProtection() {
   return (
     <Dialog open={showDataProtection} onOpenChange={toggleDataProtection} >
         <DialogTrigger asChild>
-            <div className='text-sm hover:underline inline-flex gap-4'>
+            <button className='text-sm hover:underline inline-flex gap-4'>
                 <GlobeLock /> Privacy Policy
-            </div>
+            </button>
         </DialogTrigger>
         <DialogContent className='overflow-y-scroll max-h-screen h-5/6 lg:w-1/2 sm:w-full'>
           <DialogTitle>Privacy Policy</DialogTitle>
