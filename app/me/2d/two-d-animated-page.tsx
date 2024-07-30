@@ -29,7 +29,7 @@ function TwoDAnimatedPage() {
 
             }
             <div className='justify-center align-middle content-center flex text-center'>
-                <Interface mobile={useNavigator && isMobile(useNavigator?.userAgent)} />
+                <Interface mobile={useNavigator && isMobile(useNavigator?.userAgent) ? true : false} />
             </div>
         </div>
     )
