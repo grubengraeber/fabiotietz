@@ -28,7 +28,7 @@ export default function ThreeDAnimatedPage() {
             <ScrollManager section={section} onSectionChange={setSection} />
             <Animations section={section} />
             <Scroll html>
-            <Interface />
+            <Interface mobile={false} />
             </Scroll>
 </ScrollControls>
 {/* <OrbitControls /> */}
