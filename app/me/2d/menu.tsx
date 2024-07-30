@@ -6,7 +6,7 @@ function Menu() {
 
     const router = useRouter();
   return (
-    <div className='w-4/12'>
+    <div className='w-4/12 ml-10'>
         <Menubar>
       <MenubarMenu>
         <MenubarTrigger onClick={() => {

@@ -5,16 +5,16 @@ import Education from './education/education'
 import Technology from './skills/technology/technology'
 import OtherSkills from './skills/others/others'
 
-function Interface() {
+function Interface({mobile}: {mobile: boolean}) {
   return (
       <div className='w-screen'>
         {/* <div className='flex flex-col items-center w-screen '> */}
         <div id='about' className='my-10 h-28' />
         <About />
         <div id='work' className='my-10 h-28' />
-        <Work />
+        <Work mobile={mobile} />
         <div id='education' className='my-10'/>
-        <Education />
+        <Education mobile={mobile} />
         <div id='technology' className='my-10 h-28'/>
         <Technology />
         <div id='other-skills' className='my-10 h-24'/>

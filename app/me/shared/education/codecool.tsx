@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-function Codecool() {
+function Codecool({mobile}: {mobile: boolean}) {
   const educationCategories = [
     { id: 'basics', label: 'Prog-Basics', startAndEndTime: '02/2022 - 04/2022', description: `
         In this module I learned the basics of programming. I learned how to write clean code, how to use loops and conditionals, and how to work in a team. I also learned about algorithms and data structures.
@@ -34,9 +34,13 @@ function Codecool() {
   return (
     <Section>
       <Link className='my-10' href='https://codecool.com/en/' target='_blank'><Button>Codecool Vienna (02/2022-10/2022)<small> Already closed in Vienna </small></Button></Link>
-      <div className="grid grid-cols-2 gap-4">
-            {educationCategories.map((category) => (
-                <Card id={category.id} key={category.id}>
+      <div className={mobile ? 'space-y-2' : 'grid grid-cols-2 gap-4'}>
+            {educationCategories.map((category, index) => (
+              <div key={index}>
+              { mobile ? 
+              <div id={category.id} className='my-10 h-16'/> : null
+                  }
+                <Card id={mobile ? '' : category.id}>
                     <CardHeader>
                         <CardTitle>{category.label}</CardTitle>
                         <CardDescription>{category.startAndEndTime}</CardDescription>
@@ -52,6 +56,7 @@ function Codecool() {
                     </div>
                         </CardContent>
                         </Card>
+                        </div>
             ))}
         </div>
     </Section>

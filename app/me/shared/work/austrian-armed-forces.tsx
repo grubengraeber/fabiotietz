@@ -79,7 +79,7 @@ function AustrianArmedForces() {
             <div>
 
             </div>
-            <Link href='https://bundesheer.at' target='_blank' className='text-center w-full'><Button className='text-center'>Visit Austrian Armed Forces</Button></Link>
+            <Link href='https://bundesheer.at' target='_blank' className='text-center w-full'><Button className='text-center'>Visit AAF</Button></Link>
         </CardFooter>
       </Card>
     </div>

@@ -3,11 +3,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from 'next/link'
 import React from 'react'
 
-function HorizontalCard({ companyPostition, companyName, companyDescription, companyUrl, companyImageUrl, companyStartAndEndTime, companyId }: { companyPostition: string, companyName: string, companyDescription: string, companyUrl: string, companyImageUrl: string, companyStartAndEndTime: string, companyId: string }) {
+function HorizontalCard({ companyPostition, companyName, companyDescription, companyUrl, companyImageUrl, companyStartAndEndTime, companyId, mobile }: { companyPostition: string, companyName: string, companyDescription: string, companyUrl: string, companyImageUrl: string, companyStartAndEndTime: string, companyId: string, mobile: boolean }) {
   return (
     <div>
         <div id={companyId} className='my-10 h-16'/>
-      <Card className='mt-64'>
+      <Card className={mobile ? '' : 'mt-64'}>
         <CardHeader>
             <CardTitle>{companyPostition}</CardTitle>
             <CardDescription>{companyName} <small>{companyStartAndEndTime}</small></CardDescription>
