@@ -7,6 +7,7 @@ function HorizontalCardCarousel({jobs} : {jobs: Job[]}) {
     
   return (
     <div>
+        <h1 className='text-4xl font-bold'>Side Jobs</h1>
         <Carousel className="max-w-xs" opts={{ loop: true }}>
       <CarouselContent>
         {jobs.map((job, index) => (
