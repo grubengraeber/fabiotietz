@@ -7,7 +7,7 @@ function HorizontalCard({ companyPostition, companyName, companyDescription, com
   return (
     <div>
         <div id={companyId} className='my-10 h-16'/>
-      <Card className={mobile ? '' : 'mt-64'}>
+      <Card >
         <CardHeader>
             <CardTitle>{companyPostition}</CardTitle>
             <CardDescription>{companyName} <small>{companyStartAndEndTime}</small></CardDescription>
