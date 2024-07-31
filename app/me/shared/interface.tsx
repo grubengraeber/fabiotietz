@@ -4,6 +4,7 @@ import Work from './work/work'
 import Education from './education/education'
 import Technology from './skills/technology/technology'
 import OtherSkills from './skills/others/others'
+import TechnologyMobile from './skills/technology/mobile/technology-mobile'
 
 function Interface({mobile}: {mobile: boolean}) {
   return (
@@ -16,7 +17,11 @@ function Interface({mobile}: {mobile: boolean}) {
         <div id='education' className='my-10'/>
         <Education mobile={mobile} />
         <div id='technology' className='my-10 h-28'/>
+        { mobile ?
+          <TechnologyMobile />
+          :  
         <Technology />
+      }
         <div id='other-skills' className='my-10 h-24'/>
         <OtherSkills />
     </div>
