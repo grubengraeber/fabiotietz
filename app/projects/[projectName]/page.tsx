@@ -34,7 +34,7 @@ const projectData: Project[] = [
     ),
   ];
 
-const ProjectDetailPage: NextPage = () => {
+function ProjectDetailPage() {
   const params = useParams<{ projectName: string }>()
   const projectName = params.projectName;
   const project = projectData.find(p => p.title === projectName);

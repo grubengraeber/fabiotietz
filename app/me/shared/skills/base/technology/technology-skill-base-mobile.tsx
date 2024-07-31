@@ -19,8 +19,12 @@ function TechnologySkillBaseMobile({items, label } : {items: TechnologySkill[], 
         {items.map((item, index) => (
             <Dialog key={index}>
                 <DialogTrigger asChild>
+                    {/* TODO: Animate the click on the following div to be visually seeable like a click animation */}
+
+
                     <motion.div
-                    className={`inline-block h-full ${colors[index % colors.length]}`}
+
+                    className={`inline-block h-full ${colors[index % colors.length]} `}
                     style={{ width: `${(item.level / totalLevel) * 100}%` }}
                     initial={{
                         scaleX: 0,
@@ -36,6 +40,8 @@ function TechnologySkillBaseMobile({items, label } : {items: TechnologySkill[], 
                         }
                     }}
                     animate={{ width: `${(item.level / totalLevel) * 100}%` }}
+                    whileTap={{ scale: 0.8 }}
+
                     ></motion.div>
                 </DialogTrigger>
 
