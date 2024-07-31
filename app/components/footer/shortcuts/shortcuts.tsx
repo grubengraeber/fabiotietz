@@ -26,10 +26,10 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
     const router = useRouter();
 
     const shortcuts: {icon: ReactElement, description: string, keys: KeyType[], action: Function}[] = [
-      { icon: <FileDown />, description: 'Download Resume', keys: ['cmd', 'option', 'R'], action:  () => {
+      /* { icon: <FileDown />, description: 'Download Resume', keys: ['cmd', 'option', 'R'], action:  () => {
         setShowShortcuts(false);
         setShowResumePanel(true);
-      }},
+      }}, */  
       //{ icon: <FolderDown />, description: 'Download Portfolio As PDF', keys: ['cmd', 'option', 'D'], action:  () => {}}, // TODO
       //{ icon: <BrainCog />, description: 'Skills', keys: ['cmd', 'shift', 'S'], action:  () => {}}, // TODO
       { icon: <Home />, description: 'Home', keys: ['cmd', 'option', 'H'], action:  () => {
@@ -58,7 +58,7 @@ function Shortcuts({ isMac }: { isMac: boolean}) {
       }},
       { icon: <FilePenLine />, description: 'Blog Section', keys: ['cmd', 'option', 'B'], action:  () => {
         setShowShortcuts(false)
-        window.open (process.env.NEXT_PUBLIC_BLOG_URL!, '_ blank')
+        router.push('/blog');
       }},
       { icon: <Forward />, description: 'Share Page', keys: ['cmd', 'option', 'F'], action:  () => {
         setShowShortcuts(false)

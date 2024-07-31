@@ -27,16 +27,16 @@ const useKeyboardShortcuts = () => {
       () => toggleShortcutMenu(),
       { preventDefault: true },
     ],
-    [
+    /* [
       'mod+alt+R',
       () => setShowResumePanel(true),
       { preventDefault: true },
-    ],
-    [
+    ], */
+    /* [
       'mod+alt+D',
       () => downloadFile('/api/portfolio', 'fabiotietz_portfolio'),
       { preventDefault: true },
-    ],
+    ], */
     [
       'mod+alt+H',
       () => {
@@ -65,11 +65,11 @@ const useKeyboardShortcuts = () => {
       },
       { preventDefault: true },
     ],
-    [
+    /* [
       'mod+alt+L',
       () => toggleLanguage({ currentLanguage: language, setLanguage: setLanguage }),
       { preventDefault: true },
-    ],
+    ], */
     [
       'mod+shift+C',
       () => window.open(process.env.NEXT_PUBLIC_COMPANY_URL!, '_ blank'),
@@ -77,7 +77,9 @@ const useKeyboardShortcuts = () => {
     ],
     [
       'mod+alt+B',
-      () => window.open(process.env.NEXT_PUBLIC_BLOG_URL!, '_ blank'),
+      () => {
+        router.push('/blog');
+      },
       { preventDefault: true },
     ],
     [
