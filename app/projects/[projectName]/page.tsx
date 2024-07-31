@@ -34,7 +34,7 @@ const projectData: Project[] = [
     ),
   ];
 
-function ProjectDetailPage() {
+export default function ProjectDetailPage() {
   const params = useParams<{ projectName: string }>()
   const projectName = params.projectName;
   const project = projectData.find(p => p.title === projectName);
@@ -51,5 +51,3 @@ function ProjectDetailPage() {
     </div>
     )
 }
-
-export default ProjectDetailPage
