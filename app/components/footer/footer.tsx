@@ -19,6 +19,9 @@ type props = {
 export default function Footer({isMobile, isMac} : props) {
 
     const { setShowSharePanel } = useAppContext();
+    const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "";
+    const linkedInUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "";
+    const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "";
       
     return (
         <footer className="bg-muted py-12">
@@ -32,10 +35,10 @@ export default function Footer({isMobile, isMac} : props) {
         </div>
         <div className="grid gap-2">
           <h4 className="font-medium">Socials</h4>
-          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL!} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Link href={linkedInUrl} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
           <Linkedin /> LinkedIn
           </Link>
-          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL!} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Link href={githubUrl} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
           <Github /> Github
           </Link>
           <button className="text-sm hover:underline inline-flex gap-4" onClick={() => setShowSharePanel(true)}>
@@ -53,7 +56,7 @@ export default function Footer({isMobile, isMac} : props) {
                     <Shortcuts  isMac={isMac} />
             : null
         }
-          <Link href={process.env.NEXT_PUBLIC_BLOG_URL!} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Link href={blogUrl} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
             <Newspaper /> Blog
           </Link>
         </div>
