@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useEffect, useState } from "react"
+import { toggleTheme } from "@/app/utils/toggle-theme"
 
 // TODO: language
 export function ModeToggle() {
@@ -26,8 +27,20 @@ export function ModeToggle() {
     return null
   }
 
+  const isDarkMode = !(theme.theme === "light" || (theme.theme === "system" && theme.systemTheme === "light"));
+
+  const localToggleTheme = () => {
+    theme.setTheme(isDarkMode ? "light" : "dark")
+  }
+
   return (
-    <DropdownMenu>
+    <>
+    <Button variant="outline" size="icon" onClick={() => localToggleTheme()}>
+          <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">Toggle theme</span>
+    </Button>
+    {/* <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -53,6 +66,7 @@ export function ModeToggle() {
           </span>
         </DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenu> */}
+    </>
   )
 }
