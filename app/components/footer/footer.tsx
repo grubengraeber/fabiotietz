@@ -56,7 +56,7 @@ export default function Footer({isMobile, isMac} : props) {
                     <Shortcuts  isMac={isMac} />
             : null
         }
-          <Link href={blogUrl} target="_blank" className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Link href={blogUrl} className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
             <Newspaper /> Blog
           </Link>
         </div>
