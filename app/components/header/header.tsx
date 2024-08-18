@@ -8,8 +8,8 @@ import { ModeToggle } from './modeToggle';
 import { useTheme } from 'next-themes';
 import { useHotkeys } from '@mantine/hooks';
 import Link from 'next/link';
-import { Bean } from 'lucide-react';
 import useKeyboardShortcuts from './use-keyboard-shortcuts';
+import Image from 'next/image';
 
 const companyName = "TIETZ Innovations";
 const navigation = [
@@ -49,7 +49,7 @@ function Header() {
                     <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">{companyName}</span>
                         <h1 className='font-bold space-x-1'>
-                            <span className='text-teal-700 text-2xl inline-flex gap-2'><Bean />Fabio TIETZ</span>
+                            <span className='text-teal-700 text-2xl inline-flex gap-2'><Image src={`${isDarkMode ? '/favicons/head_dark.svg' : '/favicons/head_light.svg'}`} alt='Personal Logo' width={25} height={25} /> Fabio TIETZ</span>
                         </h1>
                     </a>
                 </div>
@@ -81,7 +81,7 @@ function Header() {
                     <div className="flex items-center justify-between">
                         <a href='/' className="-m-1.5 p-1.5">
                             <span className="sr-only">{companyName}</span>
-                            <h1>Fabio TIETZ</h1>
+                            <span className='font-bold text-teal-700 text-2xl inline-flex gap-2'><Image src={`${isDarkMode ? '/favicons/head_dark.svg' : '/favicons/head_light.svg'}`} alt='Personal Logo' width={25} height={25} /> Fabio TIETZ</span>
                         </a>
                         <button
                             type="button"

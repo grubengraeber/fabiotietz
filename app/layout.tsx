@@ -18,6 +18,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Fabio Tietz",
   description: "Personal Website",
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/favicons/head_light.svg',
+        href: '/favicons/head_light.svg',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/favicons/head_dark.svg',
+        href: '/favicons/head_dark.svg',
+      },
+    ],
+  },
 };
 
 export default async function RootLayout({
