@@ -21,7 +21,7 @@ function TwoDAnimatedPage() {
 
             {
                 useNavigator && isMobile(useNavigator.userAgent) ? 
-<MobileMenu />
+                <MobileMenu />
                 : 
             <div style={{ position: 'sticky', top: 100, left: 0, zIndex: 1000 }}>
                 <Menu />
