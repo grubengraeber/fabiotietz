@@ -15,7 +15,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
   return (
         <Card className='my-2'>
             <CardHeader>
-      <Image src={`${project.banner}`} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" width={100} height={50} />
+      {/* <Image src={project.banner} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" width={100} height={50} /> */}
+      <img src={project.banner} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" />
             <CardTitle>
             {project.title}
             </CardTitle>
