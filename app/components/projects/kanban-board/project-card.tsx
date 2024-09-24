@@ -77,16 +77,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9, rotate: -5 }}
     >
-      <Link href={`/projects/${project.title}`}>
+      <Link href={`/projects/${project.id}`}>
         <Card className={`my-2 ${backgroundForStatus()} ${textForStatus()}`}>
             <CardHeader>
-                <Image src={project.banner} alt={project.title} width={150} height={150} className="w-full object-cover rounded-t-lg" /> {/* h-40 */}
+                <Image src={project.bannerLight} alt={project.title} width={150} height={150} className="w-full object-cover rounded-t-lg" /> {/* h-40 */}
                 <CardTitle>
                   {project.title}
                 </CardTitle>
             </CardHeader>
             <CardContent>
-              {project.content}
+              {project.description}
             </CardContent>
             <CardFooter className='grid grid-cols-1'>
               <div className='text-end'>

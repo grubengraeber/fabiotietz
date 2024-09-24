@@ -2,10 +2,12 @@ import { ProjectStatus } from "./project-status";
 import Technology from "./technology";
 
 class Project {
+    id: string;
     title: string;
     description: string;
     content: string;
-    banner: string;
+    bannerLight: string;
+    bannerDark: string;
     startDate: Date;
     status: ProjectStatus;
     techStack: Technology[];
@@ -14,11 +16,13 @@ class Project {
     url?: string;
     
 
-    constructor(title: string, description: string, content: string, banner: string, startDate: Date, status: ProjectStatus, techStack: Technology[], blogPost?: string, url?: string, endDate?: Date) {
+    constructor(id: string,title: string, description: string, content: string, bannerLight: string, bannerDark: string, startDate: Date, status: ProjectStatus, techStack: Technology[], blogPost?: string, url?: string, endDate?: Date) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.content = content;
-        this.banner = banner;
+        this.bannerLight = bannerLight;
+        this.bannerDark = bannerDark;
         this.startDate = startDate;
         this.status = status;
         this.techStack = techStack;
