@@ -8,6 +8,7 @@ import ProjectTags from './project-tags';
 import { ProjectStatus } from '@/app/data/project-status';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import ColorService from '@/app/service/ColorService';
 
 interface ProjectCardProps {
   project: Project;
@@ -15,62 +16,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}) => {
   
-  const backgroundForStatus = () => {
-    switch (project.status) {
-      case ProjectStatus.IN_PROGRESS:
-      case ProjectStatus.TESTING:
-        return 'bg-yellow-100';
-      case ProjectStatus.COMPLETED:
-      case ProjectStatus.DEPLOYED:
-      case ProjectStatus.LAUNCHED:
-        return 'bg-green-100';
-      case ProjectStatus.PLANNED:
-      case ProjectStatus.ON_HOLD:
-        return 'bg-blue-100';
-      case ProjectStatus.MAINTENANCE:
-        return 'bg-orange-100';
-      default:
-        return 'bg-gray-100';
-    }
-  };
-
-  const textForStatus = () => {
-    switch (project.status) {
-      case ProjectStatus.IN_PROGRESS:
-      case ProjectStatus.TESTING:
-        return 'text-yellow-800';
-      case ProjectStatus.COMPLETED:
-      case ProjectStatus.DEPLOYED:
-      case ProjectStatus.LAUNCHED:
-        return 'text-green-800';
-      case ProjectStatus.PLANNED:
-      case ProjectStatus.ON_HOLD:
-        return 'text-blue-800';
-      case ProjectStatus.MAINTENANCE:
-        return 'text-orange-800';
-      default:
-        return 'text-gray-800';
-    }
-  };
-
-  const badgeForStatus = () => {
-    switch (project.status) {
-      case ProjectStatus.IN_PROGRESS:
-      case ProjectStatus.TESTING:
-        return 'yellow';
-      case ProjectStatus.COMPLETED:
-      case ProjectStatus.DEPLOYED:
-      case ProjectStatus.LAUNCHED:
-        return 'green';
-      case ProjectStatus.PLANNED:
-      case ProjectStatus.ON_HOLD:
-        return 'blue';
-      case ProjectStatus.MAINTENANCE:
-        return 'orange';
-      default:
-        return 'gray';
-    }
-  };
+  const colorService = new ColorService();
 
   return (
     <motion.div
@@ -78,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
       whileTap={{ scale: 0.9, rotate: -5 }}
     >
       <Link href={`/projects/${project.id}`}>
-        <Card className={`my-2 ${backgroundForStatus()} ${textForStatus()}`}>
+        <Card className={`my-2 ${colorService.backgroundForStatus(project)} ${colorService.textForStatus(project)}`}>
             <CardHeader>
                 <Image src={project.bannerLight} alt={project.title} width={150} height={150} className="w-full object-cover rounded-t-lg" /> {/* h-40 */}
                 <CardTitle>
@@ -90,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
             </CardContent>
             <CardFooter className='grid grid-cols-1'>
               <div className='text-end'>
-                <ProjectTags items={project.techStack} color={badgeForStatus()} />
+                <ProjectTags items={project.techStack} color={colorService.badgeForStatus(project)} />
               </div>
             </CardFooter>
         </Card>
