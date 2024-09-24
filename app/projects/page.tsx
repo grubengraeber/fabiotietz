@@ -77,7 +77,7 @@ export default function ProjectsPage() {
           ),
           new Technology(
             "Tailwind CSS",
-            TechnologyType.CSS_FRAMEWORK,
+            TechnologyType.FRONTEND_FRAMEWORK,
             "https://tailwindcss.com/",
             0.8
           ),

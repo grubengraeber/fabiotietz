@@ -8,6 +8,7 @@ export enum TechnologyType {
     LIBRARY = ('library'),
     API = ('api'),
     HOSTING = ('hosting'),
+    DATABASE = ('database'),
 }
 
 export default TechnologyType;
