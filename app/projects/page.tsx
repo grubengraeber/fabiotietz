@@ -1,11 +1,10 @@
 "use client"
 
 import Project from '../data/project';
-import KanbanBoard from '../components/projects/kanban-board/kanban-board';
 import { ProjectStatus } from '../data/project-status';
 import Technology from '../data/technology';
 import TechnologyType from '../data/technology-type';
-import UnderConstruction from '../components/under-construction';
+import Board from '../components/projects/kanban-board/board';
 
 
 
@@ -13,60 +12,176 @@ import UnderConstruction from '../components/under-construction';
 // TODO: language
 export default function ProjectsPage() {
   const projectData: Project[] = [
-      // Example project data
       new Project(
-        'ExampleProject1',
-        'This is an example project 1.',
-        'http://thispersondoesnotexist.com',
-        new Date(),
-        ProjectStatus.PLANNED,
-        [new Technology(
-          'Java',
-          TechnologyType.PROGRAMMING_LANGUAGE,
-          "https://www.java.com/",
-          0.7
-        ), 
-        new Technology(
-          'Spring',
-          TechnologyType.BACKEND_FRAMEWORK,
-          "https://spring.io/",
-          0.9
-        )
-      ],
-        'https://blog.example.com/1',
-        'http://example.com/1'
+        "Portfolio Site",
+        "My personal portfolio website.",
+        "Here should be a longer text displayed on the project details page.",
+        "https://thispersondoesnotexist.com",
+        new Date("12.05.2024"),
+        ProjectStatus.COMPLETED,
+        [
+          new Technology(
+            "Next.js",
+            TechnologyType.WEB_FRAMEWORK,
+            "https://nextjs.org/",
+            0.8
+          ),
+          new Technology(
+            "Tailwind CSS",
+            TechnologyType.FRONTEND_FRAMEWORK,
+            "https://tailwindcss.com/",
+            0.8
+          ),
+          new Technology(
+            "TypeScript",
+            TechnologyType.PROGRAMMING_LANGUAGE,
+            "https://www.typescriptlang.org/",
+            0.8
+          ),
+          new Technology(
+            "Vercel",
+            TechnologyType.HOSTING,
+            "https://vercel.com/",
+            0.7
+          ),
+        ],
+        "https://blog.fabiotietz.com/portfolio",
+        "https://fabiotietz.com",
+        new Date("01.10.2024")
       ),
       new Project(
-        'ExampleProject2',
-        'This is an example project 2.',
-        "https://random.imagecdn.app/500/150",
-        new Date(),
-        ProjectStatus.PLANNED,
-        [new Technology(
-          'Typescript',
-          TechnologyType.PROGRAMMING_LANGUAGE,
-          'https://www.typescriptlang.org/',
-          0.8
-        ), 
-        new Technology(
-          'Nuxt',
-          TechnologyType.WEB_FRAMEWORK,
-          'https://nuxt.com/',
-          0.6
-        )
-      ],
-        'https://blog.example.com/2',
-        'https://example.com/2'
+        "Sonar",
+        "A tool for tracking deliveries and arrival times in realtime for businesses and their customers.",
+        "Here should be a longer text displayed on the project details page.",
+        "https://thispersondoesnotexist.com",
+        new Date("01.08.2024"),
+        ProjectStatus.IN_PROGRESS,
+        [
+          new Technology(
+            "Next.js",
+            TechnologyType.WEB_FRAMEWORK,
+            "https://nextjs.org/",
+            0.8
+          ),
+          new Technology(
+            "Framer Motion",
+            TechnologyType.FRONTEND_FRAMEWORK,
+            "https://www.framer.com/motion/",
+            0.7
+          ),
+          new Technology(
+            "Supabase",
+            TechnologyType.DATABASE,
+            "https://supabase.io/",
+            0.7
+          ),
+          new Technology(
+            "Tailwind CSS",
+            TechnologyType.CSS_FRAMEWORK,
+            "https://tailwindcss.com/",
+            0.8
+          ),
+          new Technology(
+            "TypeScript",
+            TechnologyType.PROGRAMMING_LANGUAGE,
+            "https://www.typescriptlang.org/",
+            0.8
+          ),
+          new Technology(
+            "Twilio",
+            TechnologyType.API,
+            "https://www.twilio.com/",
+            0.7
+          ),
+          new Technology(
+            "Vercel",
+            TechnologyType.HOSTING,
+            "https://vercel.com/",
+            0.7
+          ),
+          new Technology(
+            "React Native",
+            TechnologyType.MOBILE_FRAMEWORK,
+            "https://reactnative.dev/",
+            0.8
+          )
+        ],
+        "https://blog.fabiotietz.com/sonar",
+        "https://sonar-app.net"
       ),
-      // Add more projects as needed
+      new Project(
+        "Freelytics",
+        "An application for tracking and analyzing freelancing contracts.",
+        "Here should be a longer text displayed on the project details page.",
+        "https://thispersondoesnotexist.com",
+        new Date("01.09.2024"),
+        ProjectStatus.IN_PROGRESS,
+        [
+          new Technology(
+            "React Native",
+            TechnologyType.MOBILE_FRAMEWORK,
+            "https://reactnative.dev/",
+            0.8
+          ),
+          new Technology(
+            "Expo",
+            TechnologyType.MOBILE_FRAMEWORK,
+            "https://expo.dev/",
+            0.7
+          ),
+          new Technology(
+            "Supabase",
+            TechnologyType.DATABASE,
+            "https://supabase.io/",
+            0.8
+          ),
+        ],
+        "https://blog.fabiotietz.com/freelytics",
+        "https://freelytics-app.com",
+      ),
+      new Project(
+        "Word",
+        "A supporting app for a guessing game.",
+        "Here should be a longer text displayed on the project details page.",
+        "https://thispersondoesnotexist.com",
+        new Date("23.09.2024"),
+        ProjectStatus.IN_PROGRESS,
+        [
+          new Technology(
+            "Next.js",
+            TechnologyType.WEB_FRAMEWORK,
+            "https://nextjs.org/",
+            0.8
+          ),
+          new Technology(
+            "Tailwind CSS",
+            TechnologyType.FRONTEND_FRAMEWORK,
+            "https://tailwindcss.com/",
+            0.8
+          ),
+          new Technology(
+            "TypeScript",
+            TechnologyType.PROGRAMMING_LANGUAGE,
+            "https://www.typescriptlang.org/",
+            0.8
+          ),
+          new Technology(
+            "Vercel",
+            TechnologyType.HOSTING,
+            "https://vercel.com/",
+            0.7
+          ),
+        ],
+        "https://blog.fabiotietz.com/word",
+        "https://word.fabiotietz.com",
+      )
     ];
 
     return (
-        <div className="container mx-auto p-4">
-      {/* <h1 className="text-3xl font-bold mb-4">Projects</h1>
-      <KanbanBoard projects={projectData} /> */} {/* TODO */}
-      <UnderConstruction />
-    </div>
+      <div className="container mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-4">Projects</h1>
+        <Board projects={projectData} /> 
+      </div>
     )
     
 }

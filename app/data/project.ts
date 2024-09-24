@@ -3,6 +3,7 @@ import Technology from "./technology";
 
 class Project {
     title: string;
+    description: string;
     content: string;
     banner: string;
     startDate: Date;
@@ -13,8 +14,9 @@ class Project {
     url?: string;
     
 
-    constructor(title: string, content: string, banner: string, startDate: Date, status: ProjectStatus, techStack: Technology[], blogPost?: string, url?: string, endDate?: Date) {
+    constructor(title: string, description: string, content: string, banner: string, startDate: Date, status: ProjectStatus, techStack: Technology[], blogPost?: string, url?: string, endDate?: Date) {
         this.title = title;
+        this.description = description;
         this.content = content;
         this.banner = banner;
         this.startDate = startDate;
