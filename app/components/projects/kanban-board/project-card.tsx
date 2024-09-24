@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import ProjectTags from './project-tags';
 import { ProjectStatus } from '@/app/data/project-status';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   project: Project;
@@ -79,19 +80,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
       <Link href={`/projects/${project.title}`}>
         <Card className={`my-2 ${backgroundForStatus()} ${textForStatus()}`}>
             <CardHeader>
-        <img src={project.banner} alt={project.title} className="w-full h-40 object-cover rounded-t-lg" />
-            <CardTitle>
-            {project.title}
-            </CardTitle>
+                <Image src={project.banner} alt={project.title} width={150} height={150} className="w-full object-cover rounded-t-lg" /> {/* h-40 */}
+                <CardTitle>
+                  {project.title}
+                </CardTitle>
             </CardHeader>
             <CardContent>
-            {project.content}
+              {project.content}
             </CardContent>
             <CardFooter className='grid grid-cols-1'>
-        <div className='text-end'>
-          <ProjectTags items={project.techStack} color={badgeForStatus()} />
-        </div>
-
+              <div className='text-end'>
+                <ProjectTags items={project.techStack} color={badgeForStatus()} />
+              </div>
             </CardFooter>
         </Card>
         </Link>
@@ -100,21 +100,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
 };
 
 export default ProjectCard;
-
-/* 
-<div className="flex items-center justify-center min-h-screen">
-        <Card>
-            <CardHeader>
-
-            <CardTitle>
-            Projects
-            </CardTitle>
-            </CardHeader>
-            <CardContent>
-                <Projects />
-            </CardContent>
-            <CardFooter>
-            </CardFooter>
-        </Card>
-    </div>
-*/

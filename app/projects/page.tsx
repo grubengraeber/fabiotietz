@@ -5,18 +5,19 @@ import { ProjectStatus } from '../data/project-status';
 import Technology from '../data/technology';
 import TechnologyType from '../data/technology-type';
 import Board from '../components/projects/kanban-board/board';
-
-
+import { useTheme } from 'next-themes';
 
 
 // TODO: language
 export default function ProjectsPage() {
+  /* const theme = useTheme();
+  const isDarkMode = !(theme.theme === "light" || (theme.theme === "system" && theme.systemTheme === "light")); */
   const projectData: Project[] = [
       new Project(
         "Portfolio Site",
         "My personal portfolio website.",
         "Here should be a longer text displayed on the project details page.",
-        "https://thispersondoesnotexist.com",
+        /* isDarkMode ? "/projects/Portfolio_dark.svg" :  */ "/projects/Portfolio_light.svg",
         new Date("12.05.2024"),
         ProjectStatus.COMPLETED,
         [
@@ -53,7 +54,7 @@ export default function ProjectsPage() {
         "Sonar",
         "A tool for tracking deliveries and arrival times in realtime for businesses and their customers.",
         "Here should be a longer text displayed on the project details page.",
-        "https://thispersondoesnotexist.com",
+        /* isDarkMode ? "/projects/Sonar_dark.svg" :  */ "/projects/Sonar_light.svg",
         new Date("01.08.2024"),
         ProjectStatus.IN_PROGRESS,
         [
@@ -113,7 +114,7 @@ export default function ProjectsPage() {
         "Freelytics",
         "An application for tracking and analyzing freelancing contracts.",
         "Here should be a longer text displayed on the project details page.",
-        "https://thispersondoesnotexist.com",
+        /* isDarkMode ? "/projects/Freelytics_dark.svg" :  */ "/projects/Freelytics_light.svg",
         new Date("01.09.2024"),
         ProjectStatus.IN_PROGRESS,
         [
@@ -143,7 +144,7 @@ export default function ProjectsPage() {
         "Word",
         "A supporting app for a guessing game.",
         "Here should be a longer text displayed on the project details page.",
-        "https://thispersondoesnotexist.com",
+        "/TIETZ.svg",
         new Date("23.09.2024"),
         ProjectStatus.IN_PROGRESS,
         [
