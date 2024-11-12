@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: {project: Project}
       whileTap={{ scale: 0.9, rotate: -5 }}
     >
       <Link href={`/projects/${project.id}`}>
-        <Card className={`my-2 ${colorService.backgroundForStatus(project)} ${colorService.textForStatus(project)}`}>
+        <Card className={`my-2 ${colorService.backgroundForStatus(project)} ${colorService.textForStatus(project)} ${project.status === ProjectStatus.CANCELLED ? 'opacity-50' : ''}`}>
             <CardHeader>
                 <Image src={project.bannerLight} alt={project.title} width={150} height={150} className="w-full object-cover rounded-t-lg" /> {/* h-40 */}
                 <CardTitle>
