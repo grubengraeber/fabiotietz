@@ -18,7 +18,7 @@ const ProjectDetailView: React.FC<{project: Project}> = ({project}: {project: Pr
       <div className="text-center">
         <div className="flex-row gap-5">
           <h1 className="lg:text-8xl max-md:text-3xl font-bold mt-4 text-center">{project.title}</h1>
-          <Badge className={`bg-${colorService.backgroundForStatus(project)} ${colorService.textForStatus(project)}`} >{project.status}</Badge>
+          <Badge className={`${colorService.backgroundForStatus(project)} ${colorService.textForStatus(project)}`} >{project.status}</Badge>
         </div>
       <p className="mt-2">{project.content}</p>
       {project.blogPost && (
