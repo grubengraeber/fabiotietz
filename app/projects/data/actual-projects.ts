@@ -185,7 +185,7 @@ export const projects: Project[] = [
       "/TIETZ.svg",
       "",
       new Date("2024-09-23"),
-      ProjectStatus.IN_PROGRESS,
+      ProjectStatus.CANCELLED,
       [
         new Technology(
           "Next.js",
@@ -214,5 +214,51 @@ export const projects: Project[] = [
       ],
       "https://blog.fabiotietz.com/word",
       "https://word.fabiotietz.com",
+    ),
+    new Project(
+      "qr",
+      "Static QR Code Generator",
+      "A customization tool for generating static QR codes with logos and colors embedded.",
+      `
+        The Static QR Code Generator is a customization tool for generating static QR codes with logos and colors embedded.
+        The tool is a web application that allows users to generate a QR code with their own logo in it's middle.
+        The users can customize the QR code by changing the colors of the QR code and reposition the embedded logo.
+
+        The users can also download the QR code as either an SVG file to resize it as they wish, or as a PNG file and use it for their projects.
+        The tool is free to use.
+      `,
+      "/projects/qr_light.svg",
+      "/projects/qr_dark.svg",
+      new Date("2024-11-08"),
+      ProjectStatus.LAUNCHED,
+      [
+        new Technology(
+          "Next.js",
+          TechnologyType.WEB_FRAMEWORK,
+          "https://nextjs.org/",
+          0.8
+        ),
+        new Technology(
+          "Tailwind CSS",
+          TechnologyType.FRONTEND_FRAMEWORK,
+          "https://tailwindcss.com/",
+          0.8
+        ),
+        new Technology(
+          "TypeScript",
+          TechnologyType.PROGRAMMING_LANGUAGE,
+          "https://www.typescriptlang.org/",
+          0.8
+        ),
+        new Technology(
+          "Vercel",
+          TechnologyType.HOSTING,
+          "https://vercel.com/",
+          0.7
+        ),
+      ],
+      "https://blog.fabiotietz.com/qr", // TODO
+      "https://qr.tietz-innovations.com",
+      new Date("2024-11-10")
     )
   ];
