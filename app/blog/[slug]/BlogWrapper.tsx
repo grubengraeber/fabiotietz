@@ -3,6 +3,8 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import ReactPlayer from 'react-player/lazy'
 import { Card, CardContent } from "@/components/ui/card"
+import remarkGfm from 'remark-gfm'
+
 
 export interface BlogWrapperProps {
   title: string
@@ -69,7 +71,7 @@ export default function BlogWrapper({
       <CardContent className="p-6 md:p-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-6">{title}</h1>
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          <ReactMarkdown components={components}>{content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>{content}</ReactMarkdown>
         </div>
       </CardContent>
     </Card>
