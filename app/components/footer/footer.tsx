@@ -21,7 +21,6 @@ export default function Footer({isMobile, isMac} : props) {
     const { setShowSharePanel } = useAppContext();
     const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "";
     const linkedInUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "";
-    const blogUrl = process.env.NEXT_PUBLIC_BLOG_URL ?? "";
       
     return (
         <footer className="bg-muted py-12">
@@ -56,7 +55,7 @@ export default function Footer({isMobile, isMac} : props) {
                     <Shortcuts  isMac={isMac} />
             : null
         }
-          <Link href={blogUrl} className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
+          <Link href={"/blog"} className="text-sm hover:underline inline-flex gap-4" prefetch={false}>
             <Newspaper /> Blog
           </Link>
         </div>
