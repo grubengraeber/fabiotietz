@@ -1,5 +1,5 @@
-import Project from "../data/project";
-import { ProjectStatus } from "../data/project-status";
+import Project from "../data/project/project";
+import { ProjectStatus } from "../data/project/project-status";
 
 class ColorService {
 
