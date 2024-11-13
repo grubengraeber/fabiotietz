@@ -2,10 +2,10 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Project from '@/app/data/project';
+import Project from '@/app/data/project/project';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import ProjectTags from './project-tags';
-import { ProjectStatus } from '@/app/data/project-status';
+import { ProjectStatus } from '@/app/data/project/project-status';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ColorService from '@/app/service/ColorService';
