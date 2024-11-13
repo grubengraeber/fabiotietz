@@ -1,6 +1,6 @@
 "use client"
 
-import Technology from '@/app/data/technology'
+import Technology from '@/app/data/technology/technology'
 import { Badge } from '@/components/ui/badge'
 import { useRouter } from 'next/navigation'
 import React from 'react'
