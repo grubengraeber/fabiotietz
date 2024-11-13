@@ -1,4 +1,4 @@
-import Project from '@/app/data/project'
+import Project from '@/app/data/project/project'
 import React from 'react'
 import ProjectCard from './project-card'
 
