@@ -1,4 +1,5 @@
-import Project from "../data/project";
+import BlogPost from "../data/blog/BlogPost";
+import Project from "../data/project/project";
 
 class MapperService {
     jsonToProject(json: any): Project {
@@ -15,6 +16,22 @@ class MapperService {
             json.blogPost,
             json.url,
             json.endDate ? new Date(json.endDate) : undefined,
+        )
+    }
+
+    jsonToBlog(json: any): BlogPost {
+        return new BlogPost(
+            {
+                title: json.title,
+                content: json.content,
+                slug: json.slug,
+                date: new Date(json.date),
+                bannerImage: json.bannerImage,
+                video: json.video,
+                sources: json.sources,
+                technologies: json.technologies,
+                projectName: json.projectName,
+            }
         )
     }
 }
