@@ -1,6 +1,6 @@
 import Technology from "../technology/technology";
 
-class Blog {
+class BlogPost {
     slug: string;
     date: Date;
     title: string;
@@ -34,4 +34,4 @@ class Blog {
     }
 }
 
-export default Blog;
+export default BlogPost;
