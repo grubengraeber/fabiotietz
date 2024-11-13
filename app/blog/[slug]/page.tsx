@@ -6,7 +6,7 @@ import LoadingAnimation from '@/app/components/animation/loading/loading-animati
 import Link from 'next/link'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 
-function BlogDetails({slug}: {slug: string}) {
+function BlogDetails({params}: {params: {slug: string}}) {
 
     const [isLoading, setIsLoading] = useState(true)
     const [blog, setBlog] = useState<BlogWrapperProps | null>(null)
@@ -18,7 +18,7 @@ function BlogDetails({slug}: {slug: string}) {
     }, [])
 
     const fetchBlog = async () => {
-        const { data, error } = await fetch(`/api/blog/${slug}`).then(res => res.json())
+        const { data, error } = await fetch(`/api/blog/${params.slug}`).then(res => res.json())
         if (error) {
             console.error(error)
             setIsLoading(false)
@@ -30,7 +30,7 @@ function BlogDetails({slug}: {slug: string}) {
 
   return (
     <>
-        <Breadcrumb>
+        <Breadcrumb className='ml-8'>
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
