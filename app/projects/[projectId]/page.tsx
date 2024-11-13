@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import Project from '@/app/data/project';
+import Project from '@/app/data/project/project';
 import { useParams} from 'next/navigation';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import ProjectDetailView from '@/app/components/projects/projects-detail-view';
