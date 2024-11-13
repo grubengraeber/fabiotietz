@@ -1,7 +1,7 @@
 # 🎉 Create Custom QR Codes for Free – No Hidden Fees, Just Pure Convenience! 🚀
 
 Let’s take a moment to appreciate genuinely free tools on the internet—those that don’t come with hidden costs or sneaky tricks. I’m a fan of quality products, but I also love resources that offer real value without surprises! 🎁
-
+---
 🤔 Why I Built My Own QR Code Generator
 
 When I first tried creating a customized QR code, I didn’t realize there was a difference between static and dynamic QR codes. This led to a frustrating discovery I’d like to share to save you some trouble!
