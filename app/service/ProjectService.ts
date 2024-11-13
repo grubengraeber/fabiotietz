@@ -1,4 +1,4 @@
-import Project from "../data/project";
+import Project from "../data/project/project";
 import { projects } from "../projects/data/actual-projects";
 
 class ProjectService {
