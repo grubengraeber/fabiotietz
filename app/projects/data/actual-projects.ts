@@ -1,8 +1,8 @@
-import Project from "@/app/data/project";
-import { ProjectStatus } from "@/app/data/project-status";
-import Technology from "@/app/data/technology";
-import TechnologyType from "@/app/data/technology-type";
-import { randomUUID } from "crypto";
+import Project from "@/app/data/project/project";
+import { ProjectStatus } from "@/app/data/project/project-status";
+import Technology from "@/app/data/technology/technology";
+import TechnologyType from "@/app/data/technology/technology-type";
+import { Technologies } from "@/app/technology/data/availableTechnologies";
 
 export const projects: Project[] = [
     new Project(
@@ -27,32 +27,12 @@ export const projects: Project[] = [
       new Date("2024-05-12"),
       ProjectStatus.COMPLETED,
       [
-        new Technology(
-          "Next.js",
-          TechnologyType.WEB_FRAMEWORK,
-          "https://nextjs.org/",
-          0.8
-        ),
-        new Technology(
-          "Tailwind CSS",
-          TechnologyType.FRONTEND_FRAMEWORK,
-          "https://tailwindcss.com/",
-          0.8
-        ),
-        new Technology(
-          "TypeScript",
-          TechnologyType.PROGRAMMING_LANGUAGE,
-          "https://www.typescriptlang.org/",
-          0.8
-        ),
-        new Technology(
-          "Vercel",
-          TechnologyType.HOSTING,
-          "https://vercel.com/",
-          0.7
-        ),
+        Technologies.TYPESCRIPT,
+        Technologies.REACT,
+        Technologies.NEXT_JS,
+        Technologies.TAILWIND_CSS,
       ],
-      "https://blog.fabiotietz.com/portfolio",
+      "https://fabiotietz.com/blog/portfolio", // TODO
       "https://fabiotietz.com",
       new Date("2024-10-01")
     ),
@@ -75,56 +55,16 @@ export const projects: Project[] = [
       new Date("2024-08-01"),
       ProjectStatus.IN_PROGRESS,
       [
-        new Technology(
-          "Next.js",
-          TechnologyType.WEB_FRAMEWORK,
-          "https://nextjs.org/",
-          0.8
-        ),
-        new Technology(
-          "Framer Motion",
-          TechnologyType.FRONTEND_FRAMEWORK,
-          "https://www.framer.com/motion/",
-          0.7
-        ),
-        new Technology(
-          "Supabase",
-          TechnologyType.DATABASE,
-          "https://supabase.io/",
-          0.7
-        ),
-        new Technology(
-          "Tailwind CSS",
-          TechnologyType.FRONTEND_FRAMEWORK,
-          "https://tailwindcss.com/",
-          0.8
-        ),
-        new Technology(
-          "TypeScript",
-          TechnologyType.PROGRAMMING_LANGUAGE,
-          "https://www.typescriptlang.org/",
-          0.8
-        ),
-        new Technology(
-          "Twilio",
-          TechnologyType.API,
-          "https://www.twilio.com/",
-          0.7
-        ),
-        new Technology(
-          "Vercel",
-          TechnologyType.HOSTING,
-          "https://vercel.com/",
-          0.7
-        ),
-        new Technology(
-          "React Native",
-          TechnologyType.MOBILE_FRAMEWORK,
-          "https://reactnative.dev/",
-          0.8
-        )
+        Technologies.TYPESCRIPT,
+        Technologies.REACT,
+        Technologies.NEXT_JS,
+        Technologies.TAILWIND_CSS,
+        Technologies.FRAMER_MOTION,
+        Technologies.REACT_NATIVE,
+        Technologies.SUPABASE,
+        Technologies.TWILIO,
       ],
-      "https://blog.fabiotietz.com/sonar",
+      "https://fabiotietz.com/blog/sonar", // TODO
       "https://sonar-app.net"
     ),
     new Project(
@@ -143,26 +83,12 @@ export const projects: Project[] = [
       new Date("2024-09-01"),
       ProjectStatus.IN_PROGRESS,
       [
-        new Technology(
-          "React Native",
-          TechnologyType.MOBILE_FRAMEWORK,
-          "https://reactnative.dev/",
-          0.8
-        ),
-        new Technology(
-          "Expo",
-          TechnologyType.MOBILE_FRAMEWORK,
-          "https://expo.dev/",
-          0.7
-        ),
-        new Technology(
-          "Supabase",
-          TechnologyType.DATABASE,
-          "https://supabase.io/",
-          0.8
-        ),
+        Technologies.TYPESCRIPT,
+        Technologies.REACT_NATIVE,
+        Technologies.EXPO,
+        Technologies.SUPABASE,
       ],
-      "https://blog.fabiotietz.com/freelytics",
+      "https://fabiotietz.com/blog/freelytics", // TODO
       "https://freelytics-app.com",
     ),
     new Project(
@@ -187,32 +113,12 @@ export const projects: Project[] = [
       new Date("2024-09-23"),
       ProjectStatus.CANCELLED,
       [
-        new Technology(
-          "Next.js",
-          TechnologyType.WEB_FRAMEWORK,
-          "https://nextjs.org/",
-          0.8
-        ),
-        new Technology(
-          "Tailwind CSS",
-          TechnologyType.FRONTEND_FRAMEWORK,
-          "https://tailwindcss.com/",
-          0.8
-        ),
-        new Technology(
-          "TypeScript",
-          TechnologyType.PROGRAMMING_LANGUAGE,
-          "https://www.typescriptlang.org/",
-          0.8
-        ),
-        new Technology(
-          "Vercel",
-          TechnologyType.HOSTING,
-          "https://vercel.com/",
-          0.7
-        ),
+        Technologies.TYPESCRIPT,
+        Technologies.REACT,
+        Technologies.NEXT_JS,
+        Technologies.TAILWIND_CSS,
       ],
-      "https://blog.fabiotietz.com/word",
+      "https://fabiotietz.com/blog/word", // TODO
       "https://word.fabiotietz.com",
     ),
     new Project(
@@ -232,32 +138,12 @@ export const projects: Project[] = [
       new Date("2024-11-08"),
       ProjectStatus.LAUNCHED,
       [
-        new Technology(
-          "Next.js",
-          TechnologyType.WEB_FRAMEWORK,
-          "https://nextjs.org/",
-          0.8
-        ),
-        new Technology(
-          "Tailwind CSS",
-          TechnologyType.FRONTEND_FRAMEWORK,
-          "https://tailwindcss.com/",
-          0.8
-        ),
-        new Technology(
-          "TypeScript",
-          TechnologyType.PROGRAMMING_LANGUAGE,
-          "https://www.typescriptlang.org/",
-          0.8
-        ),
-        new Technology(
-          "Vercel",
-          TechnologyType.HOSTING,
-          "https://vercel.com/",
-          0.7
-        ),
+        Technologies.TYPESCRIPT,
+        Technologies.REACT,
+        Technologies.NEXT_JS,
+        Technologies.TAILWIND_CSS,
       ],
-      "https://blog.fabiotietz.com/qr", // TODO
+      "https://fabiotietz.com/blog/custom-qr-code-generator",
       "https://qr.tietz-innovations.com",
       new Date("2024-11-10")
     )
