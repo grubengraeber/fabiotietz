@@ -6,9 +6,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import remarkGfm from 'remark-gfm'
 import BlogPost from '@/app/data/blog/BlogPost'
 import rehypeRaw from 'rehype-raw'
-import "./css/github-markdown.css";
-import { useTheme } from 'next-themes'
-
+import "@/css/github-markdown.css"
 
 
 const VideoPlayer = ({ url }: { url: string }) => (
@@ -53,8 +51,6 @@ export default function BlogWrapper({
       src ? <VideoPlayer url={src} /> : null,
   }
 
-  const { theme } = useTheme()
-
   const [text, setText] = useState<string | null>("")
 
   useEffect(() => {
@@ -80,7 +76,6 @@ export default function BlogWrapper({
       <CardContent className="p-6 md:p-8">
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <ReactMarkdown 
-          data-theme={theme}
           className={"markdown-body"}
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
