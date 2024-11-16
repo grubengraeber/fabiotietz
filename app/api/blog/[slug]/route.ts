@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest, { params} : { params: { slug: string } }) {
     const slug = params.slug;
 
-    console.log("Slug: ", slug);
     if (!slug) {
         console.log("Blog not found");
         return NextResponse.json({
