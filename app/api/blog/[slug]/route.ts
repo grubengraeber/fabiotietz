@@ -15,10 +15,10 @@ export async function GET(request: NextRequest, { params} : { params: { slug: st
     const blogService = new BlogService();
 
 
-    const project = blogService.getBlog(slug);
+    const blogPost = blogService.getBlog(slug);
 
     return NextResponse.json({
-        data: project,
-        error: project ? null : "Blog not found"
+        data: blogPost,
+        error: blogPost ? null : "Blog not found"
     })
 }

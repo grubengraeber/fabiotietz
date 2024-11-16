@@ -15,7 +15,7 @@ export async function GET(request: NextRequest, { params} : { params: { id: stri
     const projectService = new ProjectService();
 
 
-    const project = projectService.getProject(id as string);
+    const project = projectService.getProject(id);
 
     return NextResponse.json({
         data: project,
