@@ -1,19 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import ReactPlayer from 'react-player/lazy'
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import remarkGfm from 'remark-gfm'
+import BlogPost from '@/app/data/blog/BlogPost'
+import rehypeRaw from 'rehype-raw'
+import "./css/github-markdown.css";
+import { useTheme } from 'next-themes'
 
 
-export interface BlogWrapperProps {
-  title: string
-  slug: string
-  content: string
-  bannerImage: string
-  video?: string
-  sources?: string[]
-}
 
 const VideoPlayer = ({ url }: { url: string }) => (
   <div className="aspect-w-16 aspect-h-9 my-4">
@@ -27,53 +23,94 @@ const VideoPlayer = ({ url }: { url: string }) => (
 )
 
 const CustomImage = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="my-4">
+  <div className="my-4 justify-center flex">
     <Image
       src={src}
       alt={alt}
       width={600}
       height={400}
-      layout="responsive"
       className="rounded-lg"
     />
   </div>
 )
 
 export default function BlogWrapper({ 
-  title = "Sample Blog Post", 
-  content = "", 
-  bannerImage = "/placeholder.svg?height=400&width=1200"
-}: BlogWrapperProps) {
+  title, 
+  content, 
+  bannerImage, 
+  video, 
+  tags,
+  technologies,
+  projectName,
+  sources,
+  slug,
+  date,
+}: BlogPost) {
   const components = {
     img: ({ src, alt }: { src?: string; alt?: string }) => 
-      src ? <CustomImage src={src} alt={alt || ''} /> : null,
-    p: ({ children }: { children?: React.ReactNode }) => {
-      if (React.isValidElement(children) && children.type === 'img') {
-        return <>{children}</>
-      }
-      return <p>{children}</p>
-    },
+      src ? <CustomImage src={src} alt={alt || 'An image in the blog-post'} /> : null,
     video: ({ src }: { src?: string }) => 
       src ? <VideoPlayer url={src} /> : null,
   }
 
+  const { theme } = useTheme()
+
+  const [text, setText] = useState<string | null>("")
+
+  useEffect(() => {
+    fetch(content)
+      .then(res => res.text())
+      .then(setText)
+  }, [content])
+
   return (
+    <>
     <Card className="max-w-4xl mx-auto my-8 overflow-hidden">
-      <div className="relative h-64 md:h-80">
+      <div className="">
         <Image
           src={bannerImage}
           alt="Blog post banner"
-          layout="fill"
-          objectFit="cover"
+          /* fill */
+          height={320}
+          width={640}
           priority
+          className='w-full h-auto'
         />
       </div>
       <CardContent className="p-6 md:p-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">{title}</h1>
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>{content}</ReactMarkdown>
+          <ReactMarkdown 
+          data-theme={theme}
+          className={"markdown-body"}
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw]}
+          components={components}
+          >
+            {text}
+          </ReactMarkdown>
         </div>
+        <CardFooter className="mt-8 grid grid-cols-1">
+          <div>
+            <h3 className="text-l font-bold">Sources:</h3>
+            <ul>
+            {
+              sources?.map(source => (
+                <li key={source}><a href={source} target="_blank" rel="noreferrer" className="text-sm text-blue-500 mr-2">{source}</a></li>
+              ))
+            }
+            </ul>
+          </div>
+          <div className='my-8'>
+          {
+            tags?.map(tag => (
+              <span key={tag} className="text-sm text-gray-500 mr-2">#{tag}</span>
+            ))
+          }
+          </div>
+          <p className="text-sm">Published on {new Date(date)?.toLocaleDateString()}</p>
+        </CardFooter>
       </CardContent>
     </Card>
+    </>
   )
 }
