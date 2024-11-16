@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from 'react'
-import BlogWrapper, { BlogWrapperProps } from './BlogWrapper'
+import BlogWrapper from './BlogWrapper'
 import LoadingAnimation from '@/app/components/animation/loading/loading-animation'
 import Link from 'next/link'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
+import BlogPost from '@/app/data/blog/BlogPost';
 
 function BlogDetails({params}: {params: {slug: string}}) {
 
     const [isLoading, setIsLoading] = useState(true)
-    const [blog, setBlog] = useState<BlogWrapperProps | null>(null)
+    const [blog, setBlog] = useState<BlogPost | null>(null)
 
     useEffect(() => {
         fetchBlog().then(data => {
@@ -59,7 +60,11 @@ function BlogDetails({params}: {params: {slug: string}}) {
             bannerImage={blog.bannerImage}
             video={blog.video}
             sources={blog.sources}
+            tags={blog.tags}
+            technologies={blog.technologies}
+            projectName={blog.projectName}
             slug={blog.slug}
+            date={blog.date}
             />
         }
     </>
