@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Project from "../../data/project";
+import Project from "../../data/project/project";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Badge } from "@/components/ui/badge";

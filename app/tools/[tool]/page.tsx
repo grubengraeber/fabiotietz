@@ -1,60 +1,27 @@
 "use client"
 
 import UnderConstruction from '@/app/components/under-construction';
-import Technology from '@/app/data/technology'
-import TechnologyType from '@/app/data/technology-type';
+import Technology from '@/app/data/technology/technology'
+import TechnologyType from '@/app/data/technology/technology-type';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import { Technologies } from '@/app/technology/data/availableTechnologies';
 
 function Tool() {
 const { tool } = useParams();
 const [actualTool, setActualTool] = useState<Technology | null>(null);
 const router = useRouter();
-const tools: Technology[] = [
-  new Technology(
-    "Dart",
-    TechnologyType.PROGRAMMING_LANGUAGE,
-    "https://dart.dev/",
-    0.8,
-  ), new Technology(
-    'Flutter',
-    TechnologyType.MOBILE_FRAMEWORK,
-    "https://flutter.dev/",
-    0.8
-  ),
-  new Technology(
-    'Java',
-    TechnologyType.PROGRAMMING_LANGUAGE,
-    "https://www.java.com/",
-    0.7
-  ), 
-  new Technology(
-    'Spring',
-    TechnologyType.BACKEND_FRAMEWORK,
-    "https://spring.io/",
-    0.9
-  ),
-  new Technology(
-    'Typescript',
-    TechnologyType.PROGRAMMING_LANGUAGE,
-    'https://www.typescriptlang.org/',
-    0.8
-  ), 
-  new Technology(
-    'Nuxt',
-    TechnologyType.WEB_FRAMEWORK,
-    'https://nuxt.com/',
-    0.6
-  )
-];
+const tools: Technology[] = Object.values(Technologies);
+console.log(tools.length);
 
 // TODO: if tool is in toolbox: show tool detail page, else redirect to last route (router.back())
 
 useEffect(() => {
-  const foundTool = tools.find((singleTool) => singleTool.name === tool)
+  const foundTool = tools.find((singleTool) => singleTool.name.toLocaleLowerCase() === tool)
   if (!foundTool) {
     router.back();
   } else {

@@ -26,12 +26,14 @@ class Technology {
     type: TechnologyType;
     resources: string;
     personalLikability: number;
+    image: string;
 
-    constructor(name: string, type: TechnologyType, resources: string, personalLikability: number) {
+    constructor(name: string, type: TechnologyType, resources: string, personalLikability: number, image: string) {
         this.name = name;
         this.type = type;
         this.resources = resources;
         this.personalLikability = personalLikability;
+        this.image = image;
     }
 }
 

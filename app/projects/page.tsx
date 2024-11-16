@@ -1,6 +1,6 @@
 "use client"
 
-import Project from '../data/project';
+import Project from '../data/project/project';
 import Board from '../components/projects/kanban-board/board';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
