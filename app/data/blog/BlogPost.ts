@@ -8,10 +8,11 @@ class BlogPost {
     bannerImage: string;
     video?: string;
     sources?: string[];
+    tags?: string[];
     technologies?: Technology[];
     projectName?: string;
 
-    constructor({ slug, date, title, content, bannerImage, video, sources, technologies, projectName }:{
+    constructor({ slug, date, title, content, bannerImage, video, sources, tags, technologies, projectName }:{
         slug: string, 
         date: Date,
         title: string, 
@@ -19,6 +20,7 @@ class BlogPost {
         bannerImage: string, 
         video?: string, 
         sources?: string[], 
+        tags?: string[],
         technologies?: Technology[],
         projectName?: string
     }) {
@@ -29,6 +31,7 @@ class BlogPost {
         this.bannerImage = bannerImage;
         this.video = video;
         this.sources = sources;
+        this.tags = tags;
         this.technologies = technologies;
         this.projectName = projectName;
     }
