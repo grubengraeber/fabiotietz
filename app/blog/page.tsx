@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from 'react'
 import BlogPreview from './BlogPreview'
-import { BlogWrapperProps } from './[slug]/BlogWrapper'
 import LoadingAnimation from '../components/animation/loading/loading-animation';
+import BlogPost from '../data/blog/BlogPost';
 
 function Blog() {
   const [isLoading, setIsLoading] = useState(true)
-  const [posts, setPosts] = useState<BlogWrapperProps[]>([])
+  const [posts, setPosts] = useState<BlogPost[]>([])
 
   useEffect(() => {
     fetchBlogs()
@@ -43,6 +43,7 @@ function Blog() {
                   title={blog.title}
                   imageUrl={blog.bannerImage}
                   slug={blog.slug}
+                  tags={blog.tags}
                 />
               ))
             }
