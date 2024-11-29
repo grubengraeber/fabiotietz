@@ -19,5 +19,19 @@ export const actualBlogs: BlogPost[] = [
                 Technologies.NEXT_JS
             ]
         }
+    ),
+    new BlogPost(
+        {
+            slug: "offline-first-approach",
+            date: new Date("2024-11-30"),
+            title: "📡 Offline-First: Why you should consider this approach. 🚀",
+            bannerImage: "/blog/offline-first-apps/images/banner.png",
+            content: "/blog/offline-first-apps/text/offline_first.md",
+            video: "https://www.youtube.com/watch?v=jaZ2gLMGUsM",
+            sources: ["https://wiki.genexus.com/commwiki/wiki?22221,Offline+Native+Mobile+applications+architecture", "https://www.youtube.com/watch?v=jaZ2gLMGUsM"],
+            tags: ["Offline First", "Mobile Apps", "UI/UX", "Database", "Local First"],
+            technologies: [
+            ]
+        }
     )
 ]
