@@ -24,12 +24,19 @@ const MobileMenu = () => {
           <div className="menu-list">Work</div>
           <div className="menu-list-item" onClick={() => handleMenuClick('#austrian-armed-forces')}>Austrian Armed Forces</div>
           <div className="menu-list-item" onClick={() => handleMenuClick('#smatrics')}>SMATRICS</div>
+          <div className="menu-list-item" onClick={() => handleMenuClick('#bmi')}>BMI Vienna</div>
           <div className="menu-sub-list">Side Jobs</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#therme-wien')}>Chef / Service Staff / Barkeeper</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#sfc')}>Child Care / Youth Worker</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#sellinnx')}>Promoter / Sample Distributor</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#thurs')}>Security / Bouncer</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#fitinn')}>Front Desk / Receptionist</div>
+          
+          <div className="menu-list">Client Projects</div>
+          <div className="menu-sub-list-item" onClick={() => handleMenuClick('#bladescape')}>Bladescape</div>
+          <div className="menu-sub-list-item" onClick={() => handleMenuClick('#xspector')}>XSPECTER</div>
+          <div className="menu-sub-list-item" onClick={() => handleMenuClick('#erste-bank-leasing')}>Erste Bank Leasing</div>
+          <div className="menu-sub-list-item" onClick={() => handleMenuClick('#guardians-of-social-media')}>Guardians of Social Media</div>
           
           <div className="menu-list">Education</div>
           <div className="menu-sub-list">HLW 10</div>

@@ -33,6 +33,14 @@ function Menu() {
                 10/2022 - 12/2023
             </MenubarShortcut>
           </MenubarItem>
+          <MenubarItem onClick={() => {
+            router.push('#bmi')
+          }}>
+            BMI Vienna
+            <MenubarShortcut>
+                12/2023 - 05/2025
+            </MenubarShortcut>
+          </MenubarItem>
           <MenubarSeparator />
           <MenubarSub>
             <MenubarSubTrigger>Side Jobs</MenubarSubTrigger>
@@ -67,6 +75,42 @@ function Menu() {
           }}>
                 Front Desk / Receptionist
                 <MenubarShortcut>Fitinn</MenubarShortcut>
+              </MenubarItem>
+            </MenubarSubContent>
+          </MenubarSub>
+          <MenubarSeparator />
+          <MenubarSub>
+            <MenubarSubTrigger>Client Projects</MenubarSubTrigger>
+            <MenubarSubContent>
+              <MenubarItem onClick={() => {
+            router.push('#bladescape')
+            document.getElementById('bladescape')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+          }}>
+                Bladescape
+                <MenubarShortcut className='ml-2'>
+                    08/2024
+                </MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem onClick={() => {
+            router.push('#xspector')
+            document.getElementById('xspector')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+          }}>
+                XSPECTER
+                <MenubarShortcut>01/2025 - 08/2025</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem onClick={() => {
+            router.push('#erste-bank-leasing')
+            document.getElementById('erste-bank-leasing')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+          }}>
+                Erste Bank Leasing
+                <MenubarShortcut>02/2025 - 12/2026</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem onClick={() => {
+            router.push('#guardians-of-social-media')
+            document.getElementById('guardians-of-social-media')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+          }}>
+                Guardians of Social Media
+                <MenubarShortcut>04/2025 - 01/2026</MenubarShortcut>
               </MenubarItem>
             </MenubarSubContent>
           </MenubarSub>

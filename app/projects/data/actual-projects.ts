@@ -280,5 +280,132 @@ The tool is **free to use** and accessible via any web browser. Start generating
       "https://fabiotietz.com/blog/custom-qr-code-generator",
       "https://qr.tietz-innovations.com",
       new Date("2024-11-10")
+    ),
+    new Project(
+      "captainfocus",
+      "Captain Focus",
+      "A pomodoro timer to help you stay focused on your tasks.",
+      `
+      # Captain Focus: A Pomodoro Timer to Stay Focused
+
+**Captain Focus** is a pomodoro timer to help you stay focused on your tasks.
+
+## Features
+
+- **Pomodoro Timer:** 25 minutes of work, followed by a 5 minute break.
+- **Break Timer:** 5 minutes of break, followed by a 25 minute work session.
+- **Customizable:** Change the work and break times to your liking.
+- **AI-Powered:** Create Pomodoro plans with AI.
+    `,
+      "/projects/captainfocus_light.svg",
+      "/projects/captainfocus_dark.svg",
+      new Date(2025, 3, 1),
+      ProjectStatus.IN_PROGRESS,
+      [
+        Technologies.TYPESCRIPT,
+        Technologies.REACT_NATIVE,
+        Technologies.EXPO,
+      ],
+      "",
+      "https://captainfocus.com",
+    ),
+    new Project(
+      "showradar",
+      "Showradar",
+      "A tool for tracking and analyzing shows you are watching or interested in.",
+      `
+      # Showradar: A Tool for Tracking and Analyzing Shows you are watching or interested in
+
+**Showradar** is a tool for tracking and analyzing shows you are watching or interested in.
+
+## Features
+
+- **Tracking:** Track shows you are watching or interested in.
+- **Analyzing:** Analyze shows you are watching or interested in.
+- **Recommendations:** Get recommendations for shows you might like.
+- **Notifications:** Get notified when a new episode of a show you are interested in is available.
+
+      `,
+      "/projects/showradar_light.svg",
+      "/projects/showradar_dark.svg",
+      new Date(2025, 3, 18),
+      ProjectStatus.IN_PROGRESS,
+      [
+        Technologies.TYPESCRIPT,
+        Technologies.REACT_NATIVE,
+        Technologies.EXPO,
+      ],
+      "",
+      "",
+    ),
+    new Project(
+      "weingartner-physio",
+      "Weingartner Physio",
+      "An info website for a physical therapist.",
+      `
+      # Weingartner Physio: Physical Therapy Information Website
+
+**Weingartner Physio** is an information website for a physical therapist practice.
+
+## Features
+
+- **Information:** Comprehensive information about the physical therapy services offered.
+- **Contact Details:** Easy access to contact information for appointments and inquiries.
+- **Interactive Map:** Embedded map showing the location of the practice for easy navigation.
+
+## Project Details
+
+This website provides a professional online presence for the physical therapy practice, making it easy for potential patients to find information about services and contact the practice.
+
+      `,
+      "/projects/mw_physio.jpg",
+      "/projects/mw_physio.jpg",
+      new Date(2025, 4, 30), // May 30, 2025
+      ProjectStatus.COMPLETED,
+      [
+        Technologies.TYPESCRIPT,
+        Technologies.REACT,
+        Technologies.NEXT_JS,
+        Technologies.TAILWIND_CSS,
+      ],
+      "",
+      "https://www.mwphysiowien.at/",
+      new Date(2025, 5, 4) // June 4, 2025
+    ),
+    new Project(
+      "qiye-restaurant",
+      "QiYe Restaurant",
+      "An info website for the traditional Chinese restaurant 'QiYe'.",
+      `
+      # QiYe Restaurant: Traditional Chinese Cuisine Website
+
+**QiYe Restaurant** is an information website for a traditional Chinese restaurant.
+
+## Features
+
+- **Restaurant Information:** Detailed information about the restaurant and its traditional Chinese cuisine.
+- **Contact Details:** Easy access to contact information for reservations and inquiries.
+- **Contact Form:** Interactive contact form for customer inquiries and feedback.
+- **Slideshow:** Visual showcase of the restaurant's atmosphere and dishes.
+- **Menu:** Complete menu with traditional Chinese dishes and pricing.
+- **Interactive Map:** Embedded map showing the restaurant's location for easy navigation.
+
+## Project Details
+
+This website provides a comprehensive online presence for the QiYe restaurant, allowing customers to explore the menu, view photos, and easily make contact for reservations or inquiries.
+
+      `,
+      "/projects/qiye_restaurant.jpeg",
+      "/projects/qiye_restaurant.jpeg",
+      new Date(2025, 4, 26), // May 26, 2025
+      ProjectStatus.IN_PROGRESS,
+      [
+        Technologies.TYPESCRIPT,
+        Technologies.REACT,
+        Technologies.NEXT_JS,
+        Technologies.TAILWIND_CSS,
+      ],
+      "",
+      "https://qiye.at/",
     )
   ];
