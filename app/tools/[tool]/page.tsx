@@ -1,5 +1,3 @@
-"use client"
-
 import UnderConstruction from '@/app/components/under-construction';
 import Technology from '@/app/data/technology/technology'
 import TechnologyType from '@/app/data/technology/technology-type';
@@ -7,56 +5,33 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useParams, useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Technologies } from '@/app/technology/data/availableTechnologies';
 
-function Tool() {
-const { tool } = useParams();
-const [actualTool, setActualTool] = useState<Technology | null>(null);
-const router = useRouter();
-const tools: Technology[] = Object.values(Technologies);
-console.log(tools.length);
+function Tool({params}: {params: {tool: string}}) {
+  const tools: Technology[] = Object.values(Technologies);
+  const foundTool = tools.find((singleTool) => singleTool.name.toLowerCase() === params.tool);
 
-// TODO: if tool is in toolbox: show tool detail page, else redirect to last route (router.back())
-
-useEffect(() => {
-  const foundTool = tools.find((singleTool) => singleTool.name.toLocaleLowerCase() === tool)
   if (!foundTool) {
-    router.back();
-  } else {
-    setActualTool(foundTool);
+    return (
+      <div className='container mx-auto p-4'>
+        <div className='text-4xl justify-center flex'>Tool not found</div>
+      </div>
+    );
   }
-}, [tool, router, tools])
+
   return (
     <div className='container mx-auto p-4'>
-    {/* <div className='flex justify-center'> */}
-        {/* <Card className='w-3/4 text-center'>
-          <CardHeader>
-            <CardTitle>{actualTool?.name}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p><strong>Type: </strong> {actualTool?.type}</p>
-            {
-              actualTool ?
-              <Link href={actualTool?.resources} target='_blank'>Check out</Link>
-              : null
-            }
-          </CardContent>
-          <CardFooter>
-            <p>
-              <strong>Personal Score:</strong>
-            </p>
-          <Badge>{actualTool && actualTool.personalLikability * 100} /100</Badge>
-          </CardFooter>
-        </Card> */} {/* TODO */}
-        {/* TODO: display all projects using this technology */}
-        {/* TODO: display all blog posts mentioning this technology */}
-
-        <UnderConstruction />
-    {/* </div> */}
+      <UnderConstruction />
     </div>
-  )
+  );
+}
+
+export async function generateStaticParams() {
+    const tools = Object.values(Technologies);
+    return tools.map((tool) => ({
+        tool: tool.name.toLowerCase(),
+    }));
 }
 
 export default Tool
