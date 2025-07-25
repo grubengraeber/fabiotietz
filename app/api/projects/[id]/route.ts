@@ -1,12 +1,5 @@
 import ProjectService from "@/app/service/ProjectService";
 import { NextRequest, NextResponse } from "next/server";
-import { projects } from "@/app/projects/data/actual-projects";
-
-export async function generateStaticParams() {
-    return projects.map((project) => ({
-        id: project.id,
-    }));
-}
 
 export async function GET(request: NextRequest, { params} : { params: { id: string } }) {
     const id = params.id;
