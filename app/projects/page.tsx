@@ -2,7 +2,7 @@
 
 import Project from '../data/project/project';
 import Board from '../components/projects/kanban-board/board';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 import LoadingAnimation from '../components/animation/loading/loading-animation';
@@ -12,16 +12,12 @@ import MapperService from '../service/MapperService';
 // TODO: language
 export default function ProjectsPage() {
   const router = useRouter();
-  const mapperService = new MapperService();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [projects, setProjects] = useState<Project[]>([]);
 
-  useEffect(() => {
-    fetchProjects();
-  }, [])
-
-  const fetchProjects = async () => {
+  const fetchProjects = useCallback(async () => {
+    const mapperService = new MapperService();
     setIsLoading(true);
     const response = await fetch('/api/projects');
     const { data, error } = await response.json();
@@ -38,7 +34,11 @@ export default function ProjectsPage() {
     setProjects(mappedProjects);
     
     setIsLoading(false);
-  }
+  }, [router])
+
+  useEffect(() => {
+    fetchProjects();
+  }, [fetchProjects])
 
 
     return (

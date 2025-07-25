@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from 'next/link'
 import React from 'react'
 import Section from '../section'
+import Image from 'next/image'
 
 function AustrianArmedForces() {
   return (
@@ -12,8 +13,8 @@ function AustrianArmedForces() {
         <CardHeader>
             <CardTitle>Wachtmeister <small>Sergeant (OR-5)</small></CardTitle>
             <CardDescription>Austrian Armed Forces <small>03/2017 - 02/2022</small></CardDescription>
-            <div className='w-full h-48 bg-gray-200 dark:bg-gray-800'>
-                <img src='/logos/bundesheer.jpg' alt='Bundesheer' className='w-full h-full object-cover' />
+            <div className='w-full h-48 bg-gray-200 dark:bg-gray-800 relative'>
+                <Image src='/logos/bundesheer.jpg' alt='Bundesheer' fill className='object-cover' />
             </div>
         </CardHeader>
         <CardContent className='text-start pl-10'>

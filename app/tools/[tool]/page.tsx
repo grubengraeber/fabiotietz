@@ -27,7 +27,7 @@ useEffect(() => {
   } else {
     setActualTool(foundTool);
   }
-}, [tool, router])
+}, [tool, router, tools])
   return (
     <div className='container mx-auto p-4'>
     {/* <div className='flex justify-center'> */}

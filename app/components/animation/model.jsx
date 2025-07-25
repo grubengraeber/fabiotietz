@@ -73,7 +73,7 @@ export function Model(props) {
     return () => {
       actions[animation].reset().fadeOut(0.5);
     }
-  }, [animation]) 
+  }, [animation, actions]) 
 
 
   return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import Section from '../section'
+import Image from 'next/image'
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -42,8 +43,8 @@ import { Button } from '@/components/ui/button';
                     <CardHeader>
                         <CardTitle>{category.label}</CardTitle>
                         <CardDescription>{category.startAndEndTime}</CardDescription>
-                        <div className='w-full h-48 bg-gray-200 dark:bg-gray-800'>
-                            <img src={category.imageUrl} alt={category.label} className='w-full h-full object-cover' />
+                        <div className='w-full h-48 bg-gray-200 dark:bg-gray-800 relative'>
+                            <Image src={category.imageUrl} alt={category.label} fill className='object-cover' />
                         </div>
                         </CardHeader>
                     <CardContent>

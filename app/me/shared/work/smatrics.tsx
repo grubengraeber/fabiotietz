@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from 'next/link'
 import React from 'react'
 import Section from '../section'
+import Image from 'next/image'
 
 function Smatrics() {
   return (
@@ -12,8 +13,8 @@ function Smatrics() {
         <CardHeader>
             <CardTitle>Full-Stack Developer <small>(mostly backend)</small></CardTitle>
             <CardDescription>SMATRICS <small>10/2022 - 12/2023</small></CardDescription>
-            <div className='w-full h-48 bg-gray-200 dark:bg-gray-800'>
-                <img src='/logos/smatrics.jpg' alt='SMATRICS' className='w-full h-full object-cover' />
+            <div className='w-full h-48 bg-gray-200 dark:bg-gray-800 relative'>
+                <Image src='/logos/smatrics.jpg' alt='SMATRICS' fill className='object-cover' />
             </div>
         </CardHeader>
         <CardContent className='text-start'>

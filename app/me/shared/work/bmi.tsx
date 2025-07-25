@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from 'next/link'
 import React from 'react'
 import Section from '../section'
+import Image from 'next/image'
 
 function BMI() {
   return (
@@ -12,8 +13,8 @@ function BMI() {
         <CardHeader>
             <CardTitle>Software Developer</CardTitle>
             <CardDescription>Ministry of Interior (BMI Vienna) <small>12/2023 - 05/2025</small></CardDescription>
-            <div className='w-full h-48 bg-gray-200 dark:bg-gray-800'>
-                <img src='/logos/bmi.jpg' alt='BMI Vienna' className='w-full h-full object-cover' />
+            <div className='w-full h-48 bg-gray-200 dark:bg-gray-800 relative'>
+                <Image src='/logos/bmi.jpg' alt='BMI Vienna' fill className='object-cover' />
             </div>
         </CardHeader>
         <CardContent className='text-start'>
@@ -22,7 +23,7 @@ function BMI() {
                 <ul className='list-disc list-inside'>
                     <li>Worked on internal projects as a Software Developer</li>
                     <li>Contributed to various internal software solutions and applications</li>
-                    <li>Supported the ministry's digital infrastructure and operational needs</li>
+                    <li>Supported the ministry&apos;s digital infrastructure and operational needs</li>
                 </ul>
             </div>
         </CardContent>

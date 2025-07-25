@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import Project from '@/app/data/project/project';
 import { useParams} from 'next/navigation';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
@@ -10,18 +10,12 @@ import MapperService from '@/app/service/MapperService';
 
 export default function ProjectDetailPage({params}: {params: {projectId: string}}) {
   const projectId = params.projectId;
-
-  const mapperService = new MapperService();
   
   const [project, setProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    fetchProject();
-  }, [])
-
-
-  const fetchProject = async () => {
+  const fetchProject = useCallback(async () => {
+    const mapperService = new MapperService();
     setIsLoading(true);
     const response = await fetch(`/api/projects/${projectId}`);
     const { data, error } = await response.json();
@@ -34,7 +28,11 @@ export default function ProjectDetailPage({params}: {params: {projectId: string}
     const mappedProject = mapperService.jsonToProject(data);
     setProject(mappedProject);
     setIsLoading(false);
-  }
+  }, [projectId])
+
+  useEffect(() => {
+    fetchProject();
+  }, [fetchProject])
 
   return (
     <div className='container mx-auto p-4'>

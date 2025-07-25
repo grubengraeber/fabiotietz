@@ -33,7 +33,7 @@ function ScrollManager({section, onSectionChange}: {section: number, onSectionCh
         isAnimating.current = false;
       }
     })
-  }, [section])
+  }, [section, data.el, data.fill.classList])
 
   useFrame(() => {
       if (isAnimating.current) {

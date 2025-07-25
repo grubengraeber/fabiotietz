@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 function HorizontalCard({ projectTitle, projectName, projectDescription, projectUrl, projectImageUrl, projectStartAndEndTime, projectId, mobile }: { projectTitle: string, projectName: string, projectDescription: string, projectUrl: string, projectImageUrl: string, projectStartAndEndTime: string, projectId: string, mobile: boolean }) {
   return (
@@ -12,8 +13,8 @@ function HorizontalCard({ projectTitle, projectName, projectDescription, project
             <CardTitle>{projectTitle}</CardTitle>
             <CardDescription>{projectName} <small>{projectStartAndEndTime}</small></CardDescription>
         </CardHeader>
-        <div className='w-full h-48 bg-gray-200 dark:bg-gray-800'>
-            <img src={projectImageUrl} alt={projectName} className='w-full h-full object-cover' />
+        <div className='w-full h-48 bg-gray-200 dark:bg-gray-800 relative'>
+            <Image src={projectImageUrl} alt={projectName} fill className='object-cover' />
         </div>
         <CardContent>
             <p>{projectDescription}</p>
