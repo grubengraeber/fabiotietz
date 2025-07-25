@@ -40,7 +40,7 @@ export const DownloadResume = () => {
         <CommandList className="mt-10">
           {languages.map((language, index) => (
             <CommandItem disabled key={index} onSelect={() => {
-                downloadFile(`/api/resume?language=${language.language}`, '')
+                downloadFile(`/api/resume/${language.language}`, '')
                 toggleResumePanel()
             }}>
 

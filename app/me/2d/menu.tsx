@@ -92,8 +92,8 @@ function Menu() {
                 </MenubarShortcut>
               </MenubarItem>
               <MenubarItem onClick={() => {
-            router.push('#xspector')
-            document.getElementById('xspector')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+            router.push('#xspecter')
+            document.getElementById('xspecter')?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
           }}>
                 XSPECTER
                 <MenubarShortcut>01/2025 - 08/2025</MenubarShortcut>

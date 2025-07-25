@@ -34,7 +34,7 @@ const MobileMenu = () => {
           
           <div className="menu-list">Client Projects</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#bladescape')}>Bladescape</div>
-          <div className="menu-sub-list-item" onClick={() => handleMenuClick('#xspector')}>XSPECTER</div>
+          <div className="menu-sub-list-item" onClick={() => handleMenuClick('#xspecter')}>XSPECTER</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#erste-bank-leasing')}>Erste Bank Leasing</div>
           <div className="menu-sub-list-item" onClick={() => handleMenuClick('#guardians-of-social-media')}>Guardians of Social Media</div>
           
