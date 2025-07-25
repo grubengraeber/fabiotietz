@@ -14,7 +14,7 @@ function Blog() {
   }, [])
 
   const fetchBlogs = async () => {
-    const { data, error } = await fetch('/api/blog').then(res => res.json())
+    const { data, error } = await fetch('/api/list/blog').then(res => res.json())
     if (error) {
       console.error(error)
       setIsLoading(false)

@@ -10,9 +10,4 @@ export async function GET(request: NextRequest) {
         data: projects,
         error: null
     })
-}
-
-// This is needed to avoid conflicts with dynamic routes during static export
-export async function generateStaticParams() {
-    return [];
 } 

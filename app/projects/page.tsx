@@ -19,7 +19,7 @@ export default function ProjectsPage() {
   const fetchProjects = useCallback(async () => {
     const mapperService = new MapperService();
     setIsLoading(true);
-    const response = await fetch('/api/projects');
+    const response = await fetch('/api/list/projects');
     const { data, error } = await response.json();
 
     if (error || !data) {
