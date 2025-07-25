@@ -6,8 +6,6 @@ import LoadingAnimation from '@/app/components/animation/loading/loading-animati
 import Link from 'next/link'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import BlogPost from '@/app/data/blog/BlogPost';
-
-
 function BlogDetails({params}: {params: {slug: string}}) {
 
     const [isLoading, setIsLoading] = useState(true)
