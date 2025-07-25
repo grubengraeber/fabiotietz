@@ -8,6 +8,7 @@ import ProjectDetailView from '@/app/components/projects/projects-detail-view';
 import LoadingAnimation from '@/app/components/animation/loading/loading-animation';
 import MapperService from '@/app/service/MapperService';
 
+
 export default function ProjectDetailPage({params}: {params: {projectId: string}}) {
   const projectId = params.projectId;
   
